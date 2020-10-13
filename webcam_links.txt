@@ -1,1 +1,6 @@
-
+cima_grappa:    http://www.meteocimagrappa.it/sudest/webcam.php
+monfalcone:     https://www.comune.monfalcone.go.it/anemometro-marina-julia
+riccione:       http://www.windsurf-maniac.it/web-cam-151/web-cam.jpg
+rimini:         http://www.meteosystem.com/dati/rimini/webcam.php
+rimini2:        http://www.riminiriders.com/meteo/anemometri-rimini.html
+malcesine:      https://www.wwwind.com/en/live-webcam-lake-garda-malcesine-limone-torbole
