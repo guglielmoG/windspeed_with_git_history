@@ -4,3 +4,6 @@ riccione:       http://www.windsurf-maniac.it/web-cam-151/web-cam.jpg
 rimini:         http://www.meteosystem.com/dati/rimini/webcam.php
 rimini2:        http://www.riminiriders.com/meteo/anemometri-rimini.html
 malcesine:      https://www.wwwind.com/en/live-webcam-lake-garda-malcesine-limone-torbole
+thuile:         http://www.meteolathuile.com/
+albisola:       https://www.3bmeteo.com/le_webcam/lni-albisola/21502
+campegli:       https://www.3bmeteo.com/le_webcam/campaegli/21390
