@@ -24,7 +24,7 @@ class WebcamScraper:
     def __init__(self,webcams, b_dir = ''):
 
         self.webcam_location = [location for location in webcam_link]
-        self.webcam_links = webcam_links = [link for link in webcams.values()]
+        self.webcam_links[link for link in webcams.values()]
         self.b_dir = b_dir
 
     def mk_path(self, rel_path) :
