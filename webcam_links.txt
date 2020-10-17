@@ -11,3 +11,4 @@ campegli https://www.meteo-lazio.it/webcams/campaegli/FI9901EP_00626E8B72EB/snap
 nw_egypt https://webcam.harry-nass.com/dahab-live.jpg
 nw_rbsc https://g0.ipcamlive.com/player/player.php?alias=rbsczoute&autoplay=1&mute=1
 nw_alpago http://www.meteosystem.com/webcam/alpago/lagosantacroce.jpg
+nw_zacinto https://www.zakynthos.at/zantecam/webcam.jpg?%3C?php%20echo%20time();%20?%3E
