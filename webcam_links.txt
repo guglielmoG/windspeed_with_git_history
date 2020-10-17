@@ -11,11 +11,11 @@ campegli https://www.meteo-lazio.it/webcams/campaegli/FI9901EP_00626E8B72EB/snap
 nw_egypt https://webcam.harry-nass.com/dahab-live.jpg
 nw_alpago http://www.meteosystem.com/webcam/alpago/lagosantacroce.jpg
 nw_zacinto https://www.zakynthos.at/zantecam/webcam.jpg?%3C?php%20echo%20time();%20?%3E
-nw_porto-di-andora http://217.56.254.132/jpg/image.jpg?camera=1&overview=0&videoframeskipmode=empty&Axis-Orig-Sw=true&resolution=1280x720&_nc=73290
+nw_portodiandora http://217.56.254.132/jpg/image.jpg?camera=1&overview=0&videoframeskipmode=empty&Axis-Orig-Sw=true&resolution=1280x720&_nc=73290
 nw_montalt https://www.jdserver.es/mar.jpg
-nw_alvar - montseny http://www.alvar.cat/WebCam/Imatge-Camera.jpg
-nw_veulettes-sur-mer https://www.vision-environnement.com/live/modules/timelapse/capture/veules.jpg
-nw_veulettes-sur-mer2 https://www.vision-environnement.com/live/modules/timelapse/capture/veulettes.jpg
+nw_alvarmontseny http://www.alvar.cat/WebCam/Imatge-Camera.jpg
+nw_veulettes https://www.vision-environnement.com/live/modules/timelapse/capture/veules.jpg
+nw_veulettes2 https://www.vision-environnement.com/live/modules/timelapse/capture/veulettes.jpg
 nw_poperinge https://webcam.poperinge.be/fotos/webcam.jpg
-nw_almere-haven http://almere-haven.com/
+nw_almerehaven http://almere-haven.com/
 nw_dieeksepark https://seehotel-diekseepark.de/dieksee.jpg
