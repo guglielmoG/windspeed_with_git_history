@@ -15,7 +15,7 @@ nw_porto-di-andora http://217.56.254.132/jpg/image.jpg?camera=1&overview=0&video
 nw_montalt https://www.jdserver.es/mar.jpg
 nw_alvar - montseny http://www.alvar.cat/WebCam/Imatge-Camera.jpg
 nw_veulettes-sur-mer https://www.vision-environnement.com/live/modules/timelapse/capture/veules.jpg
-nw_veulettes-sur-mer https://www.vision-environnement.com/live/modules/timelapse/capture/veulettes.jpg
+nw_veulettes-sur-mer2 https://www.vision-environnement.com/live/modules/timelapse/capture/veulettes.jpg
 nw_poperinge https://webcam.poperinge.be/fotos/webcam.jpg
 nw_almere-haven http://almere-haven.com/
 nw_dieeksepark https://seehotel-diekseepark.de/dieksee.jpg
