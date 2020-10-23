@@ -22,19 +22,25 @@ class WebcamScraper:
                 (key, val) = line.split()
                 self.webcams[key] = val
 
-    def get_data(self, folder_name = 'data_raw'):
-        self.load_webcams()
-        driver = webdriver.Firefox(executable_path = os.path.join(self.b_dir, 'geckodriver') )
-        for city, link in self.webcams.items():
-            driver.get(link)
-            now = datetime.now()
-            rel_path = folder_name + '/' + city + '_' + now.strftime("%d_%m_%Y__%H_%M_%S") +'.png'
-            driver.get_screenshot_as_file(os.path.join(self.b_dir, rel_path))
-            
-        driver.close()
-
 
     def automatic_scraper(self, interval, iteration):
+        t0=time.time()
+        def get_data(folder_name = 'data_raw'):
+            for city, link in self.webcams.items():
+                driver.get(link)
+                now = datetime.now()
+                rel_path = folder_name + '/' + city + '_' + now.strftime("%d_%m_%Y__%H_%M_%S") +'.png'
+                driver.get_screenshot_as_file(os.path.join(self.b_dir, rel_path))
+
+        self.load_webcams()
+        # chrome_options = webdriver.ChromeOptions()
+        # chrome_options.add_argument('--headless')
+        # driver = webdriver.Chrome(options=chrome_options,executable_path = os.path.join(self.b_dir, 'chromedriver') )
+        firefox_options=webdriver.FirefoxOptions()
+        firefox_options.add_argument('--headless')
+        driver = webdriver.Firefox(options=firefox_options,executable_path = os.path.join(self.b_dir, 'geckodriver') )
         for i in range(iteration):
-            self.get_data()
+            get_data()
             time.sleep(interval*60)
+        driver.close()
+        print(time.time()-t0)
