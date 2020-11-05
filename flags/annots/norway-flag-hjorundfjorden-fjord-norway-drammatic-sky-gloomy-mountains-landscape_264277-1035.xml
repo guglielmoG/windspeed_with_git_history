@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Flags</folder>
+	<filename>norway-flag-hjorundfjorden-fjord-norway-drammatic-sky-gloomy-mountains-landscape_264277-1035.jpg</filename>
+	<path>/Users/antonella/Desktop/Flags/norway-flag-hjorundfjorden-fjord-norway-drammatic-sky-gloomy-mountains-landscape_264277-1035.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>664</width>
+		<height>442</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>252</xmin>
+			<ymin>122</ymin>
+			<xmax>393</xmax>
+			<ymax>262</ymax>
+		</bndbox>
+	</object>
+</annotation>

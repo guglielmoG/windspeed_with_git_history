@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Flags</folder>
+	<filename>kein-wind-für-das-flagge-heute-ðÿ-‡-ºðÿ-¸-119044135.jpg</filename>
+	<path>/Users/antonella/Desktop/Flags/kein-wind-für-das-flagge-heute-ðÿ-‡-ºðÿ-¸-119044135.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>437</width>
+		<height>900</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>196</xmin>
+			<ymin>52</ymin>
+			<xmax>231</xmax>
+			<ymax>296</ymax>
+		</bndbox>
+	</object>
+</annotation>

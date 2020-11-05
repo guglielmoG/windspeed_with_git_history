@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Flags</folder>
+	<filename>WP_20160505_15_37_40_Pro-600x480.jpg</filename>
+	<path>/Users/antonella/Desktop/Flags/WP_20160505_15_37_40_Pro-600x480.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>600</width>
+		<height>480</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>134</xmin>
+			<ymin>163</ymin>
+			<xmax>331</xmax>
+			<ymax>386</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Flags</folder>
+	<filename>mikes-landscape-lighting-kenosha-056-600x400.jpg</filename>
+	<path>/Users/antonella/Desktop/Flags/mikes-landscape-lighting-kenosha-056-600x400.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>600</width>
+		<height>400</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>292</xmin>
+			<ymin>44</ymin>
+			<xmax>309</xmax>
+			<ymax>134</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Flags</folder>
+	<filename>US_flag_flying_at_half_mast_in_Milan,_2013.jpg</filename>
+	<path>/Users/antonella/Desktop/Flags/US_flag_flying_at_half_mast_in_Milan,_2013.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>900</width>
+		<height>1200</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>501</xmin>
+			<ymin>538</ymin>
+			<xmax>569</xmax>
+			<ymax>670</ymax>
+		</bndbox>
+	</object>
+</annotation>

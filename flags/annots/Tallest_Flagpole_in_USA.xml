@@ -1,26 +1,26 @@
 <annotation>
 	<folder>Flags</folder>
-	<filename>red-flag-with-no-waves.jpg</filename>
-	<path>/Users/antonella/Desktop/Flags/red-flag-with-no-waves.jpg</path>
+	<filename>Tallest_Flagpole_in_USA.jpg</filename>
+	<path>/Users/antonella/Desktop/Flags/Tallest_Flagpole_in_USA.jpg</path>
 	<source>
 		<database>Unknown</database>
 	</source>
 	<size>
-		<width>550</width>
-		<height>309</height>
+		<width>640</width>
+		<height>480</height>
 		<depth>3</depth>
 	</size>
 	<segmented>0</segmented>
 	<object>
 		<name>Flag</name>
 		<pose>Unspecified</pose>
-		<truncated>1</truncated>
+		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>133</xmin>
-			<ymin>1</ymin>
-			<xmax>171</xmax>
-			<ymax>114</ymax>
+			<xmin>286</xmin>
+			<ymin>76</ymin>
+			<xmax>325</xmax>
+			<ymax>177</ymax>
 		</bndbox>
 	</object>
 </annotation>

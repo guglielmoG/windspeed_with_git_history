@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Flags</folder>
+	<filename>Screenshot 2020-11-04 at 17.03.13.png</filename>
+	<path>/Users/antonella/Desktop/Flags/Screenshot 2020-11-04 at 17.03.13.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1502</width>
+		<height>970</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>614</xmin>
+			<ymin>533</ymin>
+			<xmax>659</xmax>
+			<ymax>675</ymax>
+		</bndbox>
+	</object>
+</annotation>

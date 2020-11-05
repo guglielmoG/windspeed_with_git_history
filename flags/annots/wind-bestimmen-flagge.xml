@@ -1,26 +1,26 @@
 <annotation>
 	<folder>Flags</folder>
-	<filename>red-flag-with-no-waves.jpg</filename>
-	<path>/Users/antonella/Desktop/Flags/red-flag-with-no-waves.jpg</path>
+	<filename>wind-bestimmen-flagge.jpg</filename>
+	<path>/Users/antonella/Desktop/Flags/wind-bestimmen-flagge.jpg</path>
 	<source>
 		<database>Unknown</database>
 	</source>
 	<size>
-		<width>550</width>
-		<height>309</height>
+		<width>400</width>
+		<height>225</height>
 		<depth>3</depth>
 	</size>
 	<segmented>0</segmented>
 	<object>
 		<name>Flag</name>
 		<pose>Unspecified</pose>
-		<truncated>1</truncated>
+		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>133</xmin>
-			<ymin>1</ymin>
-			<xmax>171</xmax>
-			<ymax>114</ymax>
+			<xmin>79</xmin>
+			<ymin>54</ymin>
+			<xmax>217</xmax>
+			<ymax>165</ymax>
 		</bndbox>
 	</object>
 </annotation>

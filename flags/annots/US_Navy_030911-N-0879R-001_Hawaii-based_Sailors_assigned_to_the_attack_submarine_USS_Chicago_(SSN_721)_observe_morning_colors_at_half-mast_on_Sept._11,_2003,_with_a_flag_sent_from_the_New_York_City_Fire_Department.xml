@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Flags</folder>
+	<filename>US_Navy_030911-N-0879R-001_Hawaii-based_Sailors_assigned_to_the_attack_submarine_USS_Chicago_(SSN_721)_observe_morning_colors_at_half-mast_on_Sept._11,_2003,_with_a_flag_sent_from_the_New_York_City_Fire_Department.jpg</filename>
+	<path>/Users/antonella/Desktop/Flags/US_Navy_030911-N-0879R-001_Hawaii-based_Sailors_assigned_to_the_attack_submarine_USS_Chicago_(SSN_721)_observe_morning_colors_at_half-mast_on_Sept._11,_2003,_with_a_flag_sent_from_the_New_York_City_Fire_Department.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>856</width>
+		<height>1198</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>271</xmin>
+			<ymin>309</ymin>
+			<xmax>399</xmax>
+			<ymax>718</ymax>
+		</bndbox>
+	</object>
+</annotation>

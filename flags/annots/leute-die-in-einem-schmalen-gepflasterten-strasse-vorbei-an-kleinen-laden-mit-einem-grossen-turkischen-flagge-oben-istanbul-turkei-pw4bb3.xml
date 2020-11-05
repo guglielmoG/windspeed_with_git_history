@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Flags</folder>
+	<filename>leute-die-in-einem-schmalen-gepflasterten-strasse-vorbei-an-kleinen-laden-mit-einem-grossen-turkischen-flagge-oben-istanbul-turkei-pw4bb3.jpg</filename>
+	<path>/Users/antonella/Desktop/Flags/leute-die-in-einem-schmalen-gepflasterten-strasse-vorbei-an-kleinen-laden-mit-einem-grossen-turkischen-flagge-oben-istanbul-turkei-pw4bb3.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>867</width>
+		<height>1390</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>446</xmin>
+			<ymin>200</ymin>
+			<xmax>672</xmax>
+			<ymax>486</ymax>
+		</bndbox>
+	</object>
+</annotation>

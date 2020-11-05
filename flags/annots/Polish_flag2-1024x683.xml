@@ -1,13 +1,13 @@
 <annotation>
 	<folder>Flags</folder>
-	<filename>red-flag-with-no-waves.jpg</filename>
-	<path>/Users/antonella/Desktop/Flags/red-flag-with-no-waves.jpg</path>
+	<filename>Polish_flag2-1024x683.jpg</filename>
+	<path>/Users/antonella/Desktop/Flags/Polish_flag2-1024x683.jpg</path>
 	<source>
 		<database>Unknown</database>
 	</source>
 	<size>
-		<width>550</width>
-		<height>309</height>
+		<width>1024</width>
+		<height>683</height>
 		<depth>3</depth>
 	</size>
 	<segmented>0</segmented>
@@ -17,10 +17,10 @@
 		<truncated>1</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>133</xmin>
+			<xmin>528</xmin>
 			<ymin>1</ymin>
-			<xmax>171</xmax>
-			<ymax>114</ymax>
+			<xmax>897</xmax>
+			<ymax>655</ymax>
 		</bndbox>
 	</object>
 </annotation>
