@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Flag</folder>
+	<filename>as11_40_5875_salute_dettaglio.jpg</filename>
+	<path>D:\ME\gugli\Bocconi\5\1_sem\comp_vision\project\Flag\as11_40_5875_salute_dettaglio.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>778</width>
+		<height>486</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>13</xmin>
+			<ymin>27</ymin>
+			<xmax>178</xmax>
+			<ymax>162</ymax>
+		</bndbox>
+	</object>
+</annotation>

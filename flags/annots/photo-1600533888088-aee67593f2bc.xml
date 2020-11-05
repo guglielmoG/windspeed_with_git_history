@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Flag</folder>
+	<filename>photo-1600533888088-aee67593f2bc.jpg</filename>
+	<path>D:\ME\gugli\Bocconi\5\1_sem\comp_vision\project\Flag\photo-1600533888088-aee67593f2bc.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>500</width>
+		<height>889</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>331</xmin>
+			<ymin>158</ymin>
+			<xmax>350</xmax>
+			<ymax>242</ymax>
+		</bndbox>
+	</object>
+</annotation>

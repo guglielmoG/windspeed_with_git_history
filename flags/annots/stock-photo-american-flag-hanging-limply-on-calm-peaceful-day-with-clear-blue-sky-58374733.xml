@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Flag</folder>
+	<filename>stock-photo-american-flag-hanging-limply-on-calm-peaceful-day-with-clear-blue-sky-58374733.jpg</filename>
+	<path>D:\ME\gugli\Bocconi\5\1_sem\comp_vision\project\Flag\stock-photo-american-flag-hanging-limply-on-calm-peaceful-day-with-clear-blue-sky-58374733.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>948</width>
+		<height>1600</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>425</xmin>
+			<ymin>91</ymin>
+			<xmax>592</xmax>
+			<ymax>1415</ymax>
+		</bndbox>
+	</object>
+</annotation>

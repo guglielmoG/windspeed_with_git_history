@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Flag</folder>
+	<filename>anco-toccato-croce-ventoso-vento-soffiare-la-soleggiata-e-senza-nuvole-concezione-il-patriottismo-orgoglio-nazionale-il-patriottismo-patria-h46124.jpg</filename>
+	<path>D:\ME\gugli\Bocconi\5\1_sem\comp_vision\project\Flag\anco-toccato-croce-ventoso-vento-soffiare-la-soleggiata-e-senza-nuvole-concezione-il-patriottismo-orgoglio-nazionale-il-patriottismo-patria-h46124.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1300</width>
+		<height>950</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>373</xmin>
+			<ymin>135</ymin>
+			<xmax>1210</xmax>
+			<ymax>705</ymax>
+		</bndbox>
+	</object>
+</annotation>

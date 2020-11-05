@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Flag</folder>
+	<filename>41782831-flag-of-ontario-svolazzanti-nel-vento-nel-cielo-blu-la-bandiera-dell-ontario-C3A8-stato-adottato-uffic.jpg</filename>
+	<path>D:\ME\gugli\Bocconi\5\1_sem\comp_vision\project\Flag\41782831-flag-of-ontario-svolazzanti-nel-vento-nel-cielo-blu-la-bandiera-dell-ontario-C3A8-stato-adottato-uffic.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>866</width>
+		<height>1300</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>14</xmin>
+			<ymin>285</ymin>
+			<xmax>680</xmax>
+			<ymax>785</ymax>
+		</bndbox>
+	</object>
+</annotation>

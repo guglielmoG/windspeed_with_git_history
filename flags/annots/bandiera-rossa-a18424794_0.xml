@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Flag</folder>
+	<filename>bandiera-rossa-a18424794_0.jpg</filename>
+	<path>D:\ME\gugli\Bocconi\5\1_sem\comp_vision\project\Flag\bandiera-rossa-a18424794_0.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1000</width>
+		<height>744</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>762</xmin>
+			<ymin>146</ymin>
+			<xmax>802</xmax>
+			<ymax>219</ymax>
+		</bndbox>
+	</object>
+</annotation>

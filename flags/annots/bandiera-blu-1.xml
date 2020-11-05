@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Flag</folder>
+	<filename>bandiera-blu-1.jpg</filename>
+	<path>D:\ME\gugli\Bocconi\5\1_sem\comp_vision\project\Flag\bandiera-blu-1.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>851</width>
+		<height>529</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>328</xmin>
+			<ymin>196</ymin>
+			<xmax>609</xmax>
+			<ymax>423</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Flag</folder>
+	<filename>bayern-flag-calm-flag-flagpole-bavaria-flag-of-bavaria-swabia-clouds-thumbnail.jpg</filename>
+	<path>D:\ME\gugli\Bocconi\5\1_sem\comp_vision\project\Flag\bayern-flag-calm-flag-flagpole-bavaria-flag-of-bavaria-swabia-clouds-thumbnail.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>338</width>
+		<height>224</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>149</xmin>
+			<ymin>29</ymin>
+			<xmax>187</xmax>
+			<ymax>203</ymax>
+		</bndbox>
+	</object>
+</annotation>

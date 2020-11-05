@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Flag</folder>
+	<filename>bandiera-americana-senza-vento-68510.jpg</filename>
+	<path>D:\ME\gugli\Bocconi\5\1_sem\comp_vision\project\Flag\bandiera-americana-senza-vento-68510.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>957</width>
+		<height>1300</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>59</xmin>
+			<ymin>377</ymin>
+			<xmax>413</xmax>
+			<ymax>1300</ymax>
+		</bndbox>
+	</object>
+</annotation>

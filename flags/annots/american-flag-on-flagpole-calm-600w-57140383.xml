@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Flag</folder>
+	<filename>american-flag-on-flagpole-calm-600w-57140383.jpg</filename>
+	<path>D:\ME\gugli\Bocconi\5\1_sem\comp_vision\project\Flag\american-flag-on-flagpole-calm-600w-57140383.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>400</width>
+		<height>620</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>111</xmin>
+			<ymin>116</ymin>
+			<xmax>238</xmax>
+			<ymax>483</ymax>
+		</bndbox>
+	</object>
+</annotation>

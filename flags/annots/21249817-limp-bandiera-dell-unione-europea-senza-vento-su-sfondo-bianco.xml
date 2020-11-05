@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Flag</folder>
+	<filename>21249817-limp-bandiera-dell-unione-europea-senza-vento-su-sfondo-bianco.jpg</filename>
+	<path>D:\ME\gugli\Bocconi\5\1_sem\comp_vision\project\Flag\21249817-limp-bandiera-dell-unione-europea-senza-vento-su-sfondo-bianco.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>866</width>
+		<height>1300</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>354</xmin>
+			<ymin>186</ymin>
+			<xmax>514</xmax>
+			<ymax>1087</ymax>
+		</bndbox>
+	</object>
+</annotation>

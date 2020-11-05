@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Flag</folder>
+	<filename>pexels-photo-810944.jpeg</filename>
+	<path>D:\ME\gugli\Bocconi\5\1_sem\comp_vision\project\Flag\pexels-photo-810944.jpeg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>5184</width>
+		<height>2920</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1986</xmin>
+			<ymin>772</ymin>
+			<xmax>2946</xmax>
+			<ymax>1924</ymax>
+		</bndbox>
+	</object>
+</annotation>

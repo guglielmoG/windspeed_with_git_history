@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Flag</folder>
+	<filename>lignano-spiaggia-2-2-2-2.jpg</filename>
+	<path>D:\ME\gugli\Bocconi\5\1_sem\comp_vision\project\Flag\lignano-spiaggia-2-2-2-2.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>600</width>
+		<height>338</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1</xmin>
+			<ymin>4</ymin>
+			<xmax>134</xmax>
+			<ymax>129</ymax>
+		</bndbox>
+	</object>
+</annotation>

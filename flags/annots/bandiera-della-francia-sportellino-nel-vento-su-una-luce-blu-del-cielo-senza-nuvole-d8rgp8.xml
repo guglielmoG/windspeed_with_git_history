@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Flag</folder>
+	<filename>bandiera-della-francia-sportellino-nel-vento-su-una-luce-blu-del-cielo-senza-nuvole-d8rgp8.jpg</filename>
+	<path>D:\ME\gugli\Bocconi\5\1_sem\comp_vision\project\Flag\bandiera-della-francia-sportellino-nel-vento-su-una-luce-blu-del-cielo-senza-nuvole-d8rgp8.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>866</width>
+		<height>1390</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>325</xmin>
+			<ymin>453</ymin>
+			<xmax>694</xmax>
+			<ymax>1028</ymax>
+		</bndbox>
+	</object>
+</annotation>
