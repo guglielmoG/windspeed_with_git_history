@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Flags</folder>
+	<filename>cinque-terre-vernazza-village-mediterranean-coast-seascape-landscape-panorama-flag.jpg</filename>
+	<path>/Users/antonella/Desktop/Flags/cinque-terre-vernazza-village-mediterranean-coast-seascape-landscape-panorama-flag.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>880</width>
+		<height>586</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>594</xmin>
+			<ymin>164</ymin>
+			<xmax>765</xmax>
+			<ymax>283</ymax>
+		</bndbox>
+	</object>
+</annotation>

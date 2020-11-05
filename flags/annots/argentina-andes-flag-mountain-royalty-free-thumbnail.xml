@@ -1,13 +1,13 @@
 <annotation>
 	<folder>Flags</folder>
-	<filename>gettyimages-865357134-612x612.jpg</filename>
-	<path>/Users/antonella/Desktop/Flags/gettyimages-865357134-612x612.jpg</path>
+	<filename>argentina-andes-flag-mountain-royalty-free-thumbnail.jpg</filename>
+	<path>/Users/antonella/Desktop/Flags/argentina-andes-flag-mountain-royalty-free-thumbnail.jpg</path>
 	<source>
 		<database>Unknown</database>
 	</source>
 	<size>
-		<width>612</width>
-		<height>408</height>
+		<width>350</width>
+		<height>263</height>
 		<depth>3</depth>
 	</size>
 	<segmented>0</segmented>
@@ -17,10 +17,10 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>268</xmin>
-			<ymin>55</ymin>
-			<xmax>325</xmax>
-			<ymax>381</ymax>
+			<xmin>229</xmin>
+			<ymin>17</ymin>
+			<xmax>341</xmax>
+			<ymax>73</ymax>
 		</bndbox>
 	</object>
 </annotation>

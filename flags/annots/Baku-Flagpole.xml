@@ -1,13 +1,13 @@
 <annotation>
 	<folder>Flags</folder>
-	<filename>gettyimages-865357134-612x612.jpg</filename>
-	<path>/Users/antonella/Desktop/Flags/gettyimages-865357134-612x612.jpg</path>
+	<filename>Baku-Flagpole.jpg</filename>
+	<path>/Users/antonella/Desktop/Flags/Baku-Flagpole.jpg</path>
 	<source>
 		<database>Unknown</database>
 	</source>
 	<size>
-		<width>612</width>
-		<height>408</height>
+		<width>800</width>
+		<height>653</height>
 		<depth>3</depth>
 	</size>
 	<segmented>0</segmented>
@@ -17,10 +17,10 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>268</xmin>
-			<ymin>55</ymin>
-			<xmax>325</xmax>
-			<ymax>381</ymax>
+			<xmin>364</xmin>
+			<ymin>152</ymin>
+			<xmax>486</xmax>
+			<ymax>235</ymax>
 		</bndbox>
 	</object>
 </annotation>

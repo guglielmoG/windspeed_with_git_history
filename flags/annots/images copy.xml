@@ -1,0 +1,38 @@
+<annotation>
+	<folder>Flags</folder>
+	<filename>images copy.jpeg</filename>
+	<path>/Users/antonella/Desktop/Flags/images copy.jpeg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>275</width>
+		<height>183</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>2</xmin>
+			<ymin>32</ymin>
+			<xmax>121</xmax>
+			<ymax>134</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>135</xmin>
+			<ymin>27</ymin>
+			<xmax>255</xmax>
+			<ymax>148</ymax>
+		</bndbox>
+	</object>
+</annotation>

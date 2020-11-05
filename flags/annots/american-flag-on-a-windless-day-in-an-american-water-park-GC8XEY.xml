@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Flags</folder>
+	<filename>american-flag-on-a-windless-day-in-an-american-water-park-GC8XEY.jpg</filename>
+	<path>/Users/antonella/Desktop/Flags/american-flag-on-a-windless-day-in-an-american-water-park-GC8XEY.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1300</width>
+		<height>957</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>654</xmin>
+			<ymin>340</ymin>
+			<xmax>674</xmax>
+			<ymax>512</ymax>
+		</bndbox>
+	</object>
+</annotation>

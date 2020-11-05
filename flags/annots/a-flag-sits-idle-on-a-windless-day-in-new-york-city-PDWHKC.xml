@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Flags</folder>
+	<filename>a-flag-sits-idle-on-a-windless-day-in-new-york-city-PDWHKC.jpg</filename>
+	<path>/Users/antonella/Desktop/Flags/a-flag-sits-idle-on-a-windless-day-in-new-york-city-PDWHKC.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>866</width>
+		<height>1390</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>639</xmin>
+			<ymin>184</ymin>
+			<xmax>772</xmax>
+			<ymax>860</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,13 +1,13 @@
 <annotation>
 	<folder>Flags</folder>
-	<filename>gettyimages-865357134-612x612.jpg</filename>
-	<path>/Users/antonella/Desktop/Flags/gettyimages-865357134-612x612.jpg</path>
+	<filename>gettyimages-452349438-1024x1024.jpg</filename>
+	<path>/Users/antonella/Desktop/Flags/gettyimages-452349438-1024x1024.jpg</path>
 	<source>
 		<database>Unknown</database>
 	</source>
 	<size>
-		<width>612</width>
-		<height>408</height>
+		<width>1024</width>
+		<height>688</height>
 		<depth>3</depth>
 	</size>
 	<segmented>0</segmented>
@@ -17,10 +17,10 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>268</xmin>
-			<ymin>55</ymin>
-			<xmax>325</xmax>
-			<ymax>381</ymax>
+			<xmin>382</xmin>
+			<ymin>253</ymin>
+			<xmax>657</xmax>
+			<ymax>509</ymax>
 		</bndbox>
 	</object>
 </annotation>

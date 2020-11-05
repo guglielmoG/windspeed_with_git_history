@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Flags</folder>
+	<filename>7f9dbbd4d91c8da20197d71d9f35907fv1_max_755x566_b3535db83dc50e27c1bb1392364c95a2.jpg</filename>
+	<path>/Users/antonella/Desktop/Flags/7f9dbbd4d91c8da20197d71d9f35907fv1_max_755x566_b3535db83dc50e27c1bb1392364c95a2.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>755</width>
+		<height>566</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>453</xmin>
+			<ymin>99</ymin>
+			<xmax>754</xmax>
+			<ymax>437</ymax>
+		</bndbox>
+	</object>
+</annotation>
