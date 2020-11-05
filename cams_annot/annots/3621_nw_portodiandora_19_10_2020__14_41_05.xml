@@ -1,0 +1,26 @@
+<annotation>
+	<folder>hw</folder>
+	<filename>3621_nw_portodiandora_19_10_2020__14_41_05.png</filename>
+	<path>C:\Users\guglielmo\Downloads\hw\3621_nw_portodiandora_19_10_2020__14_41_05.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1280</width>
+		<height>857</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>maybe</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>663</xmin>
+			<ymin>413</ymin>
+			<xmax>681</xmax>
+			<ymax>437</ymax>
+		</bndbox>
+	</object>
+</annotation>

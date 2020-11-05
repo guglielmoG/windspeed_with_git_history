@@ -1,0 +1,26 @@
+<annotation>
+	<folder>hw</folder>
+	<filename>3559_nw_alpago_18_10_2020__17_03_42.png</filename>
+	<path>C:\Users\guglielmo\Downloads\hw\3559_nw_alpago_18_10_2020__17_03_42.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1280</width>
+		<height>857</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>yes</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>749</xmin>
+			<ymin>320</ymin>
+			<xmax>803</xmax>
+			<ymax>358</ymax>
+		</bndbox>
+	</object>
+</annotation>

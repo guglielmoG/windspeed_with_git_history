@@ -1,0 +1,26 @@
+<annotation>
+	<folder>hw</folder>
+	<filename>2939_nw_alvarmontseny_19_10_2020__14_19_10.png</filename>
+	<path>C:\Users\guglielmo\Downloads\hw\2939_nw_alvarmontseny_19_10_2020__14_19_10.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1280</width>
+		<height>857</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>maybe</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>986</xmin>
+			<ymin>485</ymin>
+			<xmax>1187</xmax>
+			<ymax>725</ymax>
+		</bndbox>
+	</object>
+</annotation>

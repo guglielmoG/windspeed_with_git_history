@@ -1,0 +1,26 @@
+<annotation>
+	<folder>hw</folder>
+	<filename>3431_riccione_16_10_2020__14_24_40.png</filename>
+	<path>C:\Users\guglielmo\Downloads\hw\3431_riccione_16_10_2020__14_24_40.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1280</width>
+		<height>857</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>yes</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>559</xmin>
+			<ymin>312</ymin>
+			<xmax>575</xmax>
+			<ymax>347</ymax>
+		</bndbox>
+	</object>
+</annotation>

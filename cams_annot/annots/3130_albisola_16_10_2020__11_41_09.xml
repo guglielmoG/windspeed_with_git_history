@@ -1,0 +1,26 @@
+<annotation>
+	<folder>hw</folder>
+	<filename>3130_albisola_16_10_2020__11_41_09.png</filename>
+	<path>C:\Users\guglielmo\Downloads\hw\3130_albisola_16_10_2020__11_41_09.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1280</width>
+		<height>857</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>maybe</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>467</xmin>
+			<ymin>169</ymin>
+			<xmax>498</xmax>
+			<ymax>236</ymax>
+		</bndbox>
+	</object>
+</annotation>
