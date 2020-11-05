@@ -1,0 +1,26 @@
+<annotation>
+	<folder>flags</folder>
+	<filename>tristan-ramberg-KLVhD9u-eBQ-unsplash.jpg</filename>
+	<path>C:\Users\acer\Desktop\flags\tristan-ramberg-KLVhD9u-eBQ-unsplash.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>6000</width>
+		<height>4000</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1261</xmin>
+			<ymin>863</ymin>
+			<xmax>5813</xmax>
+			<ymax>3071</ymax>
+		</bndbox>
+	</object>
+</annotation>

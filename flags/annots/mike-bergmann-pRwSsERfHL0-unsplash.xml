@@ -1,0 +1,26 @@
+<annotation>
+	<folder>flags</folder>
+	<filename>mike-bergmann-pRwSsERfHL0-unsplash.jpg</filename>
+	<path>C:\Users\acer\Desktop\flags\mike-bergmann-pRwSsERfHL0-unsplash.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>3265</width>
+		<height>4898</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>410</xmin>
+			<ymin>835</ymin>
+			<xmax>2760</xmax>
+			<ymax>2763</ymax>
+		</bndbox>
+	</object>
+</annotation>

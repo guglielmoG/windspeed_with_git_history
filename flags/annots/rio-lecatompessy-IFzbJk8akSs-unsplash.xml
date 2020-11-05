@@ -1,0 +1,26 @@
+<annotation>
+	<folder>flags</folder>
+	<filename>rio-lecatompessy-IFzbJk8akSs-unsplash.jpg</filename>
+	<path>C:\Users\acer\Desktop\flags\rio-lecatompessy-IFzbJk8akSs-unsplash.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>3617</width>
+		<height>5425</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1320</xmin>
+			<ymin>1709</ymin>
+			<xmax>2614</xmax>
+			<ymax>3944</ymax>
+		</bndbox>
+	</object>
+</annotation>

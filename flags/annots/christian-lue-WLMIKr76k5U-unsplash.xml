@@ -1,0 +1,26 @@
+<annotation>
+	<folder>flags</folder>
+	<filename>christian-lue-WLMIKr76k5U-unsplash.jpg</filename>
+	<path>C:\Users\acer\Desktop\flags\christian-lue-WLMIKr76k5U-unsplash.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>5898</width>
+		<height>3932</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>2275</xmin>
+			<ymin>929</ymin>
+			<xmax>3058</xmax>
+			<ymax>1533</ymax>
+		</bndbox>
+	</object>
+</annotation>

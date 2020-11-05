@@ -1,0 +1,26 @@
+<annotation>
+	<folder>flags</folder>
+	<filename>MattCrossan-e1569408744188.jpg</filename>
+	<path>C:\Users\acer\Desktop\flags\MattCrossan-e1569408744188.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>475</width>
+		<height>415</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>250</xmin>
+			<ymin>223</ymin>
+			<xmax>396</xmax>
+			<ymax>318</ymax>
+		</bndbox>
+	</object>
+</annotation>

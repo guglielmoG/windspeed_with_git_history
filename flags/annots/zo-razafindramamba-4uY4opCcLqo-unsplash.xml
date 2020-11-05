@@ -1,0 +1,26 @@
+<annotation>
+	<folder>flags</folder>
+	<filename>zo-razafindramamba-4uY4opCcLqo-unsplash.jpg</filename>
+	<path>C:\Users\acer\Desktop\flags\zo-razafindramamba-4uY4opCcLqo-unsplash.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>4000</width>
+		<height>6000</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1973</xmin>
+			<ymin>1910</ymin>
+			<xmax>2706</xmax>
+			<ymax>2476</ymax>
+		</bndbox>
+	</object>
+</annotation>

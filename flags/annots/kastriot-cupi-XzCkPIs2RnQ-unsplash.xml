@@ -1,0 +1,26 @@
+<annotation>
+	<folder>flags</folder>
+	<filename>kastriot-cupi-XzCkPIs2RnQ-unsplash.jpg</filename>
+	<path>C:\Users\acer\Desktop\flags\kastriot-cupi-XzCkPIs2RnQ-unsplash.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>3780</width>
+		<height>5041</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>2050</xmin>
+			<ymin>45</ymin>
+			<xmax>3328</xmax>
+			<ymax>1695</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,26 @@
+<annotation>
+	<folder>flags</folder>
+	<filename>sieuwert-otterloo-w_bqwPsg8Pw-unsplash.jpg</filename>
+	<path>C:\Users\acer\Desktop\flags\sieuwert-otterloo-w_bqwPsg8Pw-unsplash.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>4272</width>
+		<height>2848</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>2980</xmin>
+			<ymin>1606</ymin>
+			<xmax>3183</xmax>
+			<ymax>1759</ymax>
+		</bndbox>
+	</object>
+</annotation>

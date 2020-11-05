@@ -1,0 +1,26 @@
+<annotation>
+	<folder>flags</folder>
+	<filename>large-canadian-flag-with-no-wind-stock-photo__2273429.jpg</filename>
+	<path>C:\Users\acer\Desktop\flags\large-canadian-flag-with-no-wind-stock-photo__2273429.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>299</width>
+		<height>470</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>174</xmin>
+			<ymin>24</ymin>
+			<xmax>189</xmax>
+			<ymax>180</ymax>
+		</bndbox>
+	</object>
+</annotation>

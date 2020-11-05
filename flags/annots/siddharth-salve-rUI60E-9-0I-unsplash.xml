@@ -1,0 +1,26 @@
+<annotation>
+	<folder>flags</folder>
+	<filename>siddharth-salve-rUI60E-9-0I-unsplash.jpg</filename>
+	<path>C:\Users\acer\Desktop\flags\siddharth-salve-rUI60E-9-0I-unsplash.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>3480</width>
+		<height>4640</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>676</xmin>
+			<ymin>1249</ymin>
+			<xmax>1402</xmax>
+			<ymax>2212</ymax>
+		</bndbox>
+	</object>
+</annotation>

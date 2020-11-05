@@ -1,0 +1,26 @@
+<annotation>
+	<folder>flags</folder>
+	<filename>depositphotos_147567087-stock-photo-sexy-young-woman-with-race.jpg</filename>
+	<path>C:\Users\acer\Desktop\flags\depositphotos_147567087-stock-photo-sexy-young-woman-with-race.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1600</width>
+		<height>1226</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>602</xmin>
+			<ymin>137</ymin>
+			<xmax>873</xmax>
+			<ymax>360</ymax>
+		</bndbox>
+	</object>
+</annotation>

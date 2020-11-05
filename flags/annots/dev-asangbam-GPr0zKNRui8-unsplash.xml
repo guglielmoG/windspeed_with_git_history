@@ -1,0 +1,26 @@
+<annotation>
+	<folder>flags</folder>
+	<filename>dev-asangbam-GPr0zKNRui8-unsplash.jpg</filename>
+	<path>C:\Users\acer\Desktop\flags\dev-asangbam-GPr0zKNRui8-unsplash.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>3761</width>
+		<height>5590</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1549</xmin>
+			<ymin>3479</ymin>
+			<xmax>2193</xmax>
+			<ymax>4079</ymax>
+		</bndbox>
+	</object>
+</annotation>

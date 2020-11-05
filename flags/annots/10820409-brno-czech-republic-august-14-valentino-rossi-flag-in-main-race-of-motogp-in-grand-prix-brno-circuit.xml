@@ -1,0 +1,26 @@
+<annotation>
+	<folder>flags</folder>
+	<filename>10820409-brno-czech-republic-august-14-valentino-rossi-flag-in-main-race-of-motogp-in-grand-prix-brno-circuit.jpg</filename>
+	<path>C:\Users\acer\Desktop\flags\10820409-brno-czech-republic-august-14-valentino-rossi-flag-in-main-race-of-motogp-in-grand-prix-brno-circuit.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>863</width>
+		<height>1300</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>57</xmin>
+			<ymin>118</ymin>
+			<xmax>688</xmax>
+			<ymax>872</ymax>
+		</bndbox>
+	</object>
+</annotation>

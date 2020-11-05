@@ -1,0 +1,26 @@
+<annotation>
+	<folder>flags</folder>
+	<filename>dave-kim-XHVc0DFeenE-unsplash.jpg</filename>
+	<path>C:\Users\acer\Desktop\flags\dave-kim-XHVc0DFeenE-unsplash.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>5184</width>
+		<height>3456</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>2107</xmin>
+			<ymin>1430</ymin>
+			<xmax>3134</xmax>
+			<ymax>2468</ymax>
+		</bndbox>
+	</object>
+</annotation>

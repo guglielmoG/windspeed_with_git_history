@@ -1,0 +1,26 @@
+<annotation>
+	<folder>flags</folder>
+	<filename>kite-1571228_960_720.xxxx.jpg</filename>
+	<path>C:\Users\acer\Desktop\flags\kite-1571228_960_720.xxxx.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>960</width>
+		<height>668</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>452</xmin>
+			<ymin>51</ymin>
+			<xmax>626</xmax>
+			<ymax>261</ymax>
+		</bndbox>
+	</object>
+</annotation>

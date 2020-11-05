@@ -1,0 +1,26 @@
+<annotation>
+	<folder>flags</folder>
+	<filename>moran-KCsblHlrS2g-unsplash.jpg</filename>
+	<path>C:\Users\acer\Desktop\flags\moran-KCsblHlrS2g-unsplash.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>4160</width>
+		<height>6240</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>530</xmin>
+			<ymin>909</ymin>
+			<xmax>1901</xmax>
+			<ymax>5380</ymax>
+		</bndbox>
+	</object>
+</annotation>

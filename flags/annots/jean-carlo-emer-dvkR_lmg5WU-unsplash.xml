@@ -1,0 +1,26 @@
+<annotation>
+	<folder>flags</folder>
+	<filename>jean-carlo-emer-dvkR_lmg5WU-unsplash.jpg</filename>
+	<path>C:\Users\acer\Desktop\flags\jean-carlo-emer-dvkR_lmg5WU-unsplash.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>5333</width>
+		<height>3555</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>3938</xmin>
+			<ymin>655</ymin>
+			<xmax>5258</xmax>
+			<ymax>1779</ymax>
+		</bndbox>
+	</object>
+</annotation>

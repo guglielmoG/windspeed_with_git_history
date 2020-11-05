@@ -1,0 +1,26 @@
+<annotation>
+	<folder>flags</folder>
+	<filename>leon-seibert-kCliCkqzu5o-unsplash.jpg</filename>
+	<path>C:\Users\acer\Desktop\flags\leon-seibert-kCliCkqzu5o-unsplash.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>3898</width>
+		<height>5847</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1375</xmin>
+			<ymin>666</ymin>
+			<xmax>2235</xmax>
+			<ymax>1573</ymax>
+		</bndbox>
+	</object>
+</annotation>

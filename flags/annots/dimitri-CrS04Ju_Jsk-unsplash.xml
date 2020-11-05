@@ -1,0 +1,26 @@
+<annotation>
+	<folder>flags</folder>
+	<filename>dimitri-CrS04Ju_Jsk-unsplash.jpg</filename>
+	<path>C:\Users\acer\Desktop\flags\dimitri-CrS04Ju_Jsk-unsplash.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>3024</width>
+		<height>4032</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1644</xmin>
+			<ymin>1518</ymin>
+			<xmax>2080</xmax>
+			<ymax>2863</ymax>
+		</bndbox>
+	</object>
+</annotation>

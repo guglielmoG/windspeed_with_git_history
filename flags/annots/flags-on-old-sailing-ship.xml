@@ -1,0 +1,26 @@
+<annotation>
+	<folder>flags</folder>
+	<filename>flags-on-old-sailing-ship.jpg</filename>
+	<path>C:\Users\acer\Desktop\flags\flags-on-old-sailing-ship.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1920</width>
+		<height>1280</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>826</xmin>
+			<ymin>5</ymin>
+			<xmax>867</xmax>
+			<ymax>109</ymax>
+		</bndbox>
+	</object>
+</annotation>

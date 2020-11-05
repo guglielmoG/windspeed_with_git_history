@@ -1,0 +1,26 @@
+<annotation>
+	<folder>flags</folder>
+	<filename>260361770.jpg.gallery.jpg</filename>
+	<path>C:\Users\acer\Desktop\flags\260361770.jpg.gallery.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>450</width>
+		<height>600</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>144</xmin>
+			<ymin>48</ymin>
+			<xmax>306</xmax>
+			<ymax>282</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,26 @@
+<annotation>
+	<folder>flags</folder>
+	<filename>guilherme-stecanella-EfYdhaV63Ac-unsplash.jpg</filename>
+	<path>C:\Users\acer\Desktop\flags\guilherme-stecanella-EfYdhaV63Ac-unsplash.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>3609</width>
+		<height>5414</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1628</xmin>
+			<ymin>1886</ymin>
+			<xmax>2139</xmax>
+			<ymax>3104</ymax>
+		</bndbox>
+	</object>
+</annotation>

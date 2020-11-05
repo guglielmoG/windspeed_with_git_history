@@ -1,0 +1,26 @@
+<annotation>
+	<folder>flags</folder>
+	<filename>felipe-portella-vqwfEE7rKMw-unsplash.jpg</filename>
+	<path>C:\Users\acer\Desktop\flags\felipe-portella-vqwfEE7rKMw-unsplash.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>3246</width>
+		<height>4869</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>2194</xmin>
+			<ymin>231</ymin>
+			<xmax>2433</xmax>
+			<ymax>553</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,26 @@
+<annotation>
+	<folder>flags</folder>
+	<filename>MotoGP-Motorcycle-Racing-Explained-15.jpg</filename>
+	<path>C:\Users\acer\Desktop\flags\MotoGP-Motorcycle-Racing-Explained-15.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>600</width>
+		<height>403</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>45</xmin>
+			<ymin>5</ymin>
+			<xmax>185</xmax>
+			<ymax>256</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,26 @@
+<annotation>
+	<folder>flags</folder>
+	<filename>red-flag-danger-kite-surfer-zone-marking-surfing-beach-71401818.jpg</filename>
+	<path>C:\Users\acer\Desktop\flags\red-flag-danger-kite-surfer-zone-marking-surfing-beach-71401818.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>800</width>
+		<height>600</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>263</xmin>
+			<ymin>243</ymin>
+			<xmax>670</xmax>
+			<ymax>520</ymax>
+		</bndbox>
+	</object>
+</annotation>

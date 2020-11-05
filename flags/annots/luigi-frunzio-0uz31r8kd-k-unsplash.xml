@@ -1,0 +1,26 @@
+<annotation>
+	<folder>flags</folder>
+	<filename>luigi-frunzio-0uz31r8kd-k-unsplash.jpg</filename>
+	<path>C:\Users\acer\Desktop\flags\luigi-frunzio-0uz31r8kd-k-unsplash.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>2695</width>
+		<height>3593</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>383</xmin>
+			<ymin>1410</ymin>
+			<xmax>1743</xmax>
+			<ymax>2262</ymax>
+		</bndbox>
+	</object>
+</annotation>

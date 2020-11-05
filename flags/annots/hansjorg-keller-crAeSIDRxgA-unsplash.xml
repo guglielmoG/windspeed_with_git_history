@@ -1,0 +1,26 @@
+<annotation>
+	<folder>flags</folder>
+	<filename>hansjorg-keller-crAeSIDRxgA-unsplash.jpg</filename>
+	<path>C:\Users\acer\Desktop\flags\hansjorg-keller-crAeSIDRxgA-unsplash.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>4592</width>
+		<height>3448</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1811</xmin>
+			<ymin>553</ymin>
+			<xmax>3257</xmax>
+			<ymax>1826</ymax>
+		</bndbox>
+	</object>
+</annotation>

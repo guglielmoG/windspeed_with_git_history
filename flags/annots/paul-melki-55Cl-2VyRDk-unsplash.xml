@@ -1,0 +1,26 @@
+<annotation>
+	<folder>flags</folder>
+	<filename>paul-melki-55Cl-2VyRDk-unsplash.jpg</filename>
+	<path>C:\Users\acer\Desktop\flags\paul-melki-55Cl-2VyRDk-unsplash.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>4081</width>
+		<height>3341</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1366</xmin>
+			<ymin>539</ymin>
+			<xmax>2148</xmax>
+			<ymax>1357</ymax>
+		</bndbox>
+	</object>
+</annotation>

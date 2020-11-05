@@ -1,0 +1,26 @@
+<annotation>
+	<folder>flags</folder>
+	<filename>kentaro-toma-fN7m2LWoLZw-unsplash.jpg</filename>
+	<path>C:\Users\acer\Desktop\flags\kentaro-toma-fN7m2LWoLZw-unsplash.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>3916</width>
+		<height>2937</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1368</xmin>
+			<ymin>727</ymin>
+			<xmax>2616</xmax>
+			<ymax>1982</ymax>
+		</bndbox>
+	</object>
+</annotation>

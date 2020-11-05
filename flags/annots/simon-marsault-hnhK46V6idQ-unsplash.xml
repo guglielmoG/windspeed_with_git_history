@@ -1,0 +1,26 @@
+<annotation>
+	<folder>flags</folder>
+	<filename>simon-marsault-hnhK46V6idQ-unsplash.jpg</filename>
+	<path>C:\Users\acer\Desktop\flags\simon-marsault-hnhK46V6idQ-unsplash.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>3899</width>
+		<height>5848</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1709</xmin>
+			<ymin>1840</ymin>
+			<xmax>1929</xmax>
+			<ymax>2240</ymax>
+		</bndbox>
+	</object>
+</annotation>

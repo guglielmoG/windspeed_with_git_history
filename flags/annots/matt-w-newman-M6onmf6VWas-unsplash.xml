@@ -1,0 +1,26 @@
+<annotation>
+	<folder>flags</folder>
+	<filename>matt-w-newman-M6onmf6VWas-unsplash.jpg</filename>
+	<path>C:\Users\acer\Desktop\flags\matt-w-newman-M6onmf6VWas-unsplash.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>3265</width>
+		<height>4898</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1949</xmin>
+			<ymin>2985</ymin>
+			<xmax>2427</xmax>
+			<ymax>3379</ymax>
+		</bndbox>
+	</object>
+</annotation>

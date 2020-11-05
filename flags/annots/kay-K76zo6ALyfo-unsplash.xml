@@ -1,0 +1,26 @@
+<annotation>
+	<folder>flags</folder>
+	<filename>kay-K76zo6ALyfo-unsplash.jpg</filename>
+	<path>C:\Users\acer\Desktop\flags\kay-K76zo6ALyfo-unsplash.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>4592</width>
+		<height>3448</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1192</xmin>
+			<ymin>2207</ymin>
+			<xmax>1626</xmax>
+			<ymax>3157</ymax>
+		</bndbox>
+	</object>
+</annotation>

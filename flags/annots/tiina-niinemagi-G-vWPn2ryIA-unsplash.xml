@@ -1,0 +1,26 @@
+<annotation>
+	<folder>flags</folder>
+	<filename>tiina-niinemagi-G-vWPn2ryIA-unsplash.jpg</filename>
+	<path>C:\Users\acer\Desktop\flags\tiina-niinemagi-G-vWPn2ryIA-unsplash.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>3872</width>
+		<height>2592</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1355</xmin>
+			<ymin>497</ymin>
+			<xmax>2275</xmax>
+			<ymax>1620</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,26 @@
+<annotation>
+	<folder>flags</folder>
+	<filename>martin-krchnacek-pfawfmJyEgM-unsplash.jpg</filename>
+	<path>C:\Users\acer\Desktop\flags\martin-krchnacek-pfawfmJyEgM-unsplash.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>6000</width>
+		<height>4000</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>3443</xmin>
+			<ymin>645</ymin>
+			<xmax>5365</xmax>
+			<ymax>4000</ymax>
+		</bndbox>
+	</object>
+</annotation>

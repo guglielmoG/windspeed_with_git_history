@@ -1,0 +1,26 @@
+<annotation>
+	<folder>flags</folder>
+	<filename>sepehr-aleagha-DKgQLuHNH0s-unsplash.jpg</filename>
+	<path>C:\Users\acer\Desktop\flags\sepehr-aleagha-DKgQLuHNH0s-unsplash.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>3888</width>
+		<height>5184</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>349</xmin>
+			<ymin>2977</ymin>
+			<xmax>1414</xmax>
+			<ymax>3983</ymax>
+		</bndbox>
+	</object>
+</annotation>

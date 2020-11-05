@@ -1,0 +1,26 @@
+<annotation>
+	<folder>flags</folder>
+	<filename>dylan-nolte-A4tkGuMKIJU-unsplash.jpg</filename>
+	<path>C:\Users\acer\Desktop\flags\dylan-nolte-A4tkGuMKIJU-unsplash.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>5204</width>
+		<height>2927</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>3301</xmin>
+			<ymin>1454</ymin>
+			<xmax>3746</xmax>
+			<ymax>1824</ymax>
+		</bndbox>
+	</object>
+</annotation>

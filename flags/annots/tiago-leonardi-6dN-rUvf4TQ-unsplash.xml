@@ -1,0 +1,26 @@
+<annotation>
+	<folder>flags</folder>
+	<filename>tiago-leonardi-6dN-rUvf4TQ-unsplash.jpg</filename>
+	<path>C:\Users\acer\Desktop\flags\tiago-leonardi-6dN-rUvf4TQ-unsplash.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>3923</width>
+		<height>4904</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>2450</xmin>
+			<ymin>1266</ymin>
+			<xmax>2767</xmax>
+			<ymax>2521</ymax>
+		</bndbox>
+	</object>
+</annotation>

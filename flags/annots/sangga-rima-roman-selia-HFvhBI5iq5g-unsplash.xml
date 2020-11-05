@@ -1,0 +1,26 @@
+<annotation>
+	<folder>flags</folder>
+	<filename>sangga-rima-roman-selia-HFvhBI5iq5g-unsplash.jpg</filename>
+	<path>C:\Users\acer\Desktop\flags\sangga-rima-roman-selia-HFvhBI5iq5g-unsplash.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>5152</width>
+		<height>2904</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1068</xmin>
+			<ymin>820</ymin>
+			<xmax>2583</xmax>
+			<ymax>2712</ymax>
+		</bndbox>
+	</object>
+</annotation>

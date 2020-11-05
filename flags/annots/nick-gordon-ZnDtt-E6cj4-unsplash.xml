@@ -1,0 +1,26 @@
+<annotation>
+	<folder>flags</folder>
+	<filename>nick-gordon-ZnDtt-E6cj4-unsplash.jpg</filename>
+	<path>C:\Users\acer\Desktop\flags\nick-gordon-ZnDtt-E6cj4-unsplash.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>4016</width>
+		<height>6016</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>201</xmin>
+			<ymin>1604</ymin>
+			<xmax>2421</xmax>
+			<ymax>3811</ymax>
+		</bndbox>
+	</object>
+</annotation>

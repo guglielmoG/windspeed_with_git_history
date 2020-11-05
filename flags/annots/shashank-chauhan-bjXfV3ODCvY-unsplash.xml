@@ -1,0 +1,26 @@
+<annotation>
+	<folder>flags</folder>
+	<filename>shashank-chauhan-bjXfV3ODCvY-unsplash.jpg</filename>
+	<path>C:\Users\acer\Desktop\flags\shashank-chauhan-bjXfV3ODCvY-unsplash.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>4032</width>
+		<height>2268</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1357</xmin>
+			<ymin>829</ymin>
+			<xmax>1989</xmax>
+			<ymax>1770</ymax>
+		</bndbox>
+	</object>
+</annotation>

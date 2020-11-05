@@ -1,0 +1,26 @@
+<annotation>
+	<folder>flags</folder>
+	<filename>matthew-soesito-d7O5qj-YpQU-unsplash.jpg</filename>
+	<path>C:\Users\acer\Desktop\flags\matthew-soesito-d7O5qj-YpQU-unsplash.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>3435</width>
+		<height>5115</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1917</xmin>
+			<ymin>4271</ymin>
+			<xmax>2345</xmax>
+			<ymax>4849</ymax>
+		</bndbox>
+	</object>
+</annotation>

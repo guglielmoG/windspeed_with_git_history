@@ -1,0 +1,26 @@
+<annotation>
+	<folder>flags</folder>
+	<filename>stephen-h-dF4qSZKJw_g-unsplash.jpg</filename>
+	<path>C:\Users\acer\Desktop\flags\stephen-h-dF4qSZKJw_g-unsplash.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>4493</width>
+		<height>3000</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>3786</xmin>
+			<ymin>891</ymin>
+			<xmax>4319</xmax>
+			<ymax>1518</ymax>
+		</bndbox>
+	</object>
+</annotation>

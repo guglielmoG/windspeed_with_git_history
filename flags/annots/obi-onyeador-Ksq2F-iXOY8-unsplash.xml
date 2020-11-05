@@ -1,0 +1,26 @@
+<annotation>
+	<folder>flags</folder>
+	<filename>obi-onyeador-Ksq2F-iXOY8-unsplash.jpg</filename>
+	<path>C:\Users\acer\Desktop\flags\obi-onyeador-Ksq2F-iXOY8-unsplash.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>7600</width>
+		<height>4985</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>3421</xmin>
+			<ymin>484</ymin>
+			<xmax>4171</xmax>
+			<ymax>1900</ymax>
+		</bndbox>
+	</object>
+</annotation>

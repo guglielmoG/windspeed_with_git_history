@@ -1,0 +1,26 @@
+<annotation>
+	<folder>flags</folder>
+	<filename>bit-cloud-K1Nci-qbMvg-unsplash.jpg</filename>
+	<path>C:\Users\acer\Desktop\flags\bit-cloud-K1Nci-qbMvg-unsplash.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>6016</width>
+		<height>4016</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>4013</xmin>
+			<ymin>1269</ymin>
+			<xmax>5835</xmax>
+			<ymax>3983</ymax>
+		</bndbox>
+	</object>
+</annotation>

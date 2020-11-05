@@ -1,0 +1,26 @@
+<annotation>
+	<folder>flags</folder>
+	<filename>max-kukurudziak-7IKGWMIv4wM-unsplash.jpg</filename>
+	<path>C:\Users\acer\Desktop\flags\max-kukurudziak-7IKGWMIv4wM-unsplash.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>4032</width>
+		<height>2691</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1042</xmin>
+			<ymin>294</ymin>
+			<xmax>3048</xmax>
+			<ymax>2488</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,26 @@
+<annotation>
+	<folder>flags</folder>
+	<filename>flavia-carpio-P3PFi8THbUs-unsplash.jpg</filename>
+	<path>C:\Users\acer\Desktop\flags\flavia-carpio-P3PFi8THbUs-unsplash.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>6000</width>
+		<height>3376</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>2235</xmin>
+			<ymin>1142</ymin>
+			<xmax>3361</xmax>
+			<ymax>2616</ymax>
+		</bndbox>
+	</object>
+</annotation>

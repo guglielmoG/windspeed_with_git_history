@@ -1,0 +1,26 @@
+<annotation>
+	<folder>flags</folder>
+	<filename>christian-lue-G6RE_to6Lus-unsplash.jpg</filename>
+	<path>C:\Users\acer\Desktop\flags\christian-lue-G6RE_to6Lus-unsplash.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>5871</width>
+		<height>3914</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>2831</xmin>
+			<ymin>1185</ymin>
+			<xmax>3165</xmax>
+			<ymax>1546</ymax>
+		</bndbox>
+	</object>
+</annotation>

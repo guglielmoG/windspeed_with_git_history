@@ -1,0 +1,26 @@
+<annotation>
+	<folder>flags</folder>
+	<filename>wladislaw-peljuchno-59hfZdGwjR4-unsplash.jpg</filename>
+	<path>C:\Users\acer\Desktop\flags\wladislaw-peljuchno-59hfZdGwjR4-unsplash.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>4819</width>
+		<height>3212</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1541</xmin>
+			<ymin>1307</ymin>
+			<xmax>2041</xmax>
+			<ymax>2268</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,26 @@
+<annotation>
+	<folder>flags</folder>
+	<filename>hermes-rivera-ahHn48-zKWo-unsplash.jpg</filename>
+	<path>C:\Users\acer\Desktop\flags\hermes-rivera-ahHn48-zKWo-unsplash.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>6000</width>
+		<height>3192</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1782</xmin>
+			<ymin>580</ymin>
+			<xmax>4417</xmax>
+			<ymax>2476</ymax>
+		</bndbox>
+	</object>
+</annotation>

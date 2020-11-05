@@ -1,0 +1,26 @@
+<annotation>
+	<folder>flags</folder>
+	<filename>1428684178125_motogp_bandiera_rossa_ad_austin_videostill_1.jpg</filename>
+	<path>C:\Users\acer\Desktop\flags\1428684178125_motogp_bandiera_rossa_ad_austin_videostill_1.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>576</width>
+		<height>324</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>167</xmin>
+			<ymin>39</ymin>
+			<xmax>293</xmax>
+			<ymax>182</ymax>
+		</bndbox>
+	</object>
+</annotation>

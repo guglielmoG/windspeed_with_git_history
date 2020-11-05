@@ -1,0 +1,26 @@
+<annotation>
+	<folder>flags</folder>
+	<filename>China-flag.jpg</filename>
+	<path>C:\Users\acer\Desktop\flags\China-flag.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>533</width>
+		<height>400</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>171</xmin>
+			<ymin>92</ymin>
+			<xmax>482</xmax>
+			<ymax>294</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,26 @@
+<annotation>
+	<folder>flags</folder>
+	<filename>sander-dalhuisen-umknQoKGnrA-unsplash.jpg</filename>
+	<path>C:\Users\acer\Desktop\flags\sander-dalhuisen-umknQoKGnrA-unsplash.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>5472</width>
+		<height>3648</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>696</xmin>
+			<ymin>94</ymin>
+			<xmax>896</xmax>
+			<ymax>382</ymax>
+		</bndbox>
+	</object>
+</annotation>

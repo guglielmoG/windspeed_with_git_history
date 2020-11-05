@@ -1,0 +1,26 @@
+<annotation>
+	<folder>flags</folder>
+	<filename>sophie-vinetlouis-jqXzNtECtQ4-unsplash.jpg</filename>
+	<path>C:\Users\acer\Desktop\flags\sophie-vinetlouis-jqXzNtECtQ4-unsplash.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>2766</width>
+		<height>4165</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>460</xmin>
+			<ymin>243</ymin>
+			<xmax>1256</xmax>
+			<ymax>811</ymax>
+		</bndbox>
+	</object>
+</annotation>

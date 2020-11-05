@@ -1,0 +1,26 @@
+<annotation>
+	<folder>flags</folder>
+	<filename>istockphoto-1049051048-170667a.jpg</filename>
+	<path>C:\Users\acer\Desktop\flags\istockphoto-1049051048-170667a.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>339</width>
+		<height>509</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>60</xmin>
+			<ymin>77</ymin>
+			<xmax>93</xmax>
+			<ymax>258</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,26 @@
+<annotation>
+	<folder>flags</folder>
+	<filename>romain-huneau-sQaOGfoLDNA-unsplash.jpg</filename>
+	<path>C:\Users\acer\Desktop\flags\romain-huneau-sQaOGfoLDNA-unsplash.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>3632</width>
+		<height>5456</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>2572</xmin>
+			<ymin>743</ymin>
+			<xmax>2985</xmax>
+			<ymax>1124</ymax>
+		</bndbox>
+	</object>
+</annotation>

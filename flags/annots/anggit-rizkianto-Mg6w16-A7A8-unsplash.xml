@@ -1,0 +1,26 @@
+<annotation>
+	<folder>flags</folder>
+	<filename>anggit-rizkianto-Mg6w16-A7A8-unsplash.jpg</filename>
+	<path>C:\Users\acer\Desktop\flags\anggit-rizkianto-Mg6w16-A7A8-unsplash.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>3333</width>
+		<height>5000</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>344</xmin>
+			<ymin>958</ymin>
+			<xmax>561</xmax>
+			<ymax>1869</ymax>
+		</bndbox>
+	</object>
+</annotation>

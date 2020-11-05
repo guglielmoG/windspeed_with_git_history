@@ -1,0 +1,26 @@
+<annotation>
+	<folder>flags</folder>
+	<filename>motogp-1521432399.jpg</filename>
+	<path>C:\Users\acer\Desktop\flags\motogp-1521432399.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>950</width>
+		<height>634</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>288</xmin>
+			<ymin>101</ymin>
+			<xmax>588</xmax>
+			<ymax>560</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,26 @@
+<annotation>
+	<folder>flags</folder>
+	<filename>chuttersnap-RVmXc2qpJtw-unsplash.jpg</filename>
+	<path>C:\Users\acer\Desktop\flags\chuttersnap-RVmXc2qpJtw-unsplash.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>3024</width>
+		<height>4032</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1798</xmin>
+			<ymin>1513</ymin>
+			<xmax>2498</xmax>
+			<ymax>2245</ymax>
+		</bndbox>
+	</object>
+</annotation>

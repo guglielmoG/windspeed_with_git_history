@@ -1,0 +1,26 @@
+<annotation>
+	<folder>flags</folder>
+	<filename>marten-lWReV3Oo6tI-unsplash.jpg</filename>
+	<path>C:\Users\acer\Desktop\flags\marten-lWReV3Oo6tI-unsplash.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>6000</width>
+		<height>4000</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>3100</xmin>
+			<ymin>345</ymin>
+			<xmax>3556</xmax>
+			<ymax>1228</ymax>
+		</bndbox>
+	</object>
+</annotation>

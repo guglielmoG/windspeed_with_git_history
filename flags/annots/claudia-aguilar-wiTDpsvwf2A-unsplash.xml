@@ -1,0 +1,26 @@
+<annotation>
+	<folder>flags</folder>
+	<filename>claudia-aguilar-wiTDpsvwf2A-unsplash.jpg</filename>
+	<path>C:\Users\acer\Desktop\flags\claudia-aguilar-wiTDpsvwf2A-unsplash.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>3911</width>
+		<height>4000</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>2359</xmin>
+			<ymin>1323</ymin>
+			<xmax>2768</xmax>
+			<ymax>1667</ymax>
+		</bndbox>
+	</object>
+</annotation>
