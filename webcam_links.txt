@@ -1,21 +1,21 @@
-bassano http://www.meteocimagrappa.it/sudest/webcam2.php?v=55832%27
-albisola https://lnialbisola.wdsitems.it/cam_display.php?station=lnialbisola&element=cam
-monfalcone https://amministrazioneaperta.comune.monfalcone.go.it/windEth-jpg.php?rnd=0.5469449876751713
-riccione http://www.windsurf-maniac.it/web-cam-151/web-cam.jpg
-rimini https://www.meteogiuliacci.it/webcam/rimini.jpg
-torbole http://www.addicted-sports.com/fileadmin/webcam/torbole/current/1200.jpg
-malcesine http://www.addicted-sports.com/fileadmin/webcam/gardasee/current/1200.jpg
-thuile http://www.meteolathuile.com/piccolo_san_bernardo_sud.jpg
-thuile2 http://www.meteolathuile.com/piccolo_san_bernardo.jpg
-campegli https://www.meteo-lazio.it/webcams/campaegli/FI9901EP_00626E8B72EB/snap/webcam.php
-nw_egypt https://webcam.harry-nass.com/dahab-live.jpg
-nw_alpago http://www.meteosystem.com/webcam/alpago/lagosantacroce.jpg
-nw_zacinto https://www.zakynthos.at/zantecam/webcam.jpg?%3C?php%20echo%20time();%20?%3E
-nw_portodiandora http://217.56.254.132/jpg/image.jpg?camera=1&overview=0&videoframeskipmode=empty&Axis-Orig-Sw=true&resolution=1280x720&_nc=73290
-nw_montalt https://www.jdserver.es/mar.jpg
-nw_alvarmontseny http://www.alvar.cat/WebCam/Imatge-Camera.jpg
-nw_veulettes https://www.vision-environnement.com/live/modules/timelapse/capture/veules.jpg
-nw_veulettes2 https://www.vision-environnement.com/live/modules/timelapse/capture/veulettes.jpg
-nw_poperinge https://webcam.poperinge.be/fotos/webcam.jpg
-nw_almerehaven http://almere-haven.com/
-nw_dieeksepark https://seehotel-diekseepark.de/dieksee.jpg
+n bassano http://www.meteocimagrappa.it/sudest/webcam2.php?v=55832%27
+n albisola https://lnialbisola.wdsitems.it/cam_display.php?station=lnialbisola&element=cam
+n monfalcone https://amministrazioneaperta.comune.monfalcone.go.it/windEth-jpg.php?rnd=0.5469449876751713
+n riccione http://www.windsurf-maniac.it/web-cam-151/web-cam.jpg
+n rimini https://www.meteogiuliacci.it/webcam/rimini.jpg
+n torbole http://www.addicted-sports.com/fileadmin/webcam/torbole/current/1200.jpg
+n malcesine http://www.addicted-sports.com/fileadmin/webcam/gardasee/current/1200.jpg
+n thuile http://www.meteolathuile.com/piccolo_san_bernardo_sud.jpg
+n thuile2 http://www.meteolathuile.com/piccolo_san_bernardo.jpg
+y campegli https://www.meteo-lazio.it/webcams/campaegli/FI9901EP_00626E8B72EB/snap/webcam.php
+n nw_egypt https://webcam.harry-nass.com/dahab-live.jpg
+n nw_alpago http://www.meteosystem.com/webcam/alpago/lagosantacroce.jpg
+n nw_zacinto https://www.zakynthos.at/zantecam/webcam.jpg?%3C?php%20echo%20time();%20?%3E
+n nw_portodiandora http://217.56.254.132/jpg/image.jpg?camera=1&overview=0&videoframeskipmode=empty&Axis-Orig-Sw=true&resolution=1280x720&_nc=73290
+n nw_montalt https://www.jdserver.es/mar.jpg
+n nw_alvarmontseny http://www.alvar.cat/WebCam/Imatge-Camera.jpg
+n nw_veulettes https://www.vision-environnement.com/live/modules/timelapse/capture/veules.jpg
+n nw_veulettes2 https://www.vision-environnement.com/live/modules/timelapse/capture/veulettes.jpg
+n nw_poperinge https://webcam.poperinge.be/fotos/webcam.jpg
+n nw_almerehaven http://almere-haven.com/
+n nw_dieeksepark https://seehotel-diekseepark.de/dieksee.jpg

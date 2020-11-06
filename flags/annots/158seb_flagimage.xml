@@ -1,0 +1,26 @@
+<annotation>
+	<folder>flag_selected</folder>
+	<filename>158seb_flagimage.jpg</filename>
+	<path>/home/sebastiano/Downloads/flag_selected/158seb_flagimage.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>4320</width>
+		<height>3240</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>179</xmin>
+			<ymin>671</ymin>
+			<xmax>3127</xmax>
+			<ymax>2954</ymax>
+		</bndbox>
+	</object>
+</annotation>
