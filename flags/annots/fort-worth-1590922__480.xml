@@ -1,0 +1,26 @@
+<annotation>
+	<folder>img</folder>
+	<filename>fort-worth-1590922__480.jpg</filename>
+	<path>C:\Users\Filippo\Downloads\img\fort-worth-1590922__480.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>745</width>
+		<height>480</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>374</xmin>
+			<ymin>109</ymin>
+			<xmax>427</xmax>
+			<ymax>165</ymax>
+		</bndbox>
+	</object>
+</annotation>

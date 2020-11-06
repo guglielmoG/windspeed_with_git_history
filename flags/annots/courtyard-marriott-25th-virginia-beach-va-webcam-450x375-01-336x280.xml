@@ -1,0 +1,26 @@
+<annotation>
+	<folder>img</folder>
+	<filename>courtyard-marriott-25th-virginia-beach-va-webcam-450x375-01-336x280.jpg</filename>
+	<path>C:\Users\Filippo\Downloads\img\courtyard-marriott-25th-virginia-beach-va-webcam-450x375-01-336x280.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>336</width>
+		<height>280</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>207</xmin>
+			<ymin>81</ymin>
+			<xmax>240</xmax>
+			<ymax>120</ymax>
+		</bndbox>
+	</object>
+</annotation>

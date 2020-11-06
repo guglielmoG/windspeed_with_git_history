@@ -1,0 +1,26 @@
+<annotation>
+	<folder>img</folder>
+	<filename>calypso-bahamas-caribbean-webcam-450x375-01.jpg</filename>
+	<path>C:\Users\Filippo\Downloads\img\calypso-bahamas-caribbean-webcam-450x375-01.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>450</width>
+		<height>375</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>348</xmin>
+			<ymin>10</ymin>
+			<xmax>426</xmax>
+			<ymax>80</ymax>
+		</bndbox>
+	</object>
+</annotation>

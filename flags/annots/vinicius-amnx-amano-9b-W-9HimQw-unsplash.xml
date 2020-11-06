@@ -1,0 +1,26 @@
+<annotation>
+	<folder>img</folder>
+	<filename>vinicius-amnx-amano-9b-W-9HimQw-unsplash.jpg</filename>
+	<path>C:\Users\Filippo\Downloads\img\vinicius-amnx-amano-9b-W-9HimQw-unsplash.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>2541</width>
+		<height>4518</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1189</xmin>
+			<ymin>718</ymin>
+			<xmax>1586</xmax>
+			<ymax>1358</ymax>
+		</bndbox>
+	</object>
+</annotation>

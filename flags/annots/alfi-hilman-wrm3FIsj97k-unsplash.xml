@@ -1,0 +1,26 @@
+<annotation>
+	<folder>img</folder>
+	<filename>alfi-hilman-wrm3FIsj97k-unsplash.jpg</filename>
+	<path>C:\Users\Filippo\Downloads\img\alfi-hilman-wrm3FIsj97k-unsplash.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>6000</width>
+		<height>4000</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>2293</xmin>
+			<ymin>2219</ymin>
+			<xmax>2407</xmax>
+			<ymax>2611</ymax>
+		</bndbox>
+	</object>
+</annotation>

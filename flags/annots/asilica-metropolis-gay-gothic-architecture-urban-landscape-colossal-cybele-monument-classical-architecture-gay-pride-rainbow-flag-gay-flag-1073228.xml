@@ -1,0 +1,26 @@
+<annotation>
+	<folder>img</folder>
+	<filename>asilica-metropolis-gay-gothic-architecture-urban-landscape-colossal-cybele-monument-classical-architecture-gay-pride-rainbow-flag-gay-flag-1073228.jpg</filename>
+	<path>C:\Users\Filippo\Downloads\img\asilica-metropolis-gay-gothic-architecture-urban-landscape-colossal-cybele-monument-classical-architecture-gay-pride-rainbow-flag-gay-flag-1073228.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>7024</width>
+		<height>4272</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>3046</xmin>
+			<ymin>1045</ymin>
+			<xmax>3493</xmax>
+			<ymax>1325</ymax>
+		</bndbox>
+	</object>
+</annotation>

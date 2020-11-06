@@ -1,0 +1,26 @@
+<annotation>
+	<folder>img</folder>
+	<filename>images6.jpg</filename>
+	<path>C:\Users\Filippo\Downloads\img\images6.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>264</width>
+		<height>191</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>156</xmin>
+			<ymin>10</ymin>
+			<xmax>194</xmax>
+			<ymax>44</ymax>
+		</bndbox>
+	</object>
+</annotation>

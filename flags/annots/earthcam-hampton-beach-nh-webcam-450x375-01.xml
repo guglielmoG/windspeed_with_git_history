@@ -1,0 +1,26 @@
+<annotation>
+	<folder>img</folder>
+	<filename>earthcam-hampton-beach-nh-webcam-450x375-01.jpg</filename>
+	<path>C:\Users\Filippo\Downloads\img\earthcam-hampton-beach-nh-webcam-450x375-01.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>450</width>
+		<height>375</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>378</xmin>
+			<ymin>1</ymin>
+			<xmax>407</xmax>
+			<ymax>144</ymax>
+		</bndbox>
+	</object>
+</annotation>

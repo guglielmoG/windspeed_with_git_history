@@ -1,0 +1,26 @@
+<annotation>
+	<folder>img</folder>
+	<filename>image17.jpeg</filename>
+	<path>C:\Users\Filippo\Downloads\img\image17.jpeg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>260</width>
+		<height>194</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>128</xmin>
+			<ymin>22</ymin>
+			<xmax>152</xmax>
+			<ymax>98</ymax>
+		</bndbox>
+	</object>
+</annotation>

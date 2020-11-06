@@ -1,0 +1,26 @@
+<annotation>
+	<folder>img</folder>
+	<filename>photo-1527524763643-a0b0f43670b3.jpg</filename>
+	<path>C:\Users\Filippo\Downloads\img\photo-1527524763643-a0b0f43670b3.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>2592</width>
+		<height>1728</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1002</xmin>
+			<ymin>509</ymin>
+			<xmax>1615</xmax>
+			<ymax>1152</ymax>
+		</bndbox>
+	</object>
+</annotation>

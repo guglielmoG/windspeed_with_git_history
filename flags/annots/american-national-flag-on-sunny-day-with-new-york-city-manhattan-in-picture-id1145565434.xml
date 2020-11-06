@@ -1,0 +1,26 @@
+<annotation>
+	<folder>img</folder>
+	<filename>american-national-flag-on-sunny-day-with-new-york-city-manhattan-in-picture-id1145565434.jpg</filename>
+	<path>C:\Users\Filippo\Downloads\img\american-national-flag-on-sunny-day-with-new-york-city-manhattan-in-picture-id1145565434.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>509</width>
+		<height>339</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>99</xmin>
+			<ymin>64</ymin>
+			<xmax>176</xmax>
+			<ymax>122</ymax>
+		</bndbox>
+	</object>
+</annotation>

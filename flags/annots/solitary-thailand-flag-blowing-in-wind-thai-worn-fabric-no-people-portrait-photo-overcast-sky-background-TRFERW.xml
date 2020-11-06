@@ -1,0 +1,26 @@
+<annotation>
+	<folder>img</folder>
+	<filename>solitary-thailand-flag-blowing-in-wind-thai-worn-fabric-no-people-portrait-photo-overcast-sky-background-TRFERW.jpg</filename>
+	<path>C:\Users\Filippo\Downloads\img\solitary-thailand-flag-blowing-in-wind-thai-worn-fabric-no-people-portrait-photo-overcast-sky-background-TRFERW.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>867</width>
+		<height>1390</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>244</xmin>
+			<ymin>70</ymin>
+			<xmax>741</xmax>
+			<ymax>845</ymax>
+		</bndbox>
+	</object>
+</annotation>

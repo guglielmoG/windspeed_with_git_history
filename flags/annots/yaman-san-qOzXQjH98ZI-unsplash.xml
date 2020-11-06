@@ -1,0 +1,26 @@
+<annotation>
+	<folder>img</folder>
+	<filename>yaman-san-qOzXQjH98ZI-unsplash.jpg</filename>
+	<path>C:\Users\Filippo\Downloads\img\yaman-san-qOzXQjH98ZI-unsplash.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>2448</width>
+		<height>3264</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1429</xmin>
+			<ymin>745</ymin>
+			<xmax>1545</xmax>
+			<ymax>919</ymax>
+		</bndbox>
+	</object>
+</annotation>

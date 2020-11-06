@@ -1,0 +1,26 @@
+<annotation>
+	<folder>img</folder>
+	<filename>italian-flag-droops-as-there-no-wind-skyline-italian-flag-droops-as-there-no-wind-skyline-118101471.jpg</filename>
+	<path>C:\Users\Filippo\Downloads\img\italian-flag-droops-as-there-no-wind-skyline-italian-flag-droops-as-there-no-wind-skyline-118101471.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>951</width>
+		<height>1300</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>502</xmin>
+			<ymin>361</ymin>
+			<xmax>647</xmax>
+			<ymax>1155</ymax>
+		</bndbox>
+	</object>
+</annotation>

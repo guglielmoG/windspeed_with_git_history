@@ -1,0 +1,26 @@
+<annotation>
+	<folder>img</folder>
+	<filename>depositphotos_109630610-stock-photo-chinese-flag-above-a-mosque.jpg</filename>
+	<path>C:\Users\Filippo\Downloads\img\depositphotos_109630610-stock-photo-chinese-flag-above-a-mosque.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>675</width>
+		<height>1024</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>316</xmin>
+			<ymin>197</ymin>
+			<xmax>599</xmax>
+			<ymax>406</ymax>
+		</bndbox>
+	</object>
+</annotation>

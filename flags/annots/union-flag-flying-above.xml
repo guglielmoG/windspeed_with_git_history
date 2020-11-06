@@ -1,0 +1,26 @@
+<annotation>
+	<folder>img</folder>
+	<filename>union-flag-flying-above.jpg</filename>
+	<path>C:\Users\Filippo\Downloads\img\union-flag-flying-above.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>550</width>
+		<height>367</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>191</xmin>
+			<ymin>29</ymin>
+			<xmax>258</xmax>
+			<ymax>72</ymax>
+		</bndbox>
+	</object>
+</annotation>

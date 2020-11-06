@@ -1,0 +1,26 @@
+<annotation>
+	<folder>img</folder>
+	<filename>12-qom-city-photos-urban-landscape-mostafa-meraji.jpg</filename>
+	<path>C:\Users\Filippo\Downloads\img\12-qom-city-photos-urban-landscape-mostafa-meraji.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>900</width>
+		<height>600</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>389</xmin>
+			<ymin>212</ymin>
+			<xmax>504</xmax>
+			<ymax>343</ymax>
+		</bndbox>
+	</object>
+</annotation>

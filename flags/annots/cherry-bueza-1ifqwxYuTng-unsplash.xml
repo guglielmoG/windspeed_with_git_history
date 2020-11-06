@@ -1,0 +1,26 @@
+<annotation>
+	<folder>img</folder>
+	<filename>cherry-bueza-1ifqwxYuTng-unsplash.jpg</filename>
+	<path>C:\Users\Filippo\Downloads\img\cherry-bueza-1ifqwxYuTng-unsplash.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>4032</width>
+		<height>1960</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1564</xmin>
+			<ymin>645</ymin>
+			<xmax>2037</xmax>
+			<ymax>885</ymax>
+		</bndbox>
+	</object>
+</annotation>

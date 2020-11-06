@@ -1,0 +1,26 @@
+<annotation>
+	<folder>img</folder>
+	<filename>american-flag-pole-green-hill-cloud-wind-no-wind-flag-today-C3B0C3BFE280A1C2BAC3B0C3BFE280A1C2B8-119044135.jpg</filename>
+	<path>C:\Users\Filippo\Downloads\img\american-flag-pole-green-hill-cloud-wind-no-wind-flag-today-C3B0C3BFE280A1C2BAC3B0C3BFE280A1C2B8-119044135.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>437</width>
+		<height>900</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>202</xmin>
+			<ymin>49</ymin>
+			<xmax>227</xmax>
+			<ymax>298</ymax>
+		</bndbox>
+	</object>
+</annotation>

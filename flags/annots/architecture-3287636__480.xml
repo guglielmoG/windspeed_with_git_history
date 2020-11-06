@@ -1,0 +1,26 @@
+<annotation>
+	<folder>img</folder>
+	<filename>architecture-3287636__480.jpg</filename>
+	<path>C:\Users\Filippo\Downloads\img\architecture-3287636__480.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>722</width>
+		<height>480</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>365</xmin>
+			<ymin>73</ymin>
+			<xmax>402</xmax>
+			<ymax>110</ymax>
+		</bndbox>
+	</object>
+</annotation>

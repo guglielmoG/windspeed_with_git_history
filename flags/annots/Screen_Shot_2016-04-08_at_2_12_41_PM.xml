@@ -1,0 +1,26 @@
+<annotation>
+	<folder>img</folder>
+	<filename>Screen_Shot_2016-04-08_at_2_12_41_PM.png</filename>
+	<path>C:\Users\Filippo\Downloads\img\Screen_Shot_2016-04-08_at_2_12_41_PM.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>807</width>
+		<height>600</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>325</xmin>
+			<ymin>52</ymin>
+			<xmax>547</xmax>
+			<ymax>156</ymax>
+		</bndbox>
+	</object>
+</annotation>

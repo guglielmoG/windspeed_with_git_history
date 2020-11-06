@@ -1,0 +1,26 @@
+<annotation>
+	<folder>img</folder>
+	<filename>walls-2772352__480.jpg</filename>
+	<path>C:\Users\Filippo\Downloads\img\walls-2772352__480.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>721</width>
+		<height>480</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>463</xmin>
+			<ymin>93</ymin>
+			<xmax>505</xmax>
+			<ymax>125</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,26 @@
+<annotation>
+	<folder>img</folder>
+	<filename>10-1-11-at-old-main-both-the-american-flag-and-the-pennsylvania-flag-hung-at-half-mast-photo-by-patrick-thorp.jpg</filename>
+	<path>C:\Users\Filippo\Downloads\img\10-1-11-at-old-main-both-the-american-flag-and-the-pennsylvania-flag-hung-at-half-mast-photo-by-patrick-thorp.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>3264</width>
+		<height>4928</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Flag</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>577</xmin>
+			<ymin>923</ymin>
+			<xmax>1236</xmax>
+			<ymax>4504</ymax>
+		</bndbox>
+	</object>
+</annotation>
