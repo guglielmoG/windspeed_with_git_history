@@ -1,13 +1,13 @@
 <annotation>
 	<folder>img</folder>
-	<filename>306.jpg</filename>
-	<path>C:\Users\Filippo\Downloads\img\306.jpg</path>
+	<filename>88231.jpg</filename>
+	<path>C:\Users\Filippo\Downloads\img\88231.jpg</path>
 	<source>
 		<database>Unknown</database>
 	</source>
 	<size>
-		<width>430</width>
-		<height>288</height>
+		<width>1600</width>
+		<height>1200</height>
 		<depth>3</depth>
 	</size>
 	<segmented>0</segmented>
@@ -17,10 +17,10 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>225</xmin>
-			<ymin>44</ymin>
-			<xmax>276</xmax>
-			<ymax>110</ymax>
+			<xmin>584</xmin>
+			<ymin>204</ymin>
+			<xmax>749</xmax>
+			<ymax>353</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -29,10 +29,10 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>295</xmin>
-			<ymin>81</ymin>
-			<xmax>333</xmax>
-			<ymax>128</ymax>
+			<xmin>597</xmin>
+			<ymin>483</ymin>
+			<xmax>706</xmax>
+			<ymax>558</ymax>
 		</bndbox>
 	</object>
 </annotation>

@@ -1,13 +1,13 @@
 <annotation>
-	<folder>Flags</folder>
-	<filename>images-1.jpeg</filename>
-	<path>/Users/antonella/Desktop/Flags/images-1.jpeg</path>
+	<folder>img</folder>
+	<filename>87.jpg</filename>
+	<path>C:\Users\Filippo\Downloads\img\87.jpg</path>
 	<source>
 		<database>Unknown</database>
 	</source>
 	<size>
-		<width>194</width>
-		<height>259</height>
+		<width>945</width>
+		<height>532</height>
 		<depth>3</depth>
 	</size>
 	<segmented>0</segmented>
@@ -17,10 +17,10 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>53</xmin>
-			<ymin>27</ymin>
-			<xmax>84</xmax>
-			<ymax>198</ymax>
+			<xmin>246</xmin>
+			<ymin>154</ymin>
+			<xmax>283</xmax>
+			<ymax>241</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -29,10 +29,10 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>91</xmin>
-			<ymin>27</ymin>
-			<xmax>128</xmax>
-			<ymax>207</ymax>
+			<xmin>252</xmin>
+			<ymin>261</ymin>
+			<xmax>283</xmax>
+			<ymax>343</ymax>
 		</bndbox>
 	</object>
 </annotation>
