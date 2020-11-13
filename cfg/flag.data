@@ -2,4 +2,4 @@ classes = 1
 train  = data/flags/train.txt
 valid  = data/flags/valid.txt
 names = cfg/flag.names
-backup = backup
+backup = /mydrive/yolov3
