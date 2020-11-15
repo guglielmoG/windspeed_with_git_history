@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Image</folder>
+	<filename>1248_nw_egypt_18_10_2020__12_26_06.png</filename>
+	<path>C:\Users\Filippo\Desktop\Image\1248_nw_egypt_18_10_2020__12_26_06.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1280</width>
+		<height>857</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>maybe</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>320</xmin>
+			<ymin>443</ymin>
+			<xmax>390</xmax>
+			<ymax>512</ymax>
+		</bndbox>
+	</object>
+</annotation>

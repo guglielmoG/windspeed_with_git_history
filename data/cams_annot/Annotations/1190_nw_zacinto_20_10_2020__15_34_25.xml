@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Image</folder>
+	<filename>1190_nw_zacinto_20_10_2020__15_34_25.png</filename>
+	<path>C:\Users\Filippo\Desktop\Image\1190_nw_zacinto_20_10_2020__15_34_25.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1280</width>
+		<height>857</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>no</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>620</xmin>
+			<ymin>578</ymin>
+			<xmax>640</xmax>
+			<ymax>640</ymax>
+		</bndbox>
+	</object>
+</annotation>

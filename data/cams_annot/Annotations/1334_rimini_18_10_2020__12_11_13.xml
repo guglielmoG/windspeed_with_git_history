@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Image</folder>
+	<filename>1334_rimini_18_10_2020__12_11_13.png</filename>
+	<path>C:\Users\Filippo\Desktop\Image\1334_rimini_18_10_2020__12_11_13.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1280</width>
+		<height>857</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>maybe</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>489</xmin>
+			<ymin>480</ymin>
+			<xmax>517</xmax>
+			<ymax>520</ymax>
+		</bndbox>
+	</object>
+</annotation>

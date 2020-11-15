@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Image</folder>
+	<filename>0812_albisola_18_10_2020__12_18_37.png</filename>
+	<path>C:\Users\Filippo\Desktop\Image\0812_albisola_18_10_2020__12_18_37.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1280</width>
+		<height>857</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>maybe</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>488</xmin>
+			<ymin>165</ymin>
+			<xmax>530</xmax>
+			<ymax>242</ymax>
+		</bndbox>
+	</object>
+</annotation>

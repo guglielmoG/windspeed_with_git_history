@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Image</folder>
+	<filename>1381_nw_alvarmontseny_18_10_2020__16_19_34.png</filename>
+	<path>C:\Users\Filippo\Desktop\Image\1381_nw_alvarmontseny_18_10_2020__16_19_34.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1280</width>
+		<height>857</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>maybe</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>966</xmin>
+			<ymin>469</ymin>
+			<xmax>1041</xmax>
+			<ymax>721</ymax>
+		</bndbox>
+	</object>
+</annotation>
