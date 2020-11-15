@@ -34,12 +34,12 @@ class WebcamScraper:
                 driver.get_screenshot_as_file(os.path.join(self.b_dir, rel_path))
 
         self.load_webcams()
-        chrome_options = webdriver.ChromeOptions()
-        chrome_options.add_argument('--headless')
-        driver = webdriver.Chrome(options=chrome_options,executable_path = os.path.join(self.b_dir, 'chromedriver') )
-        # firefox_options=webdriver.FirefoxOptions()
-        # firefox_options.add_argument('--headless')
-        # driver = webdriver.Firefox(options=firefox_options,executable_path = os.path.join(self.b_dir, 'geckodriver') )
+        # chrome_options = webdriver.ChromeOptions()
+        # chrome_options.add_argument('--headless')
+        # driver = webdriver.Chrome(options=chrome_options,executable_path = os.path.join(self.b_dir, 'chromedriver') )
+        firefox_options=webdriver.FirefoxOptions()
+        firefox_options.add_argument('--headless')
+        driver = webdriver.Firefox(options=firefox_options,executable_path = os.path.join(self.b_dir, 'geckodriver') )
         for i in range(iteration):
             get_data()
             time.sleep(interval*60)
