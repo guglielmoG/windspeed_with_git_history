@@ -1,0 +1,26 @@
+<annotation>
+	<folder>data_raw</folder>
+	<filename>3809_campegli_11_S11_2020__11_36_11.png</filename>
+	<path>/media/sebastiano/Data/windspeed/data_raw/3809_campegli_11_S11_2020__11_36_11.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1366</width>
+		<height>694</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>no</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>981</xmin>
+			<ymin>92</ymin>
+			<xmax>1068</xmax>
+			<ymax>487</ymax>
+		</bndbox>
+	</object>
+</annotation>

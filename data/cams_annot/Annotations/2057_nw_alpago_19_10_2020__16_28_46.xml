@@ -1,0 +1,26 @@
+<annotation>
+	<folder>data_raw</folder>
+	<filename>2057_nw_alpago_19_10_2020__16_28_46.png</filename>
+	<path>/media/sebastiano/Data/windspeed/data_raw/2057_nw_alpago_19_10_2020__16_28_46.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1280</width>
+		<height>857</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>yes</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>748</xmin>
+			<ymin>319</ymin>
+			<xmax>810</xmax>
+			<ymax>367</ymax>
+		</bndbox>
+	</object>
+</annotation>

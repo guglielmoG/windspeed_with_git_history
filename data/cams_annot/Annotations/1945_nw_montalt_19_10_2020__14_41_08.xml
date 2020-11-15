@@ -1,0 +1,26 @@
+<annotation>
+	<folder>data_raw</folder>
+	<filename>1945_nw_montalt_19_10_2020__14_41_08.png</filename>
+	<path>/media/sebastiano/Data/windspeed/data_raw/1945_nw_montalt_19_10_2020__14_41_08.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1280</width>
+		<height>857</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>maybe</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>810</xmin>
+			<ymin>253</ymin>
+			<xmax>866</xmax>
+			<ymax>328</ymax>
+		</bndbox>
+	</object>
+</annotation>
