@@ -179,7 +179,7 @@ def label_map(objname, repo):
         the_file.write('\n')
         the_file.write('}\n')
 
-def configuring_pipeline(pipeline_fname,fine_tune_checkpoint, train_record_fname, test_record_fname, label_map_pbtxt_fname, batch_size, num_step):
+def configuring_pipeline(pipeline_fname,fine_tune_checkpoint, train_record_fname, test_record_fname, label_map_pbtxt_fname, batch_size, num_steps):
     
     '''
     This function modify the config file according to our parameters
