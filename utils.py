@@ -155,7 +155,7 @@ def xml_to_csv(path):
     xml_df = pd.DataFrame(xml_list, columns=column_name)
     return xml_df
 
-def label_map_v1(objname):
+def label_map(objname, repo):
   with open(os.path.join(os.getcwd(), repo , 'OD_SSD/label_map.pbtxt'), 'a') as the_file:
       the_file.write('item\n')
       the_file.write('{\n')
@@ -165,7 +165,7 @@ def label_map_v1(objname):
       the_file.write('\n')
       the_file.write('}\n')
 
-def configuring_pipeline(pipeline_fname, train_record_fname, test_record_fname, label_map_pbtxt_fname, batch_size, num_step):
+def configuring_pipeline(pipeline_fname,fine_tune_checkpoint, train_record_fname, test_record_fname, label_map_pbtxt_fname, batch_size, num_step):
   
   with open(pipeline_fname) as f:
       s = f.read()
