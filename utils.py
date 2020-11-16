@@ -451,6 +451,26 @@ def convert_to_jpg(path):
         _convert_img_to_jpg(png)
         os.remove(png)
 
-
+# converting xmls to df
+def xml_to_df(path):
+    '''
+    Collects all xmls at path and creates a pandas dataframe
+    '''
+    xml_list = []
+    for xml_file in glob.glob(path +'/*.xml'):
+        tree = ElementTree.parse(xml_file)
+        root = tree.getroot()
+        for member in root.findall('object'):
+            xmlbox = member.find('bndbox')
+            value = (''.join(xml_file.split(os.sep)[-1].split('.')[:-1])+'.jpg',
+                     int(xmlbox.find('xmin').text),
+                     int(xmlbox.find('ymin').text),
+                     int(xmlbox.find('xmax').text),
+                     int(xmlbox.find('ymax').text),
+                     member.find('name').text.lower())
+            xml_list.append(value)
+    column_name = ['filename', 'xmin', 'ymin', 'xmax', 'ymax', 'class']
+    xml_df = pd.DataFrame(xml_list, columns=column_name)
+    return xml_df
 
             
