@@ -163,13 +163,13 @@ def xml_to_csv(path):
     return xml_df
 
 def label_map(objname, repo):    
-     '''
+    
+    '''
     This function crate the label map
     INPUT
         objname: string containing the name of the class
         repo: name of the repositort where we are working
-    '''
-    
+    '''    
     with open(os.path.join(os.getcwd(), repo , 'OD_SSD/label_map.pbtxt'), 'a') as the_file:
         the_file.write('item\n')
         the_file.write('{\n')
@@ -180,7 +180,8 @@ def label_map(objname, repo):
         the_file.write('}\n')
 
 def configuring_pipeline(pipeline_fname,fine_tune_checkpoint, train_record_fname, test_record_fname, label_map_pbtxt_fname, batch_size, num_step):
-     '''
+    
+    '''
     This function modify the config file according to our parameters
     INPUT
         pipeline_fname: path to the .config file
@@ -310,17 +311,17 @@ def predict_fn_ssd(PATH_TO_CKPT, image_path, **kwargs):
                     output_dict['detection_masks'] = output_dict['detection_masks'][0]
                              
 
-              #custom part
-              im_height, im_width, _ = image.shape
-              d_boxes = output_dict['detection_boxes']
-              y = (d_boxes[:,0] + d_boxes[:,2])/2*im_height
-              x = (d_boxes[:,1] + d_boxes[:,3])/2*im_width
-              half_w = (d_boxes[:,3] - d_boxes[:,1])/2*im_width
-              half_h = (d_boxes[:,2] - d_boxes[:,0])/2*im_height
-              det_scores = output_dict['detection_scores']
-              class_id = output_dict['detection_classes']
+                #custom part
+                im_height, im_width, _ = image.shape
+                d_boxes = output_dict['detection_boxes']
+                y = (d_boxes[:,0] + d_boxes[:,2])/2*im_height
+                x = (d_boxes[:,1] + d_boxes[:,3])/2*im_width
+                half_w = (d_boxes[:,3] - d_boxes[:,1])/2*im_width
+                half_h = (d_boxes[:,2] - d_boxes[:,0])/2*im_height
+                det_scores = output_dict['detection_scores']
+                class_id = output_dict['detection_classes']
 
-              output_matrix = np.dstack((x,y,half_w,half_h, class_id,det_scores))
+                output_matrix = np.dstack((x,y,half_w,half_h, class_id,det_scores))
 
         return output_matrix
     
