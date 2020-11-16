@@ -132,6 +132,13 @@ def predict_yolo(net, img_path, net_input_w, net_input_h, **kwargs):
 ############ SSD #####################################
 
 def xml_to_csv(path):
+    
+    '''
+    This function convert all the .xml file into a single .csv file
+    INPUT
+        path: path to the directory where the .xml files are
+    '''
+    
     xml_list = []
     for xml_file in glob.glob(path + '/*.xml'):
         base = os.path.basename(xml_file)
@@ -155,126 +162,153 @@ def xml_to_csv(path):
     xml_df = pd.DataFrame(xml_list, columns=column_name)
     return xml_df
 
-def label_map(objname, repo):
-  with open(os.path.join(os.getcwd(), repo , 'OD_SSD/label_map.pbtxt'), 'a') as the_file:
-      the_file.write('item\n')
-      the_file.write('{\n')
-      the_file.write('id :{}'.format(int(1)))
-      the_file.write('\n')
-      the_file.write("name :'{0}'".format(str(objname)))
-      the_file.write('\n')
-      the_file.write('}\n')
+def label_map(objname, repo):    
+     '''
+    This function crate the label map
+    INPUT
+        objname: string containing the name of the class
+        repo: name of the repositort where we are working
+    '''
+    
+    with open(os.path.join(os.getcwd(), repo , 'OD_SSD/label_map.pbtxt'), 'a') as the_file:
+        the_file.write('item\n')
+        the_file.write('{\n')
+        the_file.write('id :{}'.format(int(1)))
+        the_file.write('\n')
+        the_file.write("name :'{0}'".format(str(objname)))
+        the_file.write('\n')
+        the_file.write('}\n')
 
 def configuring_pipeline(pipeline_fname,fine_tune_checkpoint, train_record_fname, test_record_fname, label_map_pbtxt_fname, batch_size, num_step):
-  
-  with open(pipeline_fname) as f:
-      s = f.read()
-  with open(pipeline_fname, 'w') as f:
-      
-      # fine_tune_checkpoint
-      s = re.sub('fine_tune_checkpoint: ".*?"',
+     '''
+    This function modify the config file according to our parameters
+    INPUT
+        pipeline_fname: path to the .config file
+        fine_tune_checkpoint: path of the pretrained model
+        train_record_fname: path to the tran .tfrecord
+        test_record_fname: path to the test .tfrecord
+        label_map_pbtxt_fname: path to the label map file
+        batch_size: this is the batch size with which we want to train our model
+        num_sted: number of step with which we want to train our model
+    '''
+    
+    with open(pipeline_fname) as f:
+        s = f.read()
+    with open(pipeline_fname, 'w') as f:
+        # fine_tune_checkpoint
+        s = re.sub('fine_tune_checkpoint: ".*?"',
                 'fine_tune_checkpoint: "{}"'.format(fine_tune_checkpoint), s)
       
-      # tfrecord files train and test.
-      s = re.sub(
+        # tfrecord files train and test.
+        s = re.sub(
           '(input_path: ".*?)(train.record)(.*?")', 'input_path: "{}"'.format(train_record_fname), s)
-      s = re.sub(
+        s = re.sub(
           '(input_path: ".*?)(val.record)(.*?")', 'input_path: "{}"'.format(test_record_fname), s)
 
-      # label_map_path
-      s = re.sub(
+        # label_map_path
+        s = re.sub(
           'label_map_path: ".*?"', 'label_map_path: "{}"'.format(label_map_pbtxt_fname), s)
 
-      # Set training batch_size.
-      s = re.sub('batch_size: [0-9]+',
+        # Set training batch_size.
+        s = re.sub('batch_size: [0-9]+',
                 'batch_size: {}'.format(batch_size), s)
 
-      # Set training steps, num_steps
-      s = re.sub('num_steps: [0-9]+',
+        # Set training steps, num_steps
+        s = re.sub('num_steps: [0-9]+',
                 'num_steps: {}'.format(num_steps), s)
       
-      # Set number of classes num_classes.
-      s = re.sub('num_classes: [0-9]+',
+        # Set number of classes num_classes.
+        s = re.sub('num_classes: [0-9]+',
                 'num_classes: {}'.format(1), s)
-      f.write(s)
+        f.write(s)
 
 
 def predict_fn_ssd(PATH_TO_CKPT, image_path, **kwargs):
-  detection_graph = tf.Graph()
-  with detection_graph.as_default():
-      od_graph_def = tf.GraphDef()
-      with tf.gfile.GFile(PATH_TO_CKPT, 'rb') as fid:
-          serialized_graph = fid.read()
-          od_graph_def.ParseFromString(serialized_graph)
-          tf.import_graph_def(od_graph_def, name='')
+    '''
+    INPUT
+        PATH_TO_CKPT: path to the trained model
+        img_path: path to the image
+        PATH_TO_LABELS: path to the .pbtxt file
+        
+    OUTPUT
+        Returns the bounding boxes as a np.array. Each row is a bounding box, each column is
+        (x, y, w/2, h/2, class_id, confidence)
+        (x,y): center of the bounding box
+        (w,h): width and height of the bounding box
+        class_id: numerical id of the class
+    '''
+    
+    detection_graph = tf.Graph()
+    with detection_graph.as_default():
+        od_graph_def = tf.GraphDef()
+    with tf.gfile.GFile(PATH_TO_CKPT, 'rb') as fid:
+        serialized_graph = fid.read()
+        od_graph_def.ParseFromString(serialized_graph)
+        tf.import_graph_def(od_graph_def, name='')
+    
+    label_map = label_map_util.load_labelmap(kwargs['PATH_TO_LABELS'])
+    categories = label_map_util.convert_label_map_to_categories(
+      label_map, max_num_classes= 1 , use_display_name=True)
+    category_index = label_map_util.create_category_index(categories)
 
 
-  label_map = label_map_util.load_labelmap(kwargs['PATH_TO_LABELS'])
-  categories = label_map_util.convert_label_map_to_categories(
-      label_map, max_num_classes=kwargs['num_classes'], use_display_name=True)
-  category_index = label_map_util.create_category_index(categories)
-
-
-  def load_image_into_numpy_array(image):
-      (im_width, im_height) = image.size
-      return np.array(image.getdata()).reshape(
+    def load_image_into_numpy_array(image):
+        (im_width, im_height) = image.size
+        return np.array(image.getdata()).reshape(
           (im_height, im_width, 3)).astype(np.uint8)
 
-  # Size, in inches, of the output images.
-  IMAGE_SIZE = (12, 8)
+    # Size, in inches, of the output images.
+    IMAGE_SIZE = (12, 8)
 
 
-  def run_inference_for_single_image_ssd(image, graph):
-      with graph.as_default():
-          with tf.Session() as sess:
-              # Get handles to input and output tensors
-              ops = tf.get_default_graph().get_operations()
-              all_tensor_names = {
-                  output.name for op in ops for output in op.outputs}
-              tensor_dict = {}
-              for key in [
-                  'num_detections', 'detection_boxes', 'detection_scores',
-                  'detection_classes', 'detection_masks'
-              ]:
-                  tensor_name = key + ':0'
-                  if tensor_name in all_tensor_names:
-                      tensor_dict[key] = tf.get_default_graph().get_tensor_by_name(
-                          tensor_name)
-              if 'detection_masks' in tensor_dict:
-                  # The following processing is only for single image
-                  detection_boxes = tf.squeeze(
-                      tensor_dict['detection_boxes'], [0])
-                  detection_masks = tf.squeeze(
-                      tensor_dict['detection_masks'], [0])
-                  # Reframe is required to translate mask from box coordinates to image coordinates and fit the image size.
-                  real_num_detection = tf.cast(
-                      tensor_dict['num_detections'][0], tf.int32)
-                  detection_boxes = tf.slice(detection_boxes, [0, 0], [
+    def run_inference_for_single_image_ssd(image, graph):
+        with graph.as_default():
+            with tf.Session() as sess:
+                # Get handles to input and output tensors
+                ops = tf.get_default_graph().get_operations()
+                all_tensor_names = {output.name for op in ops for output in op.outputs}
+                tensor_dict = {}
+                for key in [
+                      'num_detections', 'detection_boxes', 'detection_scores',
+                      'detection_classes', 'detection_masks'
+                  ]:
+                    tensor_name = key + ':0'
+                    if tensor_name in all_tensor_names:
+                        tensor_dict[key] = tf.get_default_graph().get_tensor_by_name(tensor_name)
+                if 'detection_masks' in tensor_dict:
+                    # The following processing is only for single image
+                    detection_boxes = tf.squeeze(tensor_dict['detection_boxes'], [0])
+                    detection_masks = tf.squeeze(tensor_dict['detection_masks'], [0])
+                    # Reframe is required to translate mask from box coordinates to image coordinates and fit the image size.
+                    real_num_detection = tf.cast(tensor_dict['num_detections'][0], tf.int32)
+                    detection_boxes = tf.slice(detection_boxes, [0, 0], [
                                             real_num_detection, -1])
-                  detection_masks = tf.slice(detection_masks, [0, 0, 0], [
+                    detection_masks = tf.slice(detection_masks, [0, 0, 0], [
                                             real_num_detection, -1, -1])
-                  detection_masks_reframed = utils_ops.reframe_box_masks_to_image_masks(
+                    detection_masks_reframed = utils_ops.reframe_box_masks_to_image_masks(
                       detection_masks, detection_boxes, image.shape[0], image.shape[1])
-                  detection_masks_reframed = tf.cast(
+                    detection_masks_reframed = tf.cast(
                       tf.greater(detection_masks_reframed, 0.5), tf.uint8)
-                  # Follow the convention by adding back the batch dimension
-                  tensor_dict['detection_masks'] = tf.expand_dims(
+                    # Follow the convention by adding back the batch dimension
+                    tensor_dict['detection_masks'] = tf.expand_dims(
                       detection_masks_reframed, 0)
-              image_tensor = tf.get_default_graph().get_tensor_by_name('image_tensor:0')
+                
+                image_tensor = tf.get_default_graph().get_tensor_by_name('image_tensor:0')
 
-              # Run inference
-              output_dict = sess.run(tensor_dict,
+                # Run inference
+                output_dict = sess.run(tensor_dict,
                                     feed_dict={image_tensor: np.expand_dims(image, 0)})
 
-              # all outputs are float32 numpy arrays, so convert types as appropriate
-              output_dict['num_detections'] = int(
-                  output_dict['num_detections'][0])
-              output_dict['detection_classes'] = output_dict[
-                  'detection_classes'][0].astype(np.uint8)
-              output_dict['detection_boxes'] = output_dict['detection_boxes'][0]
-              output_dict['detection_scores'] = output_dict['detection_scores'][0]
-              if 'detection_masks' in output_dict:
-                  output_dict['detection_masks'] = output_dict['detection_masks'][0]
+                # all outputs are float32 numpy arrays, so convert types as appropriate
+                output_dict['num_detections'] = int(
+                                  output_dict['num_detections'][0])
+                output_dict['detection_classes'] = output_dict[
+                                  'detection_classes'][0].astype(np.uint8)
+                output_dict['detection_boxes'] = output_dict['detection_boxes'][0]
+                output_dict['detection_scores'] = output_dict['detection_scores'][0]
+                if 'detection_masks' in output_dict:
+                    output_dict['detection_masks'] = output_dict['detection_masks'][0]
+                             
 
               #custom part
               im_height, im_width, _ = image.shape
@@ -288,13 +322,13 @@ def predict_fn_ssd(PATH_TO_CKPT, image_path, **kwargs):
 
               output_matrix = np.dstack((x,y,half_w,half_h, class_id,det_scores))
 
-      return output_matrix
+        return output_matrix
+    
+    image = Image.open(image_path)
+    image_np = load_image_into_numpy_array(image)
+    image_np_expanded = np.expand_dims(image_np, axis=0)
   
-  image = Image.open(image_path)
-  image_np = load_image_into_numpy_array(image)
-  image_np_expanded = np.expand_dims(image_np, axis=0)
-  
-  return np.squeeze(run_inference_for_single_image_ssd(image_np, detection_graph))
+    return np.squeeze(run_inference_for_single_image_ssd(image_np, detection_graph))
 
 
 
