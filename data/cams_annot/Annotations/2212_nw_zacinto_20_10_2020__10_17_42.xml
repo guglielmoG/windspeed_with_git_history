@@ -1,0 +1,26 @@
+<annotation>
+	<folder>cams</folder>
+	<filename>2212_nw_zacinto_20_10_2020__10_17_42.png</filename>
+	<path>C:\Users\acer\Desktop\cams\2212_nw_zacinto_20_10_2020__10_17_42.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1280</width>
+		<height>857</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>no</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>618</xmin>
+			<ymin>581</ymin>
+			<xmax>637</xmax>
+			<ymax>632</ymax>
+		</bndbox>
+	</object>
+</annotation>
