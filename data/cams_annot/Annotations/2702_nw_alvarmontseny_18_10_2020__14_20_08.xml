@@ -1,0 +1,26 @@
+<annotation>
+	<folder>cams</folder>
+	<filename>2702_nw_alvarmontseny_18_10_2020__14_20_08.png</filename>
+	<path>C:\Users\acer\Desktop\cams\2702_nw_alvarmontseny_18_10_2020__14_20_08.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1280</width>
+		<height>857</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>no</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>955</xmin>
+			<ymin>506</ymin>
+			<xmax>1044</xmax>
+			<ymax>738</ymax>
+		</bndbox>
+	</object>
+</annotation>

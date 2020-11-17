@@ -1,0 +1,26 @@
+<annotation>
+	<folder>cams</folder>
+	<filename>2330_nw_alpago_19_10_2020__15_43_38.png</filename>
+	<path>C:\Users\acer\Desktop\cams\2330_nw_alpago_19_10_2020__15_43_38.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1280</width>
+		<height>857</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>yes</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>755</xmin>
+			<ymin>326</ymin>
+			<xmax>803</xmax>
+			<ymax>360</ymax>
+		</bndbox>
+	</object>
+</annotation>

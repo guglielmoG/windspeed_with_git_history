@@ -1,0 +1,26 @@
+<annotation>
+	<folder>cams</folder>
+	<filename>2491_rimini_16_10_2020__13_28_13.png</filename>
+	<path>C:\Users\acer\Desktop\cams\2491_rimini_16_10_2020__13_28_13.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1280</width>
+		<height>857</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>yes</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>488</xmin>
+			<ymin>475</ymin>
+			<xmax>518</xmax>
+			<ymax>523</ymax>
+		</bndbox>
+	</object>
+</annotation>
