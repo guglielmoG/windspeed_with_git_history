@@ -15,6 +15,7 @@ import tensorflow as tf
 
 
 
+
 ############ Convenience Functions ########################
 
 #convenience function to build portable paths
@@ -266,7 +267,7 @@ def predict_fn_ssd(graph, image_path, **kwargs):
                       'num_detections', 'detection_boxes', 'detection_scores',
                       'detection_classes', 'detection_masks'
                   ]:
-                    tensor_name = key + ':0'
+                tensor_name = key + ':0'
                 if tensor_name in all_tensor_names:
                         tensor_dict[key] = tf.get_default_graph().get_tensor_by_name(tensor_name)
             if 'detection_masks' in tensor_dict:
