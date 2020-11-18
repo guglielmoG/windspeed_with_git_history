@@ -1,0 +1,26 @@
+<annotation>
+	<folder>cams</folder>
+	<filename>2385_albisola_17_10_2020__13_47_06.png</filename>
+	<path>C:\Users\acer\Desktop\cams\2385_albisola_17_10_2020__13_47_06.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1280</width>
+		<height>857</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>maybe</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>485</xmin>
+			<ymin>165</ymin>
+			<xmax>536</xmax>
+			<ymax>229</ymax>
+		</bndbox>
+	</object>
+</annotation>

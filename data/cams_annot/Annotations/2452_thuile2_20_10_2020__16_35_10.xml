@@ -1,0 +1,26 @@
+<annotation>
+	<folder>cams</folder>
+	<filename>2452_thuile2_20_10_2020__16_35_10.png</filename>
+	<path>C:\Users\acer\Desktop\cams\2452_thuile2_20_10_2020__16_35_10.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1280</width>
+		<height>857</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>yes</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>396</xmin>
+			<ymin>460</ymin>
+			<xmax>414</xmax>
+			<ymax>490</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,26 @@
+<annotation>
+	<folder>cams</folder>
+	<filename>2742_nw_egypt_18_10_2020__16_04_45.png</filename>
+	<path>C:\Users\acer\Desktop\cams\2742_nw_egypt_18_10_2020__16_04_45.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1280</width>
+		<height>857</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>yes</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>317</xmin>
+			<ymin>443</ymin>
+			<xmax>418</xmax>
+			<ymax>507</ymax>
+		</bndbox>
+	</object>
+</annotation>
