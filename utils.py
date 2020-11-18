@@ -31,7 +31,7 @@ def cwd(*l):
 
 def convert_bbox_to_yolo(size, box):      
     '''
-    Convert xml BBox to YOLO format
+    Converts xml BBox to YOLO format
 
     INPUT
         size: image size (width, height)
@@ -57,7 +57,7 @@ def convert_bbox_to_yolo(size, box):
 
 def convert_annot_yolo(ann_path, detection_classes, outdir=''):
     '''
-    Converts annotation file at ann_path into YOLO formt, storing it in outdir
+    Converts annotation file at ann_path into YOLO format, storing it in outdir
     '''
     img_name,_ = os.path.splitext(os.path.basename(ann_path))
     tree = ElementTree.parse(ann_path)
@@ -134,7 +134,7 @@ def predict_yolo(net, img_path, net_input_w, net_input_h, **kwargs):
 def xml_to_csv(path):
     
     '''
-    This function convert all the .xml file into a single .csv file
+    This function converts all the .xml file into a single .csv file
     INPUT
         path: path to the directory where the .xml files are
     '''
@@ -165,7 +165,7 @@ def xml_to_csv(path):
 def label_map(objname, repo):    
     
     '''
-    This function crate the label map
+    This function creates the label map
     INPUT
         objname: string containing the name of the class
         repo: name of the repositort where we are working
@@ -182,7 +182,7 @@ def label_map(objname, repo):
 def configuring_pipeline(pipeline_fname,fine_tune_checkpoint, train_record_fname, test_record_fname, label_map_pbtxt_fname, batch_size, num_step):
     
     '''
-    This function modify the config file according to our parameters
+    This function modifies the config file according to our parameters
     INPUT
         pipeline_fname: path to the .config file
         fine_tune_checkpoint: path of the pretrained model
@@ -339,7 +339,7 @@ def predict_fn_ssd(PATH_TO_CKPT, image_path, **kwargs):
 #give path if folder structure contains Images and Annotations, else can give img_path and ann_path
 def evaluate_model(model, predict_fn, classes, mdl_type='detection', **kwargs):
     '''
-    Function used to evaluate model, possibly on test set. Can accept a generic model, coupled with its predict function
+    Function used to evaluate model, possibly on test set. It can accept a generic model, coupled with its predict function
 
     INPUT
         model: a model trained
@@ -424,7 +424,7 @@ def read_xml_bb(ann_path, classes_map):
         ann_path: path to annotation file (xml)
         classes_map: dictionary containing key=class_label value=number
     OUTPUT
-        numpy array containing a BBox for each row, as (xmin, xmax, ymin, ymax, class_id, difficulty)
+        numpy array containing a BBox for each row, as (xmin, ymin, xmax, ymax, class_id, difficulty)
     '''
     bboxes = []
     tree = ElementTree.parse(ann_path)
@@ -447,7 +447,7 @@ def convert_c_bbox_to_corners(boxes):
     INPUT
         numpy array of bounding boxes, as (x, y, w/2, h/2, ...)
     OUPUT
-        numpy array of bounding boxes, as (xmin, xmax, ymin, ymax, ...)
+        numpy array of bounding boxes, as (xmin, ymin, xmax, ymax, ...)
     '''
     xmin = boxes[:,0] - boxes[:,2]
     xmax = boxes[:,0] + boxes[:,2]
