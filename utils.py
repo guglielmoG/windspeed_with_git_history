@@ -564,25 +564,25 @@ def convert_to_jpg(path):
         os.remove(png)
 
 # converting xmls to df
-def xml_to_df(path):
+def annotations_to_df(path,classes_map):
     '''
     Collects all xmls at path and creates a pandas dataframe
+    INPUT: 
+        path: folder path where the annotations are stored
+        classes map: dictionary containing key=class_label value=number
+    OUTPUT: 
+        Dataframe that summarize the main feature of every annotation
     '''
     xml_list = []
-    for xml_file in glob.glob(path +'/*.xml'):
-        tree = ElementTree.parse(xml_file)
-        root = tree.getroot()
-        for member in root.findall('object'):
-            xmlbox = member.find('bndbox')
-            value = (''.join(xml_file.split(os.sep)[-1].split('.')[:-1])+'.jpg',
-                     int(xmlbox.find('xmin').text),
-                     int(xmlbox.find('ymin').text),
-                     int(xmlbox.find('xmax').text),
-                     int(xmlbox.find('ymax').text),
-                     member.find('name').text.lower())
-            xml_list.append(value)
-    column_name = ['filename', 'xmin', 'ymin', 'xmax', 'ymax', 'class']
+    for xml_file in glob.glob(path +os.sep+'*.xml'):
+        value=read_xml_bb(xml_file,classes_map)[:,:-1]
+        names=np.array([[''.join(xml_file.split(os.sep)[-1].split('.')[:-1])+'.jpg']]*value.shape[0])
+        annots=np.hstack((names, value))
+        for ann in annots:
+            xml_list.append(ann)
+    column_name = ['filename', 'xmin', 'ymin', 'xmax', 'ymax','class']
     xml_df = pd.DataFrame(xml_list, columns=column_name)
+    xml_df['class']=xml_df['class'].apply(lambda x:list(classes_map.keys())[list(classes_map.values()).index(int(x))])
     return xml_df
 
             
