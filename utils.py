@@ -531,6 +531,42 @@ def convert_c_bbox_to_corners(boxes):
     ymin = boxes[:,1] - boxes[:,3]
     ymax = boxes[:,1] + boxes[:,3]
     return np.hstack([xmin[:,np.newaxis], ymin[:,np.newaxis], xmax[:,np.newaxis], ymax[:,np.newaxis], boxes[:,4:]])
+
+
+def convert_corners_to_c_bbox(boxes):
+    '''
+    INPUT
+        numpy array of bounding boxes, as (xmin, ymin, xmax, ymax, ...)
+    OUPUT
+        numpy array of bounding boxes, as (x, y, w/2, h/2, ...)
+    '''
+    x = (boxes[:,0] + boxes[:,2]) / 2
+    y = (boxes[:,1] + boxes[:,3]) / 2
+    w_2 = abs(boxes[:,0] - boxes[:,2]) / 2
+    h_2 = abs(boxes[:,1] - boxes[:,3]) / 2
+    return np.hstack([x[:,np.newaxis], y[:,np.newaxis], w_2[:,np.newaxis], h_2[:,np.newaxis], boxes[:,4:]])
+
+
+def enlarge_boxes(boxes,ratio=1.1,xml=True):
+  '''
+  enlarges bounding boxes by specified ratio.
+  INPUT
+      boxes = numpy array of bounding boxes, as
+          if xml=True: (xmin, ymin, xmax, ymax, ...)
+          if xml=False: (x, y, w/2, h/2, ...)
+      ratio = ratio by which the boxes are enlarged
+      xml = True if boxes from the annotated xml files, False if boxes from object detection
+  OUTPUT
+      numpy array of enlarged bounding boxes, as (x, y, w'/2, h'/2, ...)
+  '''
+  if xml: 
+    boxes = convert_corners_to_c_bbox(boxes)
+
+  boxes[:,2] *= ratio
+  boxes[:,3] *= ratio
+  
+  return boxes
+
     
     
 def _convert_img_to_jpg(path):
@@ -563,7 +599,7 @@ def convert_to_jpg(path):
         _convert_img_to_jpg(png)
         os.remove(png)
 
-# converting xmls to df
+
 def annotations_to_df(path,classes_map):
     '''
     Collects all xmls at path and creates a pandas dataframe
@@ -586,3 +622,103 @@ def annotations_to_df(path,classes_map):
     return xml_df
 
             
+############ IMAGE CLASSIFICATION #####################################
+
+### 
+#section specific imports placed here temporarily
+from tensorflow import keras
+from keras.preprocessing.image import load_img, img_to_array
+#import re
+import random
+import seaborn as sns
+from sklearn.metrics import confusion_matrix
+###
+
+def get_flags(img_path,boxes,ratio=1.1,xml=True):
+  '''
+  extracts only the detected flags from an image, after enlarging the bounding boxes.
+  INPUT
+      img_path = 
+      boxes = numpy array of bounding boxes, as
+          if xml=True: (xmin, ymin, xmax, ymax, ...)
+          if xml=False: (x, y, w/2, h/2, ...)
+      ratio = ratio by which the boxes are enlarged
+      xml = True if boxes from the annotated xml files, False if boxes from object detection
+  OUTPUT
+      flags = list of cropped images, as numpy arrays
+      labels = if xml = True, list flag labels from manual annotation; if xml = False, an empty list. 
+  '''
+
+  img = load_img(img_path)
+  boxes = enlarge_boxes(boxes,ratio,xml)
+
+  boxes = convert_c_bbox_to_corners(boxes)
+  flags = []
+  labels = []
+
+  for box in boxes:
+    im = img.crop(box[:4])
+    flags.append(img_to_array(im))
+    if xml: 
+      labels.append(int(box[4])) 
+
+  return flags,labels
+
+
+def get_location_names(annot_path):
+  '''
+  extracts the names of all locations for the cams annotations
+  INPUT
+      path of the annotation files
+  OUTPUT
+      a set of locations
+  '''
+  pattern = '[a-z][a-z][a-z]+' 
+  locs = set()
+
+  for annot in os.listdir(annot_path):
+    loc = re.findall(pattern,annot)[0] 
+    locs.add(loc)
+
+  return locs
+
+
+def split_train_test_locations(locations,val_split=0.2,test_split=0.2):  
+  '''
+  performs a random split of train, validation and test set, for the different cams locations
+  '''
+  n_cams = len(locations)
+
+  train = random.sample(locations,round(n_cams*(1-test_split)))
+  validation = set(random.sample(train,round(len(train)*val_split)))
+  test = {i for i in locations if i not in train}
+  train = {i for i in train if i not in validation}
+
+  return train,validation,test
+
+
+def create_classification_directory(cams_dir,annot_map,info=True,val_split=0.2,test_split=0.2):
+    '''
+    TO BE DEFINED
+    '''
+    return 
+
+
+def plot_conf_mat(y_true,y_pred,labels,normalize=False,cmap=sns.cm.rocket_r,figsize=(10,7)):
+  '''
+  plots confusion matrix, using sklearn and seaborn 
+  '''
+  cm = confusion_matrix(y_true,y_pred)
+  fmt = ".0f"
+
+  if normalize:
+    cm = cm / cm.sum(axis=1)[:, np.newaxis]
+    fmt = ".2f"
+
+  plt.figure(figsize=figsize)
+  sns.set(font_scale=1.4) 
+  sns.heatmap(cm, annot=True,
+                  fmt=fmt, xticklabels=labels,
+                  yticklabels=labels, annot_kws={"size": 16},cmap=cmap) 
+
+  plt.show()
