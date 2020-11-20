@@ -629,6 +629,7 @@ def annotations_to_df(path,classes_map):
 from tensorflow import keras
 from keras.preprocessing.image import load_img, img_to_array
 #import re
+import matplotlib.pyplot as plt
 import random
 import seaborn as sns
 from sklearn.metrics import confusion_matrix
