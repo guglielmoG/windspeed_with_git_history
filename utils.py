@@ -672,23 +672,25 @@ def get_location_names(annot_path):
   INPUT
       path of the annotation files
   OUTPUT
-      a set of locations
+      a list of unique locations (N.b: sets are inherently unordered)
   '''
   pattern = '[a-z][a-z][a-z]+' 
-  locs = set()
+  locs = []
 
   for annot in os.listdir(annot_path):
     loc = re.findall(pattern,annot)[0] 
-    locs.add(loc)
+    locs.append(loc)
 
-  return locs
+  return list(dict.fromkeys(locs))
 
 
-def split_train_test_locations(locations,val_split=0.2,test_split=0.2):  
+def split_train_test_locations(locations,val_split=0.2,test_split=0.2,seed=seed):  
   '''
   performs a random split of train, validation and test set, for the different cams locations
   '''
   n_cams = len(locations)
+
+  random.seed(seed)
 
   train = random.sample(locations,round(n_cams*(1-test_split)))
   validation = set(random.sample(train,round(len(train)*val_split)))
@@ -698,11 +700,61 @@ def split_train_test_locations(locations,val_split=0.2,test_split=0.2):
   return train,validation,test
 
 
-def create_classification_directory(cams_dir,annot_map,info=True,val_split=0.2,test_split=0.2):
-    '''
-    TO BE DEFINED
-    '''
-    return 
+def create_classification_directory(cams_dir,annot_map,info=True,val_split=0.2,test_split=0.2,seed=3456):
+  '''
+  Given the directory containing Images and Annotations, and an annotation map:
+  1. creates subdirectories train, validation and test set
+  2. crops out the flags from the annotated images
+  3. places them into further subdirectories, for each set, based on their label
+  Dataset is now ready to be fed to keras' ImageDataGenerator.
+  If info=True, returns counts and label distribution for the three sets.
+  '''
+
+  annot_path = join_path(cams_dir,'Annotations')
+  img_path = join_path(cams_dir,'Images')
+
+  locations = get_location_names(annot_path)
+
+  for i in ['train','validation','test']:
+    os.mkdir(join_path(cams_dir,i))
+    for v in annot_map.values():
+      os.mkdir(join_path(cams_dir,i,str(v)))
+
+  tr,val,te = split_train_test_locs(locations,val_split,test_split,seed)
+
+  for img in os.listdir(img_path):
+    pattern = '[a-z][a-z][a-z]+'
+    loc = re.findall(pattern,img)[0]
+    dest = 'test'
+    if loc in tr:
+      dest = 'train' 
+    elif loc in val:
+      dest = 'validation'
+    
+    annot = join_path(annot_path,img[:-3]+'xml')
+    boxes = read_xml_bb(annot,annot_map)
+    flags,labels = get_flags(join_path(img_path,img),boxes)
+
+    j = 1 #keeps count of flags in given img 
+    for f in range(len(flags)):
+      PIL.Image.fromarray(flags[f].astype(np.uint8)).save(
+          join_path(cams_dir,dest,str(int(labels[f])),img[:-3]+'_'+str(j)+'.png'),format='PNG')
+      j+=1
+
+  if info:
+    train_dirs = []
+    val_dirs = []
+    test_dirs = []
+    for v in annot_map.values():
+      train_dirs.append(join_path(cams_dir,'train', str(v)))
+      val_dirs.append(join_path(cams_dir,'validation', str(v)))
+      test_dirs.append(join_path(cams_dir,'test', str(v)))
+
+    print(f'total training images by label: {[len(os.listdir(k)) for k in train_dirs]}')
+    print(f'total validation images by label: {[len(os.listdir(k)) for k in val_dirs]}')
+    print(f'total test images by label: {[len(os.listdir(k)) for k in test_dirs]}')
+    print(f'label map: {annot_map}')
+    
 
 
 def plot_conf_mat(y_true,y_pred,labels,normalize=False,cmap=sns.cm.rocket_r,figsize=(10,7)):
