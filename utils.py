@@ -684,7 +684,7 @@ def get_location_names(annot_path):
   return list(dict.fromkeys(locs))
 
 
-def split_train_test_locations(locations,val_split=0.2,test_split=0.2,seed=seed):  
+def split_train_test_locations(locations,val_split=0.2,test_split=0.2,seed):  
   '''
   performs a random split of train, validation and test set, for the different cams locations
   '''
