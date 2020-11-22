@@ -720,7 +720,7 @@ def create_classification_directory(cams_dir,annot_map,info=True,val_split=0.2,t
     for v in annot_map.values():
       os.mkdir(join_path(cams_dir,i,str(v)))
 
-  tr,val,te = split_train_test_locs(locations,val_split,test_split,seed)
+  tr,val,te = split_train_test_locations(locations,val_split,test_split,seed)
 
   for img in os.listdir(img_path):
     pattern = '[a-z][a-z][a-z]+'
@@ -754,7 +754,7 @@ def create_classification_directory(cams_dir,annot_map,info=True,val_split=0.2,t
     print(f'total validation images by label: {[len(os.listdir(k)) for k in val_dirs]}')
     print(f'total test images by label: {[len(os.listdir(k)) for k in test_dirs]}')
     print(f'label map: {annot_map}')
-    
+
 
 
 def plot_conf_mat(y_true,y_pred,labels,normalize=False,cmap=sns.cm.rocket_r,figsize=(10,7)):
