@@ -38,7 +38,7 @@ def cwd(*l):
 
 ############ YOLO ########################
 
-def convert_bbox_to_yolo(size, box):      
+def convert_bbox_to_yolo(size, box):
     '''
     Converts xml BBox to YOLO format
 
@@ -49,7 +49,7 @@ def convert_bbox_to_yolo(size, box):
         BBox information encoded for YOLO, (x,y,w,h)
         (x,y): center of the box, rescaled to be within 0 and 1
         (w, h): width and height of BBox, rescaled
-    '''                                                                                               
+    '''
     dw = 1./size[0]
     dh = 1./size[1]
     x = (box[0] + box[1])/2.0
@@ -62,7 +62,7 @@ def convert_bbox_to_yolo(size, box):
     h = h*dh
     return (x,y,w,h)
 
-    
+
 
 def convert_annot_yolo(ann_path, detection_classes, outdir=''):
     '''
@@ -87,7 +87,7 @@ def convert_annot_yolo(ann_path, detection_classes, outdir=''):
         with open(join_path(outdir, img_name + ".txt"), 'w') as writer:
             writer.write(str(cls_id) + " " + " ".join([str(a) for a in bb]) + '\n')
 
-            
+
 def predict_yolo(net, img_path, net_input_w, net_input_h, **kwargs):
     '''
     INPUT
@@ -95,7 +95,7 @@ def predict_yolo(net, img_path, net_input_w, net_input_h, **kwargs):
         img_path: path to the image
         net_input_w: network input width (for input layer)
         net_input_h: network input height (for input layer)
-        
+
     OUTPUT
         Returns the bounding boxes as a np.array. Each row is a bounding box, each column is
         (x, y, w/2, h/2, class_id, confidence)
@@ -105,12 +105,12 @@ def predict_yolo(net, img_path, net_input_w, net_input_h, **kwargs):
     '''
     img = cv2.imread(img_path)
     height, width, channels = img.shape
-    
+
     blob = cv2.dnn.blobFromImage(img, 0.00392, (net_input_w, net_input_h), (0, 0, 0), True, crop=False)
 
     net.setInput(blob)
     layers_output = net.forward(output_layers)
-    
+
     class_ids = []
     confidences = []
     boxes = []
@@ -164,13 +164,13 @@ def predict_retinanet(net,img_path,**kwargs):
 ############ SSD #####################################
 
 def xml_to_csv(path):
-    
+
     '''
     This function converts all the .xml file into a single .csv file
     INPUT
         path: path to the directory where the .xml files are
     '''
-    
+
     xml_list = []
     for xml_file in glob.glob(path + '/*.xml'):
         base = os.path.basename(xml_file)
@@ -194,14 +194,14 @@ def xml_to_csv(path):
     xml_df = pd.DataFrame(xml_list, columns=column_name)
     return xml_df
 
-def label_map(objname, repo):    
-    
+def label_map(objname, repo):
+
     '''
     This function creates the label map
     INPUT
         objname: string containing the name of the class
         repo: name of the repositort where we are working
-    '''    
+    '''
     with open(os.path.join(os.getcwd(), repo , 'OD_SSD/label_map.pbtxt'), 'a') as the_file:
         the_file.write('item\n')
         the_file.write('{\n')
@@ -212,7 +212,7 @@ def label_map(objname, repo):
         the_file.write('}\n')
 
 def configuring_pipeline(pipeline_fname,fine_tune_checkpoint, train_record_fname, test_record_fname, label_map_pbtxt_fname, batch_size, num_steps):
-    
+
     '''
     This function modifies the config file according to our parameters
     INPUT
@@ -224,14 +224,14 @@ def configuring_pipeline(pipeline_fname,fine_tune_checkpoint, train_record_fname
         batch_size: this is the batch size with which we want to train our model
         num_sted: number of step with which we want to train our model
     '''
-    
+
     with open(pipeline_fname) as f:
         s = f.read()
     with open(pipeline_fname, 'w') as f:
         # fine_tune_checkpoint
         s = re.sub('fine_tune_checkpoint: ".*?"',
                 'fine_tune_checkpoint: "{}"'.format(fine_tune_checkpoint), s)
-      
+
         # tfrecord files train and test.
         s = re.sub(
           '(input_path: ".*?)(train.record)(.*?")', 'input_path: "{}"'.format(train_record_fname), s)
@@ -249,7 +249,7 @@ def configuring_pipeline(pipeline_fname,fine_tune_checkpoint, train_record_fname
         # Set training steps, num_steps
         s = re.sub('num_steps: [0-9]+',
                 'num_steps: {}'.format(num_steps), s)
-      
+
         # Set number of classes num_classes.
         s = re.sub('num_classes: [0-9]+',
                 'num_classes: {}'.format(1), s)
@@ -260,20 +260,20 @@ def predict_fn_ssd(graph, image_path, **kwargs):
     INPUT
         graph: path to the trained model
         img_path: path to the image
-        
+
     OUTPUT
         Returns the bounding boxes as a np.array. Each row is a bounding box, each column is
         (x, y, w/2, h/2, class_id, confidence)
         (x,y): center of the bounding box
         (w,h): width and height of the bounding box
         class_id: numerical id of the class
-  '''  
+  '''
   import numpy as np
   import os
   import six.moves.urllib as urllib
   import sys
   import tarfile
-  
+
   import zipfile
 
   from collections import defaultdict
@@ -283,7 +283,7 @@ def predict_fn_ssd(graph, image_path, **kwargs):
   from object_detection.utils import ops as utils_ops
   from object_detection.utils import label_map_util
   from object_detection.utils import visualization_utils as vis_util
-  
+
   image = PIL.Image.open(image_path)
   (im_width, im_height) = image.size
   image_np = np.array(image.getdata()).reshape((im_height, im_width, 3)).astype(np.uint8)
@@ -339,7 +339,7 @@ def predict_fn_ssd(graph, image_path, **kwargs):
           output_dict['detection_scores'] = output_dict['detection_scores'][0]
           if 'detection_masks' in output_dict:
               output_dict['detection_masks'] = output_dict['detection_masks'][0]
-          
+
           im_width, im_height = image.size
           d_boxes = output_dict['detection_boxes']
           y = ((d_boxes[:,0] + d_boxes[:,2])/2*im_height).astype(np.int16)
@@ -374,12 +374,12 @@ def generate_tfrecord(csv_input, output_path, image_dir):
         return 1
     else:
         return 0
-  
+
   def split(df, group):
     data = namedtuple('data', ['filename', 'object'])
     gb = df.groupby(group)
     return [data(filename, gb.get_group(x)) for filename, x in zip(gb.groups.keys(), gb.groups)]
-  
+
   def create_tf_example(group, path):
     with tf.io.gfile.GFile(os.path.join(path, '{}'.format(group.filename)), 'rb') as fid:
         encoded_jpg = fid.read()
@@ -393,7 +393,7 @@ def generate_tfrecord(csv_input, output_path, image_dir):
     xmaxs = []
     ymins = []
     ymaxs = []
-    classes_text = [] 
+    classes_text = []
     classes = []
 
     for index, row in group.object.iterrows():
@@ -431,7 +431,7 @@ def generate_tfrecord(csv_input, output_path, image_dir):
   writer.close()
   output_path = os.path.join(os.getcwd(), output_path)
   print('Successfully created the TFRecords: {}'.format(output_path))
-  
+
 
 
 ############ MODEL EVALUATION ########################
@@ -444,14 +444,14 @@ def evaluate_model(model, predict_fn, classes, mdl_type='detection', **kwargs):
 
     INPUT
         model: a model trained
-        predict_fn: custom predict functions for the model with signature _(model, img_path, **kwargs). 
+        predict_fn: custom predict functions for the model with signature _(model, img_path, **kwargs).
                     Its output can vary based on mdl_type:
                     Detection: Should output a numpy array
                         containing BBoxes on each row, as (x, y, w/2, h/2, class_id, confidence)
                     Classification: NOT IMPLEMENTED
         classes: list of class labels
-        mdl_type: kind of problem type: detection or classification 
-        **kwargs: 
+        mdl_type: kind of problem type: detection or classification
+        **kwargs:
             path: path to folder containing Images and Annotations folder
             img_path and ann_path: separate paths for the two folders.
             mAP_type: type of mAP metric to use, pascal_voc or coco. Default: pascal_voc
@@ -463,8 +463,8 @@ def evaluate_model(model, predict_fn, classes, mdl_type='detection', **kwargs):
     '''
     n_classes = len(classes)
     classes_map = {classes[i].lower() : i for i in range(n_classes)}
-    
-    
+
+
     #input check
     if 'path' in kwargs:
         path = kwargs['path']
@@ -477,11 +477,11 @@ def evaluate_model(model, predict_fn, classes, mdl_type='detection', **kwargs):
         f_ann_path = kwargs.get('f_ann_path')
     else:
         raise Exception('You need to supply a path to images and annotations')
-        
+
     metric_fn = MeanAveragePrecision(num_classes=n_classes)
     if mdl_type not in ['detection', 'classification']:
         raise Exception('Unknown model type, must be either detection or classification.')
-    
+
     #in case img_path == ann_path
     for img_path in glob.glob(join_path(f_img_path, '*[!.xml]')):
         img_name, ext = os.path.splitext(os.path.basename(img_path))
@@ -495,11 +495,11 @@ def evaluate_model(model, predict_fn, classes, mdl_type='detection', **kwargs):
                 metric_fn.add(preds, gt)
             elif mdl_type == 'classification':
                 raise Exception('not implemented')
-                
+
         except Exception as e:
             print('Found exception processing image %s' % (img_path))
             raise e from None
-    
+
     if mdl_type == 'detection':
         mAP_type = kwargs.get('mAP_type', 'pascal_voc')
         if mAP_type == 'pascal_voc':
@@ -513,7 +513,7 @@ def evaluate_model(model, predict_fn, classes, mdl_type='detection', **kwargs):
         else:
             raise Exception('mean average precision type unknown %s' % mAP_type)
     return mAP
-            
+
 
 
 ############ MISC ########################
@@ -542,7 +542,7 @@ def read_xml_bb(ann_path, classes_map):
         bboxes.append(value)
     return np.array(bboxes)
 
-    
+
 def convert_c_bbox_to_corners(boxes):
     '''
     INPUT
@@ -583,21 +583,21 @@ def enlarge_boxes(boxes,ratio=1.1,xml=True):
   OUTPUT
       numpy array of enlarged bounding boxes, as (x, y, w'/2, h'/2, ...)
   '''
-  if xml: 
+  if xml:
     boxes = convert_corners_to_c_bbox(boxes)
 
   boxes[:,2] *= ratio
   boxes[:,3] *= ratio
-  
+
   return boxes
 
-    
-    
+
+
 def _convert_img_to_jpg(path):
     '''
     Converts image at path to jpg
     '''
-    dir, file = os.path.split(path) 
+    dir, file = os.path.split(path)
     img_name,_ = os.path.splitext(file)
     img = PIL.Image.open(path)
     img = img.convert('RGB')
@@ -609,7 +609,7 @@ def convert_to_jpg(path):
     '''
     Converts PNG and jpeg images at path to jpg
     '''
-    
+
     #cast png to jpg
     pngs = glob.glob(join_path(path, '*.png'))
     pngs.extend(glob.glob(join_path(path, '*.PNG')))
@@ -627,10 +627,10 @@ def convert_to_jpg(path):
 def annotations_to_df(path,classes_map):
     '''
     Collects all xmls at path and creates a pandas dataframe
-    INPUT: 
+    INPUT:
         path: folder path where the annotations are stored
         classes map: dictionary containing key=class_label value=number
-    OUTPUT: 
+    OUTPUT:
         Dataframe that summarize the main feature of every annotation
     '''
     xml_list = []
@@ -646,7 +646,7 @@ def annotations_to_df(path,classes_map):
     return xml_df
 
 def scrape_webcam(txt_file_name, b_dir, iteration, interval):
-    
+
     '''
     Scrape webcam links and save the image in data_raw folder
     INPUT:
@@ -656,36 +656,36 @@ def scrape_webcam(txt_file_name, b_dir, iteration, interval):
         interval: number of minutes that intercurs between each iteration
     '''
 
-  webcams = {}
-  path_to_txt = os.path.join(b_dir, txt_file_name)
+    webcams = {}
+    path_to_txt = os.path.join(b_dir, txt_file_name)
 
-  def get_data(folder_name = 'data_raw'):
+    def get_data(folder_name = 'data_raw'):
       for city, link in webcams.items():
           driver.get(link)
           now = datetime.now()
           rel_path = folder_name + '/' + city + '_' + now.strftime("%d_S%m_%Y__%H_%M_%S") +'.png'
           driver.get_screenshot_as_file(os.path.join(b_dir, rel_path))
 
-  with open(path_to_txt) as f:
-    for line in f:
-      (load_check, key, val) = line.split()
-      if load_check == 'y':
-        webcams[key] = val
+    with open(path_to_txt) as f:
+        for line in f:
+            (load_check, key, val) = line.split()
+            if load_check == 'y':
+                webcams[key] = val
 
-  chrome_options = webdriver.ChromeOptions()
-  chrome_options.add_argument('--headless')
-  chrome_options.add_argument('--no-sandbox')
-  chrome_options.add_argument('--disable-dev-shm-usage')
+    chrome_options = webdriver.ChromeOptions()
+    chrome_options.add_argument('--headless')
+    chrome_options.add_argument('--no-sandbox')
+    chrome_options.add_argument('--disable-dev-shm-usage')
 
-  driver = webdriver.Chrome('chromedriver',chrome_options=chrome_options )
-  for i in range(iteration):
-      get_data()
-      time.sleep(interval*60)
-  driver.close()
-            
+    driver = webdriver.Chrome('chromedriver',chrome_options=chrome_options )
+    for i in range(iteration):
+        get_data()
+        time.sleep(interval*60)
+    driver.close()
+
 ############ IMAGE CLASSIFICATION #####################################
 
-### 
+###
 #section specific imports placed here temporarily
 from tensorflow import keras
 from keras.preprocessing.image import load_img, img_to_array
@@ -700,7 +700,7 @@ def get_flags(img_path,boxes,ratio=1.1,xml=True):
   '''
   extracts only the detected flags from an image, after enlarging the bounding boxes.
   INPUT
-      img_path = 
+      img_path =
       boxes = numpy array of bounding boxes, as
           if xml=True: (xmin, ymin, xmax, ymax, ...)
           if xml=False: (x, y, w/2, h/2, ...)
@@ -708,7 +708,7 @@ def get_flags(img_path,boxes,ratio=1.1,xml=True):
       xml = True if boxes from the annotated xml files, False if boxes from object detection
   OUTPUT
       flags = list of cropped images, as numpy arrays
-      labels = if xml = True, list flag labels from manual annotation; if xml = False, an empty list. 
+      labels = if xml = True, list flag labels from manual annotation; if xml = False, an empty list.
   '''
 
   img = load_img(img_path)
@@ -721,8 +721,8 @@ def get_flags(img_path,boxes,ratio=1.1,xml=True):
   for box in boxes:
     im = img.crop(box[:4])
     flags.append(img_to_array(im))
-    if xml: 
-      labels.append(int(box[4])) 
+    if xml:
+      labels.append(int(box[4]))
 
   return flags,labels
 
@@ -735,17 +735,17 @@ def get_location_names(annot_path):
   OUTPUT
       a list of unique locations (N.b: sets are inherently unordered)
   '''
-  pattern = '[a-z][a-z][a-z]+' 
+  pattern = '[a-z][a-z][a-z]+'
   locs = []
 
   for annot in os.listdir(annot_path):
-    loc = re.findall(pattern,annot)[0] 
+    loc = re.findall(pattern,annot)[0]
     locs.append(loc)
 
   return list(dict.fromkeys(locs))
 
 
-def split_train_test_locations(locations,val_split,test_split,seed):  
+def split_train_test_locations(locations,val_split,test_split,seed):
   '''
   performs a random split of train, validation and test set, for the different cams locations
   '''
@@ -788,15 +788,15 @@ def create_classification_directory(cams_dir,annot_map,info=True,val_split=0.2,t
     loc = re.findall(pattern,img)[0]
     dest = 'test'
     if loc in tr:
-      dest = 'train' 
+      dest = 'train'
     elif loc in val:
       dest = 'validation'
-    
+
     annot = join_path(annot_path,img[:-3]+'xml')
     boxes = read_xml_bb(annot,annot_map)
     flags,labels = get_flags(join_path(img_path,img),boxes)
 
-    j = 1 #keeps count of flags in given img 
+    j = 1 #keeps count of flags in given img
     for f in range(len(flags)):
       PIL.Image.fromarray(flags[f].astype(np.uint8)).save(
           join_path(cams_dir,dest,str(int(labels[f])),img[:-3]+'_'+str(j)+'.png'),format='PNG')
@@ -820,7 +820,7 @@ def create_classification_directory(cams_dir,annot_map,info=True,val_split=0.2,t
 
 def plot_conf_mat(y_true,y_pred,labels,normalize=False,cmap=sns.cm.rocket_r,figsize=(10,7)):
   '''
-  plots confusion matrix, using sklearn and seaborn 
+  plots confusion matrix, using sklearn and seaborn
   '''
   cm = confusion_matrix(y_true,y_pred)
   fmt = ".0f"
@@ -830,9 +830,9 @@ def plot_conf_mat(y_true,y_pred,labels,normalize=False,cmap=sns.cm.rocket_r,figs
     fmt = ".2f"
 
   plt.figure(figsize=figsize)
-  sns.set(font_scale=1.4) 
+  sns.set(font_scale=1.4)
   sns.heatmap(cm, annot=True,
                   fmt=fmt, xticklabels=labels,
-                  yticklabels=labels, annot_kws={"size": 16},cmap=cmap) 
+                  yticklabels=labels, annot_kws={"size": 16},cmap=cmap)
 
   plt.show()
