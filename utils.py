@@ -645,6 +645,43 @@ def annotations_to_df(path,classes_map):
     xml_df['class']=xml_df['class'].apply(lambda x:list(classes_map.keys())[list(classes_map.values()).index(int(x))])
     return xml_df
 
+def scrape_webcam(txt_file_name, b_dir, iteration, interval):
+    
+    '''
+    Scrape webcam links and save the image in data_raw folder
+    INPUT:
+        txt_file_name: .txt file of webcam's link
+        b_dir: base directory where we are working
+        iteration: number of time we want the scraper to scrape all the set of webcam_links
+        interval: number of minutes that intercurs between each iteration
+    '''
+
+  webcams = {}
+  path_to_txt = os.path.join(b_dir, txt_file_name)
+
+  def get_data(folder_name = 'data_raw'):
+      for city, link in webcams.items():
+          driver.get(link)
+          now = datetime.now()
+          rel_path = folder_name + '/' + city + '_' + now.strftime("%d_S%m_%Y__%H_%M_%S") +'.png'
+          driver.get_screenshot_as_file(os.path.join(b_dir, rel_path))
+
+  with open(path_to_txt) as f:
+    for line in f:
+      (load_check, key, val) = line.split()
+      if load_check == 'y':
+        webcams[key] = val
+
+  chrome_options = webdriver.ChromeOptions()
+  chrome_options.add_argument('--headless')
+  chrome_options.add_argument('--no-sandbox')
+  chrome_options.add_argument('--disable-dev-shm-usage')
+
+  driver = webdriver.Chrome('chromedriver',chrome_options=chrome_options )
+  for i in range(iteration):
+      get_data()
+      time.sleep(interval*60)
+  driver.close()
             
 ############ IMAGE CLASSIFICATION #####################################
 
