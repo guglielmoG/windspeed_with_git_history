@@ -1,4 +1,5 @@
 from mean_average_precision import MeanAveragePrecision
+from keras_retinanet.utils.image import read_image_bgr, preprocess_image, resize_image
 import os
 import glob
 import PIL
@@ -137,6 +138,29 @@ def predict_yolo(net, img_path, net_input_w, net_input_h, **kwargs):
         print('POTENTIAL ERROR: n. predicted BBox %d image %s' % (result.shape[0], img_path))
     return result
 
+############ RETINANET #####################################
+
+def predict_retinanet(net,img_path,**kwargs):
+    image = read_image_bgr(img_path)
+    image = preprocess_image(image)
+    image, scale = resize_image(image)
+
+    boxes, scores, labels = net.predict_on_batch(np.expand_dims(image, axis=0))
+    boxes /= scale
+    bboxes=[]
+    for box, score, label in zip(boxes[0], scores[0], labels[0]):
+    x = int((box[0] + box[2])/2.0)
+    y = int((box[1] + box[3])/2.0)
+    w = int((box[2] - box[0])/2.0)
+    h = int((box[3] - box[1])/2.0)
+
+    if score < 0.5:
+        break
+    bboxes.append([x,y,w,h,label,score])
+    if len(bboxes) == 0:
+    return np.zeros((0,6))
+
+    return np.array(bboxes)
 ############ SSD #####################################
 
 def xml_to_csv(path):
