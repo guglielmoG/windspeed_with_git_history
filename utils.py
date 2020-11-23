@@ -1,5 +1,5 @@
 from mean_average_precision import MeanAveragePrecision
-from windspeed.keras.keras_retinanet.utils.image import read_image_bgr, preprocess_image, resize_image
+from windspeed.retinanet.keras_retinanet.utils.image import read_image_bgr, preprocess_image, resize_image
 import os
 import glob
 import PIL
