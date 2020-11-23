@@ -149,16 +149,16 @@ def predict_retinanet(net,img_path,**kwargs):
     boxes /= scale
     bboxes=[]
     for box, score, label in zip(boxes[0], scores[0], labels[0]):
-    x = int((box[0] + box[2])/2.0)
-    y = int((box[1] + box[3])/2.0)
-    w = int((box[2] - box[0])/2.0)
-    h = int((box[3] - box[1])/2.0)
+        x = int((box[0] + box[2])/2.0)
+        y = int((box[1] + box[3])/2.0)
+        w = int((box[2] - box[0])/2.0)
+        h = int((box[3] - box[1])/2.0)
 
-    if score < 0.5:
-        break
-    bboxes.append([x,y,w,h,label,score])
+        if score < 0.5:
+            break
+        bboxes.append([x,y,w,h,label,score])
     if len(bboxes) == 0:
-    return np.zeros((0,6))
+        return np.zeros((0,6))
 
     return np.array(bboxes)
 ############ SSD #####################################
