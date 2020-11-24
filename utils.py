@@ -103,6 +103,8 @@ def predict_yolo(net, img_path, net_input_w, net_input_h, **kwargs):
         (w,h): width and height of the bounding box
         class_id: numerical id of the class
     '''
+    layer_names = net.getLayerNames()
+    output_layers = net.getUnconnectedOutLayersNames()
     img = cv2.imread(img_path)
     height, width, channels = img.shape
 
