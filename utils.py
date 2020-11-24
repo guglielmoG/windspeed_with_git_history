@@ -689,13 +689,16 @@ def scrape_webcam(txt_file_name, b_dir, iteration, interval):
 
 ###
 #section specific imports placed here temporarily
+#import tensorflow
 from tensorflow import keras
 from keras.preprocessing.image import load_img, img_to_array
 #import re
+#import os
 import matplotlib.pyplot as plt
 import random
 import seaborn as sns
 from sklearn.metrics import confusion_matrix
+import PIL
 ###
 
 def get_flags(img_path,boxes,ratio=1.1,xml=True):
