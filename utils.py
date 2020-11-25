@@ -747,7 +747,7 @@ def get_location_names(annot_path):
     loc = re.findall(pattern,annot)[0]
     locs.append(loc)
 
-  return list(dict.fromkeys(locs))
+  return sorted(list(dict.fromkeys(locs)))
 
 
 def split_train_test_locations(locations,val_split,test_split,seed):
