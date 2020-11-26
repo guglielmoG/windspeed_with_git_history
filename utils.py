@@ -15,9 +15,7 @@ import sys
 import shutil
 import urllib.request
 import tarfile
-
-
-
+import tensorflow as tf
 
 ############ Convenience Functions ########################
 
