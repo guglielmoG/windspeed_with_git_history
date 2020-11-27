@@ -153,8 +153,26 @@ def predict_yolo(net, img_path, net_input_w, net_input_h, **kwargs):
 
 
 ############ RETINANET #####################################
+def predict_retinanet(net,image):
+    '''
+    INPUT
+        net: trained Retinanet model 
+        imgage: image in BGR format
 
-def predict_retinanet(net,img_path,**kwargs):
+    OUTPUT
+        Returns:
+        - the bounding boxes as a np.array. Each row is a bounding box, 
+        each column is (x_min, y_min, x_max, y_max)
+        scores: confidence of each box
+        labels: labels associated to each box
+    '''
+    image = preprocess_image(image)
+    image, scale = resize_image(image)
+    boxes, scores, labels = net.predict_on_batch(np.expand_dims(image, axis=0))
+    boxes /= scale
+    return boxes, scores, labels
+
+def predict_retinanet_yolo_format(net,img_path,**kwargs):
     '''
     INPUT
         net: trained Retinanet model 
@@ -169,11 +187,7 @@ def predict_retinanet(net,img_path,**kwargs):
         score: confidence of the prediction
     '''
     image = read_image_bgr(img_path)
-    image = preprocess_image(image)
-    image, scale = resize_image(image)
-
-    boxes, scores, labels = net.predict_on_batch(np.expand_dims(image, axis=0))
-    boxes /= scale
+    boxes, scores, labels = predict_retinanet(net,image)
     bboxes=[]
     for box, score, label in zip(boxes[0], scores[0], labels[0]):
         x = int((box[0] + box[2])/2.0)
@@ -189,7 +203,63 @@ def predict_retinanet(net,img_path,**kwargs):
 
     return np.array(bboxes)
 
+def predict_image_retinanet(net,label_map,image_path,from_video=False):
+    '''
+    INPUT
+        net: trained Retinanet model
+        label_map: dictionary with possible labels as keys and integers as values
+        image_path: path to the image
+        from_video: boolean value that indicates if the function is predicting frames from a video or not
 
+    OUTPUT
+        Returns the image with the bounding box
+    '''
+    if from_video==False:
+        image = read_image_bgr(image_path)
+    draw = image.copy()
+    draw = cv2.cvtColor(draw, cv2.COLOR_BGR2RGB)
+    boxes, scores, labels = predict_retinanet(net,image)
+    for box, score, label in zip(boxes[0], scores[0], labels[0]):
+        if score < 0.5:
+            break   
+        
+        b = box.astype(int)
+        caption = "{} {:.3f}".format(label_map[label], score)
+        cv2.rectangle(draw, (b[0], b[1]), (b[2], b[3]), (255,0,0), 2, cv2.LINE_AA)
+        cv2.putText(draw, caption, (b[0], b[1] - 10), cv2.FONT_HERSHEY_PLAIN, 1, (0, 0, 0), 2)
+        cv2.putText(draw, caption, (b[0], b[1] - 10), cv2.FONT_HERSHEY_PLAIN, 1, (255, 255, 255), 1)
+        
+    return draw
+
+def predict_video_retinanet(video_path,output_name,model,label_map):
+    '''
+    INPUT
+        video_path: path of the video to process
+        output_name: path of the output where to find the processed video 
+        model: retinanet model to use
+        label_map: dictionary with possible labels as keys and integers as values
+    OUTPUT
+        Returns the video in the desidered folder
+    '''
+    cap = cv2.VideoCapture(video_path)
+    if cap.isOpened():
+        width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
+        height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
+        res=(int(width), int(height))
+        fourcc = cv2.VideoWriter_fourcc('M','J','P','G')
+        out = cv2.VideoWriter(output_name, fourcc, 30.0, res)
+        while True:
+            try:
+                is_success, frame = cap.read()
+            except cv2.error:
+                continue
+            if not is_success:
+                break
+            draw=predict_image_retinanet(model,label_map,'',from_video=True)
+            image = cv2.cvtColor(draw, cv2.COLOR_BGR2RGB)
+            out.write(image)
+        out.release() 
+    cap.release()
 ############ SSD #####################################
 
 def xml_to_csv(path):
