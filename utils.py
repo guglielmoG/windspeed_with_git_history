@@ -141,6 +141,19 @@ def predict_yolo(net, img_path, net_input_w, net_input_h, **kwargs):
 ############ RETINANET #####################################
 
 def predict_retinanet(net,img_path,**kwargs):
+    '''
+    INPUT
+        net: trained Retinanet model 
+        img_path: path to the image
+
+    OUTPUT
+        Returns the bounding boxes as a np.array. Each row is a bounding box, each column is
+        (x, y, w/2, h/2, label, score)
+        (x,y): center of the bounding box
+        (w,h): width and height of the bounding box
+        label: numerical id of the class
+        score: confidence of the prediction
+    '''
     image = read_image_bgr(img_path)
     image = preprocess_image(image)
     image, scale = resize_image(image)
@@ -555,8 +568,10 @@ def annotations_to_df(path,classes_map):
     '''
     xml_list = []
     for xml_file in glob.glob(path +os.sep+'*.xml'):
+        base = os.path.basename(xml_file)
+        _, ext = os.path.splitext(base)
         value=read_xml_bb(xml_file,classes_map)[:,:-1]
-        names=np.array([[''.join(xml_file.split(os.sep)[-1].split('.')[:-1])+'.jpg']]*value.shape[0])
+        names=np.array([[''.join(xml_file.split(os.sep)[-1].split('.')[:-1])+ext]]*value.shape[0])
         annots=np.hstack((names, value))
         for ann in annots:
             xml_list.append(ann)
