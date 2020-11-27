@@ -568,10 +568,8 @@ def annotations_to_df(path,classes_map):
     '''
     xml_list = []
     for xml_file in glob.glob(path +os.sep+'*.xml'):
-        base = os.path.basename(xml_file)
-        _, ext = os.path.splitext(base)
         value=read_xml_bb(xml_file,classes_map)[:,:-1]
-        names=np.array([[''.join(xml_file.split(os.sep)[-1].split('.')[:-1])+ext]]*value.shape[0])
+        names=np.array([[''.join(xml_file.split(os.sep)[-1].split('.')[:-1])+'.jpg']]*value.shape[0])
         annots=np.hstack((names, value))
         for ann in annots:
             xml_list.append(ann)
