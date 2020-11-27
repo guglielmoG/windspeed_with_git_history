@@ -26,7 +26,6 @@ from tensorflow import keras
 from keras.preprocessing.image import load_img, img_to_array
 from sklearn.metrics import confusion_matrix
 
-from object_detection.utils import dataset_util
 from windspeed.retinanet.keras_retinanet.utils.image import read_image_bgr, preprocess_image, resize_image
 
 
@@ -199,7 +198,6 @@ def xml_to_csv(path):
     INPUT
         path: path to the directory where the .xml files are
     '''
-
     xml_list = []
     for xml_file in glob.glob(path + '/*.xml'):
         base = os.path.basename(xml_file)
@@ -225,7 +223,6 @@ def xml_to_csv(path):
 
 
 def label_map(objname, path_to_dir):
-
     '''
     This function creates the label map
     INPUT
@@ -245,7 +242,6 @@ def label_map(objname, path_to_dir):
 
 
 def configuring_pipeline(pipeline_fname,fine_tune_checkpoint, train_record_fname, test_record_fname, label_map_pbtxt_fname, batch_size, num_steps):
-
     '''
     This function modifies the config file according to our parameters
     INPUT
@@ -257,7 +253,6 @@ def configuring_pipeline(pipeline_fname,fine_tune_checkpoint, train_record_fname
         batch_size: this is the batch size with which we want to train our model
         num_sted: number of step with which we want to train our model
     '''
-
     with open(pipeline_fname) as f:
         s = f.read()
     with open(pipeline_fname, 'w') as f:
@@ -286,60 +281,62 @@ def configuring_pipeline(pipeline_fname,fine_tune_checkpoint, train_record_fname
 
 def predict_ssd(detect_fn, img_path, **kwargs):
 
-  image_np = np.array(PIL.Image.open(img_path))
-  height, width, channels = image_np.shape
-  input_tensor = tf.convert_to_tensor(image_np)
-  input_tensor = input_tensor[tf.newaxis, ...]
-  detections = detect_fn(input_tensor)
-  boxes = detections['detection_boxes'].numpy()[0]
-  classes = detections['detection_classes'].numpy()[0]
-  scores = detections['detection_scores'].numpy()[0]
+    image_np = np.array(PIL.Image.open(img_path))
+    height, width, channels = image_np.shape
+    input_tensor = tf.convert_to_tensor(image_np)
+    input_tensor = input_tensor[tf.newaxis, ...]
+    detections = detect_fn(input_tensor)
+    boxes = detections['detection_boxes'].numpy()[0]
+    classes = detections['detection_classes'].numpy()[0]
+    scores = detections['detection_scores'].numpy()[0]
 
-  y = ((boxes[:,0] + boxes[:,2])/2*height).astype(np.int)
-  x = ((boxes[:,1] + boxes[:,3])/2*width).astype(np.int)
-  half_w = ((boxes[:,3] - boxes[:,1])/2*width).astype(np.int)
-  half_h = ((boxes[:,3] - boxes[:,1])/2*height).astype(np.int)
-  classes = classes - 1
+    y = ((boxes[:,0] + boxes[:,2])/2*height).astype(np.int)
+    x = ((boxes[:,1] + boxes[:,3])/2*width).astype(np.int)
+    half_w = ((boxes[:,3] - boxes[:,1])/2*width).astype(np.int)
+    half_h = ((boxes[:,3] - boxes[:,1])/2*height).astype(np.int)
+    classes = classes - 1
 
-  output_matrix = np.dstack((x,y,half_w,half_h, classes,scores))
-  output_matrix = np.squeeze(output_matrix)
-  output_matrix = output_matrix[output_matrix[:,5]>=0.5,:]
+    output_matrix = np.dstack((x,y,half_w,half_h, classes,scores))
+    output_matrix = np.squeeze(output_matrix)
+    output_matrix = output_matrix[output_matrix[:,5]>=0.5,:]
 
-  if len(output_matrix) == 0:
-   return np.zeros((0,6)).astype(np.int8)
+    if len(output_matrix) == 0:
+        return np.zeros((0,6)).astype(np.int8)
 
-  return output_matrix
+    return output_matrix
 
 
 def generate_tfrecord(csv_input, output_path, image_dir):
 
-  def class_text_to_int(row_label):
-    if row_label == 'flag':
-    # if row_label == 'tommad':
-        return 1
-    else:
-        return 0
+    from object_detection.utils import dataset_util
 
-  def split(df, group):
-    data = namedtuple('data', ['filename', 'object'])
-    gb = df.groupby(group)
-    return [data(filename, gb.get_group(x)) for filename, x in zip(gb.groups.keys(), gb.groups)]
+    def class_text_to_int(row_label):
+        if row_label == 'flag':
+        # if row_label == 'tommad':
+            return 1
+        else:
+            return 0
 
-  def create_tf_example(group, path):
-    with tf.io.gfile.GFile(os.path.join(path, '{}'.format(group.filename)), 'rb') as fid:
-        encoded_jpg = fid.read()
-    encoded_jpg_io = io.BytesIO(encoded_jpg)
-    image = PIL.Image.open(encoded_jpg_io)
-    width, height = image.size
+    def split(df, group):
+        data = namedtuple('data', ['filename', 'object'])
+        gb = df.groupby(group)
+        return [data(filename, gb.get_group(x)) for filename, x in zip(gb.groups.keys(), gb.groups)]
 
-    filename = group.filename.encode('utf8')
-    image_format = b'jpg'
-    xmins = []
-    xmaxs = []
-    ymins = []
-    ymaxs = []
-    classes_text = []
-    classes = []
+    def create_tf_example(group, path):
+        with tf.io.gfile.GFile(os.path.join(path, '{}'.format(group.filename)), 'rb') as fid:
+            encoded_jpg = fid.read()
+        encoded_jpg_io = io.BytesIO(encoded_jpg)
+        image = PIL.Image.open(encoded_jpg_io)
+        width, height = image.size
+
+        filename = group.filename.encode('utf8')
+        image_format = b'jpg'
+        xmins = []
+        xmaxs = []
+        ymins = []
+        ymaxs = []
+        classes_text = []
+        classes = []
 
     for index, row in group.object.iterrows():
         xmins.append(row['xmin'] / width)
@@ -365,17 +362,17 @@ def generate_tfrecord(csv_input, output_path, image_dir):
     }))
     return tf_example
 
-  writer = tf.io.TFRecordWriter(output_path)
-  path = os.path.join(image_dir)
-  examples = pd.read_csv(csv_input)
-  grouped = split(examples, 'filename')
-  for group in grouped:
-      tf_example = create_tf_example(group, path)
-      writer.write(tf_example.SerializeToString())
+    writer = tf.io.TFRecordWriter(output_path)
+    path = os.path.join(image_dir)
+    examples = pd.read_csv(csv_input)
+    grouped = split(examples, 'filename')
+    for group in grouped:
+        tf_example = create_tf_example(group, path)
+        writer.write(tf_example.SerializeToString())
 
-  writer.close()
-  output_path = os.path.join(os.getcwd(), output_path)
-  print('Successfully created the TFRecords: {}'.format(output_path))
+    writer.close()
+    output_path = os.path.join(os.getcwd(), output_path)
+    print('Successfully created the TFRecords: {}'.format(output_path))
 
 
 ############ MODEL EVALUATION ########################
@@ -513,24 +510,24 @@ def convert_corners_to_c_bbox(boxes):
 
 
 def enlarge_boxes(boxes,ratio=1.1,xml=True):
-  '''
-  enlarges bounding boxes by specified ratio.
-  INPUT
-      boxes = numpy array of bounding boxes, as
-          if xml=True: (xmin, ymin, xmax, ymax, ...)
-          if xml=False: (x, y, w/2, h/2, ...)
-      ratio = ratio by which the boxes are enlarged
-      xml = True if boxes from the annotated xml files, False if boxes from object detection
-  OUTPUT
-      numpy array of enlarged bounding boxes, as (x, y, w'/2, h'/2, ...)
-  '''
-  if xml:
-    boxes = convert_corners_to_c_bbox(boxes)
+    '''
+    enlarges bounding boxes by specified ratio.
+    INPUT
+        boxes = numpy array of bounding boxes, as
+            if xml=True: (xmin, ymin, xmax, ymax, ...)
+            if xml=False: (x, y, w/2, h/2, ...)
+        ratio = ratio by which the boxes are enlarged
+        xml = True if boxes from the annotated xml files, False if boxes from object detection
+    OUTPUT
+        numpy array of enlarged bounding boxes, as (x, y, w'/2, h'/2, ...)
+    '''
+    if xml:
+        boxes = convert_corners_to_c_bbox(boxes)
 
-  boxes[:,2] *= ratio
-  boxes[:,3] *= ratio
+    boxes[:,2] *= ratio
+    boxes[:,3] *= ratio
 
-  return boxes
+    return boxes
 
 
 def _convert_img_to_jpg(path):
@@ -549,7 +546,6 @@ def convert_to_jpg(path):
     '''
     Converts PNG and jpeg images at path to jpg
     '''
-
     #cast png to jpg
     pngs = glob.glob(join_path(path, '*.png'))
     pngs.extend(glob.glob(join_path(path, '*.PNG')))
@@ -589,113 +585,110 @@ def annotations_to_df(path,classes_map):
 ############ IMAGE CLASSIFICATION #####################################
 
 def get_flags(img_path,boxes,ratio=1.1,xml=True):
-  '''
-  extracts only the detected flags from an image, after enlarging the bounding boxes.
-  INPUT
-      img_path =
-      boxes = numpy array of bounding boxes, as
-          if xml=True: (xmin, ymin, xmax, ymax, ...)
-          if xml=False: (x, y, w/2, h/2, ...)
-      ratio = ratio by which the boxes are enlarged
-      xml = True if boxes from the annotated xml files, False if boxes from object detection
-  OUTPUT
-      flags = list of cropped images, as numpy arrays
-      labels = if xml = True, list flag labels from manual annotation; if xml = False, an empty list.
-  '''
-
-  img = load_img(img_path)
-  boxes = enlarge_boxes(boxes,ratio,xml)
-  boxes = convert_c_bbox_to_corners(boxes)
+    '''
+    extracts only the detected flags from an image, after enlarging the bounding boxes.
+    INPUT
+        img_path = path to specific image
+        boxes = numpy array of bounding boxes, as
+            if xml=True: (xmin, ymin, xmax, ymax, ...)
+            if xml=False: (x, y, w/2, h/2, ...)
+        ratio = ratio by which the boxes are enlarged
+        xml = True if boxes from the annotated xml files, False if boxes from object detection
+    OUTPUT
+        flags = list of cropped images, as numpy arrays
+        labels = if xml = True, list flag labels from manual annotation; if xml = False, an empty list.
+    '''
+    img = load_img(img_path)
+    boxes = enlarge_boxes(boxes,ratio,xml)
+    boxes = convert_c_bbox_to_corners(boxes)
   
-  flags = []
-  labels = []
+    flags = []
+    labels = []
 
-  for box in boxes:
-    im = img.crop(box[:4])
-    flags.append(img_to_array(im))
+    for box in boxes:
+        im = img.crop(box[:4])
+        flags.append(img_to_array(im))
     if xml:
-      labels.append(int(box[4]))
+        labels.append(int(box[4]))
 
-  return flags,labels
+    return flags,labels
 
 
 def get_location_names(annot_path):
-  '''
-  extracts the names of all locations for the cams annotations
-  INPUT
-      path to the folder containing the annotatated files
-  OUTPUT
-      a list of unique locations, sorted alphabetically to ensure reproducibility. 
-  '''
-  pattern = '[a-z][a-z][a-z]+'
-  locs = []
-  for annot in os.listdir(annot_path):
-    loc = re.findall(pattern,annot)[0]
-    locs.append(loc)
+    '''
+    extracts the names of all locations for the cams annotations
+    INPUT
+        path to the folder containing the annotatated files
+    OUTPUT
+        a list of unique locations, sorted alphabetically to ensure reproducibility. 
+    '''
+    pattern = '[a-z][a-z][a-z]+'
+    locs = []
+    for annot in os.listdir(annot_path):
+        loc = re.findall(pattern,annot)[0]
+        locs.append(loc)
 
-  return sorted(list(dict.fromkeys(locs)))
+    return sorted(list(dict.fromkeys(locs)))
 
 
 def split_train_test_locations(locations,val_split,test_split,seed):
-  '''
-  performs a random split of train, validation and test set, for the different cams locations
-  INPUT
-      locations = list of camera locations
-      val_split = % split of training and validation
-      test_split = % split of training+validation and test
-      seed = random seed for reproducibility
-  OUTPUT
-      sets containing locations allocated to training, validation and test data respectively
-  '''
+    '''
+    performs a random split of train, validation and test set, for the different cams locations
+    INPUT
+        locations = list of camera locations
+        val_split = % split of training and validation
+        test_split = % split of training+validation and test
+        seed = random seed for reproducibility
+    OUTPUT
+        sets containing locations allocated to training, validation and test data respectively
+    '''
+    n_cams = len(locations)
+    random.seed(seed)
 
-  n_cams = len(locations)
-  random.seed(seed)
+    train = random.sample(locations,round(n_cams*(1-test_split)))
+    validation = set(random.sample(train,round(len(train)*val_split)))
+    test = {i for i in locations if i not in train}
+    train = {i for i in train if i not in validation}
 
-  train = random.sample(locations,round(n_cams*(1-test_split)))
-  validation = set(random.sample(train,round(len(train)*val_split)))
-  test = {i for i in locations if i not in train}
-  train = {i for i in train if i not in validation}
-
-  return train,validation,test
+    return train,validation,test
 
 
 def create_classification_directory(cams_dir,annot_map,info=True,val_split=0.2,test_split=0.2,seed=3456):
-  '''
-  creates the correct folder structure to be fed into keras' ImageDataGenerator via flow_from_directory()
-  INPUT
-      cams_dir = directory to the cams folder, containing Images and Annotations
-      annot_map = dictionary mapping string labels to numerical values
-      info = specifies whether we want to get printed information on the size and composition of the splits
-      val_split = % split of training and validation
-      test_split = % split of training+validation and test
-      seed = random seed for reproducibility
-  OUTPUT
-      this function performs these three operations:
-      1. creates the subdirectories train, validation and test set inside of cams_dir
-      2. crops out the flags from each of the Images using the bounding boxes in Annotations
-      3. places the flags into further subdirectories, for each of the three datasets, based on their label
-  '''
+    '''
+    creates the correct folder structure to be fed into keras' ImageDataGenerator via flow_from_directory()
+    INPUT
+        cams_dir = directory to the cams folder, containing Images and Annotations
+        annot_map = dictionary mapping string labels to numerical values
+        info = specifies whether we want to get printed information on the size and composition of the splits
+        val_split = % split of training and validation
+        test_split = % split of training+validation and test
+        seed = random seed for reproducibility
+    OUTPUT
+        this function performs these three operations:
+        1. creates the subdirectories train, validation and test set inside of cams_dir
+        2. crops out the flags from each of the Images using the bounding boxes in Annotations
+        3. places the flags into further subdirectories, for each of the three datasets, based on their label
+    '''
+    annot_path = join_path(cams_dir,'Annotations')
+    img_path = join_path(cams_dir,'Images')
 
-  annot_path = join_path(cams_dir,'Annotations')
-  img_path = join_path(cams_dir,'Images')
+    locations = get_location_names(annot_path)
 
-  locations = get_location_names(annot_path)
-
-  for i in ['train','validation','test']:
-    os.mkdir(join_path(cams_dir,i))
+    for i in ['train','validation','test']:
+        os.mkdir(join_path(cams_dir,i))
     for v in annot_map.values():
-      os.mkdir(join_path(cams_dir,i,str(v)))
+        os.mkdir(join_path(cams_dir,i,str(v)))
 
-  tr,val,te = split_train_test_locations(locations,val_split,test_split,seed)
+    tr,val,te = split_train_test_locations(locations,val_split,test_split,seed)
 
-  for img in os.listdir(img_path):
-    pattern = '[a-z][a-z][a-z]+'
-    loc = re.findall(pattern,img)[0]
-    dest = 'test'
-    if loc in tr:
-      dest = 'train'
-    elif loc in val:
-      dest = 'validation'
+    for img in os.listdir(img_path):
+        pattern = '[a-z][a-z][a-z]+'
+        loc = re.findall(pattern,img)[0]
+        dest = 'test'
+        if loc in tr:
+            dest = 'train'
+        elif loc in val:
+            dest = 'validation'
 
     annot = join_path(annot_path,img[:-3]+'xml')
     boxes = read_xml_bb(annot,annot_map)
@@ -703,40 +696,37 @@ def create_classification_directory(cams_dir,annot_map,info=True,val_split=0.2,t
 
     j = 1 #keeps count of flags in given img
     for f in range(len(flags)):
-      PIL.Image.fromarray(flags[f].astype(np.uint8)).save(
-          join_path(cams_dir,dest,str(int(labels[f])),img[:-3]+'_'+str(j)+'.png'),format='PNG')
-      j+=1
+        PIL.Image.fromarray(flags[f].astype(np.uint8)).save(
+            join_path(cams_dir,dest,str(int(labels[f])),img[:-3]+'_'+str(j)+'.png'),format='PNG')
+        j+=1
 
-  if info:
-    train_dirs = []
-    val_dirs = []
-    test_dirs = []
-    for v in annot_map.values():
-      train_dirs.append(join_path(cams_dir,'train', str(v)))
-      val_dirs.append(join_path(cams_dir,'validation', str(v)))
-      test_dirs.append(join_path(cams_dir,'test', str(v)))
+    if info:
+        train_dirs = []
+        val_dirs = []
+        test_dirs = []
+        for v in annot_map.values():
+            train_dirs.append(join_path(cams_dir,'train', str(v)))
+            val_dirs.append(join_path(cams_dir,'validation', str(v)))
+            test_dirs.append(join_path(cams_dir,'test', str(v)))
 
-    print(f'total training images by label: {[len(os.listdir(k)) for k in train_dirs]}')
-    print(f'total validation images by label: {[len(os.listdir(k)) for k in val_dirs]}')
-    print(f'total test images by label: {[len(os.listdir(k)) for k in test_dirs]}')
-    print(f'label map: {annot_map}')
+        print(f'total training images by label: {[len(os.listdir(k)) for k in train_dirs]}')
+        print(f'total validation images by label: {[len(os.listdir(k)) for k in val_dirs]}')
+        print(f'total test images by label: {[len(os.listdir(k)) for k in test_dirs]}')
+        print(f'label map: {annot_map}')
 
 
 def plot_conf_mat(y_true,y_pred,labels,normalize=False,cmap=sns.cm.rocket_r,figsize=(10,7)):
-  '''
-  plots confusion matrix, relying on sklearn and seaborn 
-  '''
+    '''
+    plots confusion matrix, relying on sklearn and seaborn 
+    '''
+    cm = confusion_matrix(y_true,y_pred)
+    fmt = ".0f"
+    if normalize:
+        cm = cm / cm.sum(axis=1)[:, np.newaxis]
+        fmt = ".2f"
 
-  cm = confusion_matrix(y_true,y_pred)
-  fmt = ".0f"
-  if normalize:
-    cm = cm / cm.sum(axis=1)[:, np.newaxis]
-    fmt = ".2f"
-
-  plt.figure(figsize=figsize)
-  sns.set(font_scale=1.4)
-  sns.heatmap(cm, annot=True,
-                  fmt=fmt, xticklabels=labels,
-                  yticklabels=labels, annot_kws={"size": 16},cmap=cmap)
-  plt.show()
+    plt.figure(figsize=figsize)
+    sns.set(font_scale=1.4)
+    sns.heatmap(cm, annot=True, fmt=fmt, xticklabels=labels, yticklabels=labels, annot_kws={"size": 16},cmap=cmap)
+    plt.show()
 
