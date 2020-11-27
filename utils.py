@@ -202,19 +202,16 @@ def predict_retinanet_yolo_format(net,img_path,**kwargs):
 
     return np.array(bboxes)
 
-def predict_image_retinanet(net,label_map,image_path,from_video=False):
+def predict_image_retinanet(net,label_map,image):
     '''
     INPUT
         net: trained Retinanet model
         label_map: dictionary with possible labels as keys and integers as values
-        image_path: path to the image
-        from_video: boolean value that indicates if the function is predicting frames from a video or not
+        image: image to process in BGR format
 
     OUTPUT
         Returns the image with the bounding box
     '''
-    if from_video==False:
-        image = read_image_bgr(image_path)
     draw = image.copy()
     draw = cv2.cvtColor(draw, cv2.COLOR_BGR2RGB)
     boxes, scores, labels = predict_retinanet(net,image)
@@ -254,7 +251,7 @@ def predict_video_retinanet(video_path,output_name,model,label_map):
                 continue
             if not is_success:
                 break
-            draw=predict_image_retinanet(model,label_map,'',from_video=True)
+            draw=predict_image_retinanet(model,label_map,frame)
             image = cv2.cvtColor(draw, cv2.COLOR_BGR2RGB)
             out.write(image)
         out.release() 
