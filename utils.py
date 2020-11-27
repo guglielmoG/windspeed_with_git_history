@@ -1,28 +1,41 @@
-from mean_average_precision import MeanAveragePrecision
-from windspeed.retinanet.keras_retinanet.utils.image import read_image_bgr, preprocess_image, resize_image
-import os
-import glob
-import PIL
-import numpy as np
-import pandas as pd
-import math
 import cv2
-from xml.etree import ElementTree
-from contextlib import contextmanager
-import re
+import glob
+import io
+import math
+import matplotlib.pyplot as plt
+import numpy as np
+import os
+import pandas as pd
 import pathlib
-import sys
+import PIL
+import random
+import re
+import seaborn as sns
 import shutil
-import urllib.request
+import sys
 import tarfile
-import tensorflow as tf
+import tensorflow as tf 
+import urllib.request
+
+from collections import namedtuple, OrderedDict
+from contextlib import contextmanager
+from mean_average_precision import MeanAveragePrecision
+from xml.etree import ElementTree
+
+from tensorflow import keras
+from keras.preprocessing.image import load_img, img_to_array
+from sklearn.metrics import confusion_matrix
+
+from object_detection.utils import dataset_util
+from windspeed.retinanet.keras_retinanet.utils.image import read_image_bgr, preprocess_image, resize_image
+
 
 ############ Convenience Functions ########################
 
 #convenience function to build portable paths
 join_path = lambda *l: os.sep.join(l)
 
-#convenience function
+
 #used in combination with _with_, sets path as cwd inside with block, and restores previous working dir upon exit
 @contextmanager
 def cwd(*l):
@@ -33,6 +46,7 @@ def cwd(*l):
         yield
     finally:
         os.chdir(oldpwd)
+
 
 ############ YOLO ########################
 
@@ -59,7 +73,6 @@ def convert_bbox_to_yolo(size, box):
     y = y*dh
     h = h*dh
     return (x,y,w,h)
-
 
 
 def convert_annot_yolo(ann_path, detection_classes, outdir=''):
@@ -138,6 +151,7 @@ def predict_yolo(net, img_path, net_input_w, net_input_h, **kwargs):
         print('POTENTIAL ERROR: n. predicted BBox %d image %s' % (result.shape[0], img_path))
     return result
 
+
 ############ RETINANET #####################################
 
 def predict_retinanet(net,img_path,**kwargs):
@@ -174,6 +188,8 @@ def predict_retinanet(net,img_path,**kwargs):
         return np.zeros((0,6))
 
     return np.array(bboxes)
+
+
 ############ SSD #####################################
 
 def xml_to_csv(path):
@@ -207,6 +223,7 @@ def xml_to_csv(path):
     xml_df = pd.DataFrame(xml_list, columns=column_name)
     return xml_df
 
+
 def label_map(objname, path_to_dir):
 
     '''
@@ -225,6 +242,7 @@ def label_map(objname, path_to_dir):
         the_file.write('\n')
         the_file.write('}\n')
     return path_to_pbtxt
+
 
 def configuring_pipeline(pipeline_fname,fine_tune_checkpoint, train_record_fname, test_record_fname, label_map_pbtxt_fname, batch_size, num_steps):
 
@@ -265,6 +283,7 @@ def configuring_pipeline(pipeline_fname,fine_tune_checkpoint, train_record_fname
                 'num_classes: {}'.format(1), s)
         f.write(s)
 
+
 def predict_ssd(detect_fn, img_path, **kwargs):
 
   image_np = np.array(PIL.Image.open(img_path))
@@ -293,13 +312,6 @@ def predict_ssd(detect_fn, img_path, **kwargs):
 
 
 def generate_tfrecord(csv_input, output_path, image_dir):
-
-  import io
-  import pandas as pd
-  import tensorflow as tf
-
-  from object_detection.utils import dataset_util
-  from collections import namedtuple, OrderedDict
 
   def class_text_to_int(row_label):
     if row_label == 'flag':
@@ -366,9 +378,7 @@ def generate_tfrecord(csv_input, output_path, image_dir):
   print('Successfully created the TFRecords: {}'.format(output_path))
 
 
-
 ############ MODEL EVALUATION ########################
-
 
 #give path if folder structure contains Images and Annotations, else can give img_path and ann_path
 def evaluate_model(model, predict_fn, classes, mdl_type='detection', **kwargs):
@@ -448,9 +458,7 @@ def evaluate_model(model, predict_fn, classes, mdl_type='detection', **kwargs):
     return mAP
 
 
-
 ############ MISC ########################
-
 
 def read_xml_bb(ann_path, classes_map):
     '''
@@ -525,7 +533,6 @@ def enlarge_boxes(boxes,ratio=1.1,xml=True):
   return boxes
 
 
-
 def _convert_img_to_jpg(path):
     '''
     Converts image at path to jpg
@@ -578,59 +585,8 @@ def annotations_to_df(path,classes_map):
     xml_df['class']=xml_df['class'].apply(lambda x:list(classes_map.keys())[list(classes_map.values()).index(int(x))])
     return xml_df
 
-def scrape_webcam(txt_file_name, b_dir, iteration, interval):
-
-    '''
-    Scrape webcam links and save the image in data_raw folder
-    INPUT:
-        txt_file_name: .txt file of webcam's link
-        b_dir: base directory where we are working
-        iteration: number of time we want the scraper to scrape all the set of webcam_links
-        interval: number of minutes that intercurs between each iteration
-    '''
-
-    webcams = {}
-    path_to_txt = os.path.join(b_dir, txt_file_name)
-
-    def get_data(folder_name = 'data_raw'):
-      for city, link in webcams.items():
-          driver.get(link)
-          now = datetime.now()
-          rel_path = folder_name + '/' + city + '_' + now.strftime("%d_S%m_%Y__%H_%M_%S") +'.png'
-          driver.get_screenshot_as_file(os.path.join(b_dir, rel_path))
-
-    with open(path_to_txt) as f:
-        for line in f:
-            (load_check, key, val) = line.split()
-            if load_check == 'y':
-                webcams[key] = val
-
-    chrome_options = webdriver.ChromeOptions()
-    chrome_options.add_argument('--headless')
-    chrome_options.add_argument('--no-sandbox')
-    chrome_options.add_argument('--disable-dev-shm-usage')
-
-    driver = webdriver.Chrome('chromedriver',chrome_options=chrome_options )
-    for i in range(iteration):
-        get_data()
-        time.sleep(interval*60)
-    driver.close()
 
 ############ IMAGE CLASSIFICATION #####################################
-
-###
-#section specific imports placed here temporarily
-#import tensorflow
-from tensorflow import keras
-from keras.preprocessing.image import load_img, img_to_array
-#import re
-#import os
-import matplotlib.pyplot as plt
-import random
-import seaborn as sns
-from sklearn.metrics import confusion_matrix
-import PIL
-###
 
 def get_flags(img_path,boxes,ratio=1.1,xml=True):
   '''
@@ -649,8 +605,8 @@ def get_flags(img_path,boxes,ratio=1.1,xml=True):
 
   img = load_img(img_path)
   boxes = enlarge_boxes(boxes,ratio,xml)
-
   boxes = convert_c_bbox_to_corners(boxes)
+  
   flags = []
   labels = []
 
@@ -667,13 +623,12 @@ def get_location_names(annot_path):
   '''
   extracts the names of all locations for the cams annotations
   INPUT
-      path of the annotation files
+      path to the folder containing the annotatated files
   OUTPUT
-      a list of unique locations (N.b: sets are inherently unordered)
+      a list of unique locations, sorted alphabetically to ensure reproducibility. 
   '''
   pattern = '[a-z][a-z][a-z]+'
   locs = []
-
   for annot in os.listdir(annot_path):
     loc = re.findall(pattern,annot)[0]
     locs.append(loc)
@@ -684,9 +639,16 @@ def get_location_names(annot_path):
 def split_train_test_locations(locations,val_split,test_split,seed):
   '''
   performs a random split of train, validation and test set, for the different cams locations
+  INPUT
+      locations = list of camera locations
+      val_split = % split of training and validation
+      test_split = % split of training+validation and test
+      seed = random seed for reproducibility
+  OUTPUT
+      sets containing locations allocated to training, validation and test data respectively
   '''
-  n_cams = len(locations)
 
+  n_cams = len(locations)
   random.seed(seed)
 
   train = random.sample(locations,round(n_cams*(1-test_split)))
@@ -699,12 +661,19 @@ def split_train_test_locations(locations,val_split,test_split,seed):
 
 def create_classification_directory(cams_dir,annot_map,info=True,val_split=0.2,test_split=0.2,seed=3456):
   '''
-  Given the directory containing Images and Annotations, and an annotation map:
-  1. creates subdirectories train, validation and test set
-  2. crops out the flags from the annotated images
-  3. places them into further subdirectories, for each set, based on their label
-  Dataset is now ready to be fed to keras' ImageDataGenerator.
-  If info=True, returns counts and label distribution for the three sets.
+  creates the correct folder structure to be fed into keras' ImageDataGenerator via flow_from_directory()
+  INPUT
+      cams_dir = directory to the cams folder, containing Images and Annotations
+      annot_map = dictionary mapping string labels to numerical values
+      info = specifies whether we want to get printed information on the size and composition of the splits
+      val_split = % split of training and validation
+      test_split = % split of training+validation and test
+      seed = random seed for reproducibility
+  OUTPUT
+      this function performs these three operations:
+      1. creates the subdirectories train, validation and test set inside of cams_dir
+      2. crops out the flags from each of the Images using the bounding boxes in Annotations
+      3. places the flags into further subdirectories, for each of the three datasets, based on their label
   '''
 
   annot_path = join_path(cams_dir,'Annotations')
@@ -753,14 +722,13 @@ def create_classification_directory(cams_dir,annot_map,info=True,val_split=0.2,t
     print(f'label map: {annot_map}')
 
 
-
 def plot_conf_mat(y_true,y_pred,labels,normalize=False,cmap=sns.cm.rocket_r,figsize=(10,7)):
   '''
-  plots confusion matrix, using sklearn and seaborn
+  plots confusion matrix, relying on sklearn and seaborn 
   '''
+
   cm = confusion_matrix(y_true,y_pred)
   fmt = ".0f"
-
   if normalize:
     cm = cm / cm.sum(axis=1)[:, np.newaxis]
     fmt = ".2f"
@@ -770,5 +738,5 @@ def plot_conf_mat(y_true,y_pred,labels,normalize=False,cmap=sns.cm.rocket_r,figs
   sns.heatmap(cm, annot=True,
                   fmt=fmt, xticklabels=labels,
                   yticklabels=labels, annot_kws={"size": 16},cmap=cmap)
-
   plt.show()
+
