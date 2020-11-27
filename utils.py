@@ -156,7 +156,7 @@ def predict_retinanet(net,image):
     '''
     INPUT
         net: trained Retinanet model 
-        imgage: image in BGR format
+        image: image in BGR format
 
     OUTPUT
         Returns:
