@@ -675,8 +675,8 @@ def get_flags(img_path,boxes,ratio=1.1,xml=True):
     for box in boxes:
         im = img.crop(box[:4])
         flags.append(img_to_array(im))
-    if xml:
-        labels.append(int(box[4]))
+        if xml:
+            labels.append(int(box[4]))
 
     return flags,labels
 
@@ -740,16 +740,20 @@ def create_classification_directory(cams_dir,annot_map,info=True,val_split=0.2,t
     img_path = join_path(cams_dir,'Images')
 
     locations = get_location_names(annot_path)
+    tr,val,te = split_train_test_locations(locations,val_split,test_split,seed)
+    pattern = '[a-z][a-z][a-z]+'
 
     for i in ['train','validation','test']:
         os.mkdir(join_path(cams_dir,i))
-    for v in annot_map.values():
-        os.mkdir(join_path(cams_dir,i,str(v)))
-
-    tr,val,te = split_train_test_locations(locations,val_split,test_split,seed)
+        for v in annot_map.values():
+            os.mkdir(join_path(cams_dir,i,str(v)))
 
     for img in os.listdir(img_path):
-        pattern = '[a-z][a-z][a-z]+'
+        if not img.endswith(".png"): 
+            print(f'WARNING: {img} in /Images was not recognized as an image, and thus ignored')
+            print('')
+            continue
+
         loc = re.findall(pattern,img)[0]
         dest = 'test'
         if loc in tr:
@@ -757,29 +761,30 @@ def create_classification_directory(cams_dir,annot_map,info=True,val_split=0.2,t
         elif loc in val:
             dest = 'validation'
 
-    annot = join_path(annot_path,img[:-3]+'xml')
-    boxes = read_xml_bb(annot,annot_map)
-    flags,labels = get_flags(join_path(img_path,img),boxes)
+        annot = join_path(annot_path,img[:-4]+'.xml')
+        try:
+            boxes = read_xml_bb(annot,annot_map)
+        except FileNotFoundError:
+            print(f'WARNING: xml file for {img} was not found in /Annotations, and thus ignored')
+            print('')
+            continue
+        flags,labels = get_flags(join_path(img_path,img),boxes)
 
-    j = 1 #keeps count of flags in given img
-    for f in range(len(flags)):
-        PIL.Image.fromarray(flags[f].astype(np.uint8)).save(
-            join_path(cams_dir,dest,str(int(labels[f])),img[:-3]+'_'+str(j)+'.png'),format='PNG')
-        j+=1
+        j = 1 #keeps count of flags in given img
+        for f in range(len(flags)):
+            PIL.Image.fromarray(flags[f].astype(np.uint8)).save(
+                join_path(cams_dir,dest,str(int(labels[f])),img[:-4]+'_'+str(j)+'.png'),format='PNG')
+            j+=1
 
     if info:
-        train_dirs = []
-        val_dirs = []
-        test_dirs = []
-        for v in annot_map.values():
-            train_dirs.append(join_path(cams_dir,'train', str(v)))
-            val_dirs.append(join_path(cams_dir,'validation', str(v)))
-            test_dirs.append(join_path(cams_dir,'test', str(v)))
-
+        train_dirs = glob.glob(join_path(cams_dir,'train/*'))
+        val_dirs = glob.glob(join_path(cams_dir,'validation/*'))
+        test_dirs = glob.glob(join_path(cams_dir,'test/*'))
+        
+        print(f'label map: {annot_map}')
         print(f'total training images by label: {[len(os.listdir(k)) for k in train_dirs]}')
         print(f'total validation images by label: {[len(os.listdir(k)) for k in val_dirs]}')
         print(f'total test images by label: {[len(os.listdir(k)) for k in test_dirs]}')
-        print(f'label map: {annot_map}')
 
 
 def plot_conf_mat(y_true,y_pred,labels,normalize=False,cmap=sns.cm.rocket_r,figsize=(10,7)):
