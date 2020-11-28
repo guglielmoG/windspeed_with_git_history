@@ -571,8 +571,8 @@ def convert_corners_to_c_bbox(boxes):
     '''
     x = (boxes[:,0] + boxes[:,2]) / 2
     y = (boxes[:,1] + boxes[:,3]) / 2
-    w_2 = abs(boxes[:,0] - boxes[:,2]) / 2
-    h_2 = abs(boxes[:,1] - boxes[:,3]) / 2
+    w_2 = (boxes[:,2] - boxes[:,0]) / 2
+    h_2 = (boxes[:,3] - boxes[:,1]) / 2
     return np.hstack([x[:,np.newaxis], y[:,np.newaxis], w_2[:,np.newaxis], h_2[:,np.newaxis], boxes[:,4:]])
 
 
