@@ -29,7 +29,7 @@ from sklearn.metrics import confusion_matrix
 from windspeed.retinanet.keras_retinanet.utils.image import read_image_bgr, preprocess_image, resize_image
 
 
-############ Convenience Functions ########################
+# ########### Convenience Functions ########################
 
 #convenience function to build portable paths
 join_path = lambda *l: os.sep.join(l)
@@ -47,7 +47,7 @@ def cwd(*l):
         os.chdir(oldpwd)
 
 
-############ YOLO ########################
+# ########### YOLO ########################
 
 def convert_bbox_to_yolo(size, box):
     '''
@@ -442,7 +442,7 @@ def generate_tfrecord(csv_input, output_path, image_dir):
     print('Successfully created the TFRecords: {}'.format(output_path))
 
 
-############ MODEL EVALUATION ########################
+# ########### MODEL EVALUATION ########################
 
 #give path if folder structure contains Images and Annotations, else can give img_path and ann_path
 def evaluate_model(model, predict_fn, classes, mdl_type='detection', **kwargs):
@@ -522,7 +522,7 @@ def evaluate_model(model, predict_fn, classes, mdl_type='detection', **kwargs):
     return mAP
 
 
-############ MISC ########################
+# ########### MISC ########################
 
 def read_xml_bb(ann_path, classes_map):
     '''
@@ -649,9 +649,9 @@ def annotations_to_df(path,classes_map):
     return xml_df
 
 
-############ IMAGE CLASSIFICATION #####################################
+# ########### IMAGE CLASSIFICATION #####################################
 
-def get_flags(img_path,boxes,ratio=1.1,xml=True):
+def get_flags(img_path,boxes,ratio=1.1,xml=True,new_dim=None):
     '''
     extracts only the detected flags from an image, after enlarging the bounding boxes.
     INPUT
@@ -660,7 +660,8 @@ def get_flags(img_path,boxes,ratio=1.1,xml=True):
             if xml=True: (xmin, ymin, xmax, ymax, ...)
             if xml=False: (x, y, w/2, h/2, ...)
         ratio = ratio by which the boxes are enlarged
-        xml = True if boxes from the annotated xml files, False if boxes from object detection
+        xml = True if boxes from the annotated xml files, False if boxes from object detection (yolo format)
+        new_dim = None or target_size
     OUTPUT
         flags = list of cropped images, as numpy arrays
         labels = if xml = True, list flag labels from manual annotation; if xml = False, an empty list.
@@ -674,6 +675,8 @@ def get_flags(img_path,boxes,ratio=1.1,xml=True):
 
     for box in boxes:
         im = img.crop(box[:4])
+        if new_dim is not None:
+            im = im.resize(new_dim)
         flags.append(img_to_array(im))
         if xml:
             labels.append(int(box[4]))
@@ -793,7 +796,7 @@ def plot_conf_mat(y_true,y_pred,labels,normalize=False,cmap=sns.cm.rocket_r,figs
     '''
     plots confusion matrix, relying on sklearn and seaborn 
     '''
-    cm = confusion_matrix(y_true,y_pred)
+    cm = confusion_matrix(y_true,y_pred,labels)
     fmt = ".0f"
     if normalize:
         cm = cm / cm.sum(axis=1)[:, np.newaxis]
