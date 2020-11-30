@@ -680,6 +680,7 @@ def get_flags(img_path,boxes,ratio=1.1,xml=True):
 
     return flags,labels
 
+pattern = '[a-z][a-z][a-z]+'
 
 def get_location_names(annot_path):
     '''
@@ -696,7 +697,6 @@ def get_location_names(annot_path):
         locs.append(loc)
 
     return sorted(list(dict.fromkeys(locs)))
-
 
 def split_train_test_locations(locations,val_split,test_split,seed):
     '''
@@ -719,6 +719,7 @@ def split_train_test_locations(locations,val_split,test_split,seed):
 
     return train,validation,test
 
+allowed_extensions = ('.png','.PNG','.jpg','.jpeg')
 
 def create_classification_directory(cams_dir,annot_map,info=True,val_split=0.2,test_split=0.2,seed=3456):
     '''
@@ -736,12 +737,13 @@ def create_classification_directory(cams_dir,annot_map,info=True,val_split=0.2,t
         2. crops out the flags from each of the Images using the bounding boxes in Annotations
         3. places the flags into further subdirectories, for each of the three datasets, based on their label
     '''
+    if not (os.path.isdir(join_path(cams_dir,'Images')) and os.path.isdir(join_path(cams_dir,'Annotations'))):
+        raise Exception('Could not find directories /Images and /Annotations within given path')
     annot_path = join_path(cams_dir,'Annotations')
     img_path = join_path(cams_dir,'Images')
 
     locations = get_location_names(annot_path)
     tr,val,te = split_train_test_locations(locations,val_split,test_split,seed)
-    pattern = '[a-z][a-z][a-z]+'
 
     for i in ['train','validation','test']:
         os.mkdir(join_path(cams_dir,i))
@@ -749,7 +751,7 @@ def create_classification_directory(cams_dir,annot_map,info=True,val_split=0.2,t
             os.mkdir(join_path(cams_dir,i,str(v)))
 
     for img in os.listdir(img_path):
-        if not img.endswith(".png"): 
+        if not img.endswith(allowed_extensions): 
             print(f'WARNING: {img} in /Images was not recognized as an image, and thus ignored')
             print('')
             continue
