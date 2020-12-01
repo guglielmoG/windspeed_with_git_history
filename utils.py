@@ -693,7 +693,6 @@ def get_location_names(annot_path):
     OUTPUT
         a list of unique locations, sorted alphabetically to ensure reproducibility. 
     '''
-    pattern = '[a-z][a-z][a-z]+'
     locs = []
     for annot in os.listdir(annot_path):
         loc = re.findall(pattern,annot)[0]
@@ -810,10 +809,11 @@ def plot_conf_mat(y_true,y_pred,labels,normalize=False,cmap=sns.cm.rocket_r,figs
 
 # ########### FINAL PREDICTION #####################################
 
-def split_train_test_locations_df(df,val_split=0.3,test_split=0.2,seed=3456):
+def split_train_test_locations_df(cams_dir,df,val_split=0.3,test_split=0.2,seed=3456):
     '''
     Performs allocation of each row between train, validation and test set, randomly by location.
     INPUT
+        cams_dir: directory containing the df and subfolders /Images and /Annotations
         df = DataFrame with columns 'image_id' and 'true_label'
         val_split = % split between train and validation
         test_split = % split between train+validation and test
@@ -823,6 +823,7 @@ def split_train_test_locations_df(df,val_split=0.3,test_split=0.2,seed=3456):
         df['split'] = whether that image belongs to train, test or validation
         df['location'] = location of the image, useful for diagnostics
     '''
+    annot_path = join_path(cams_dir,'Annotations')
     locations = get_location_names(annot_path)
     tr,val,te = split_train_test_locations(locations,val_split,test_split,seed)
     ids = df.image_id.tolist()
@@ -843,11 +844,12 @@ def split_train_test_locations_df(df,val_split=0.3,test_split=0.2,seed=3456):
     return df
 
 
-def img_pred_2step(img, retina_model, effnet_model,th=0.5):
+def img_pred_2step(cams_dir,img, retina_model, effnet_model,th=0.5):
     '''
     Predicts wind intensity for the image overall
     Seeks flags, and based on the flags predicts the intensity. Returns -1 if no flags are found.
     INPUT:
+        cams_dir: directory containing the df and subfolders /Images and /Annotations
         img: filename of image
         retina_model: LOADED retinanet model from .h5 file
         effnet_model: LOADED efficientnet model from .h5 file
