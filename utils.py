@@ -206,7 +206,7 @@ def predict_image_retinanet(net,label_map,image):
     '''
     INPUT
         net: trained Retinanet model
-        label_map: dictionary with possible labels as keys and integers as values
+        label_map: dictionary with possible labels as values and integers as keys
         image: image to process in BGR format
 
     OUTPUT
@@ -233,7 +233,7 @@ def predict_video_retinanet(video_path,output_name,model,label_map):
         video_path: path of the video to process
         output_name: path of the output where to find the processed video 
         model: retinanet model to use
-        label_map: dictionary with possible labels as keys and integers as values
+        label_map: dictionary with possible labels as values and integers as keys
     OUTPUT
         Returns the video in the desidered folder
     '''
