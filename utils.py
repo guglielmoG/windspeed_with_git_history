@@ -796,7 +796,7 @@ def plot_conf_mat(y_true,y_pred,labels,normalize=False,cmap=sns.cm.rocket_r,figs
     '''
     plots confusion matrix, relying on sklearn and seaborn 
     '''
-    cm = confusion_matrix(y_true,y_pred,labels)
+    cm = confusion_matrix(y_true,y_pred)
     fmt = ".0f"
     if normalize:
         cm = cm / cm.sum(axis=1)[:, np.newaxis]
@@ -806,4 +806,95 @@ def plot_conf_mat(y_true,y_pred,labels,normalize=False,cmap=sns.cm.rocket_r,figs
     sns.set(font_scale=1.4)
     sns.heatmap(cm, annot=True, fmt=fmt, xticklabels=labels, yticklabels=labels, annot_kws={"size": 16},cmap=cmap)
     plt.show()
+
+
+# ########### FINAL PREDICTION #####################################
+
+def split_train_test_locations_df(df,val_split=0.3,test_split=0.2,seed=3456):
+    '''
+    Performs allocation of each row between train, validation and test set, randomly by location.
+    INPUT
+        df = DataFrame with columns 'image_id' and 'true_label'
+        val_split = % split between train and validation
+        test_split = % split between train+validation and test
+        seed = for reproducibility
+    OUTPUT
+        adds two new columns to df:
+        df['split'] = whether that image belongs to train, test or validation
+        df['location'] = location of the image, useful for diagnostics
+    '''
+    locations = get_location_names(annot_path)
+    tr,val,te = split_train_test_locations(locations,val_split,test_split,seed)
+    ids = df.image_id.tolist()
+    split = []
+    locs = []
+    for i in range(len(ids)):
+        loc = re.findall(pattern,ids[i])[0]
+        locs.append(loc)
+        dest = 'test'
+        if loc in tr:
+            dest = 'train'
+        elif loc in val:
+            dest = 'validation'
+        split.append(dest)
+    df['split'] = split
+    df['location'] = locs
+    
+    return df
+
+
+def img_pred_2step(img, retina_model, effnet_model,th=0.5):
+    '''
+    Predicts wind intensity for the image overall
+    Seeks flags, and based on the flags predicts the intensity. Returns -1 if no flags are found.
+    INPUT:
+        img: filename of image
+        retina_model: LOADED retinanet model from .h5 file
+        effnet_model: LOADED efficientnet model from .h5 file
+        th: acceptance threshold for flag detection algorithm
+        label_map: label mapping for classification
+    OUTPUT:
+        final prediction for the image (as -1, 0, 1, 2)
+    '''
+    try:
+      img_path = join_path(cams_dir,'Images',img)
+    except:
+        print('No image with this filename was found in \Images')
+        return
+  
+    image = read_image_bgr(img_path)
+    try:
+      boxes,scores,_ = predict_retinanet(retina_model, image)
+    except AttributeError:
+      print('WARNING: please load your trained detection model first, using models.load_model()')
+      return 
+    
+    #get only boxes containing flags with confidence >= th 
+    mask = scores[0] > th
+    boxes = boxes[0][mask]
+    
+    #if no flags found
+    if boxes.shape[0] == 0:
+        return -1
+    
+    #grab flags
+    flags, _ = get_flags(img_path, boxes,xml=False,new_dim=(240,240))
+
+    #run classifier 
+    out_class = np.zeros((len(flags), 3))
+    for i, flag in enumerate(flags):
+        try:
+          preds = effnet_model.predict(np.expand_dims(flag, axis=0))
+        except AttributeError:
+          print('WARNING: please load your trained classification model first, using load_model()')
+          return 
+        out_class[i,:] = preds
+    
+    # combine output
+    avg = np.mean(out_class, axis=0)
+    final_pred = np.argmax(avg)
+            
+    return final_pred
+
+
 
